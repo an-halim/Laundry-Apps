@@ -8,34 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LaundryApps.View
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for DasboardPage.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class DasboardPage : Page
     {
-        public Login()
+        public DasboardPage()
         {
             InitializeComponent();
-   
         }
-
- 
-
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-           new Home().Show();
-          this.Close();
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-          System.Environment.Exit(0);
-        }
-
     }
 }

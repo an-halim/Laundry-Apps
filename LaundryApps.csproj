@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Controller\" />
+    <Folder Include="View\Admin\" />
   </ItemGroup>
 
 </Project>

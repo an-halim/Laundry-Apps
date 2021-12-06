@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaundryApps.View"
         mc:Ignorable="d"
-        Title="Logout" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Height="300" Width="450" Background="#0000ffff">
+        Title="Logout" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        WindowStyle="None" Height="300" Width="450" AllowsTransparency="True" 
+        Background="Transparent">
+    
     <Grid>
         <StackPanel>
             <Border CornerRadius="10" BorderThickness="1" BorderBrush="Black" Height="276"  Width="389" Margin="10" Background="#fff">

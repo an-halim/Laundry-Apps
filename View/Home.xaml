@@ -5,26 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaundryApps.View"
         mc:Ignorable="d"
-        Title="Home"  Width="1324" Height="812" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid>
+        Title="Home"  Width="1324" Height="812" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+
+    <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="93"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <StackPanel x:Name="btnNavigate" Grid.Column="0" Background="#F9F9F9">
-            <Grid>
+
+        <!--Start grid menu-->
+        <Grid x:Name="gridMenu" Grid.Column="0" Width="93" Background="#F9F9F9">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="660"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+
+            <ToggleButton Grid.Row="0" x:Name="btnGrid" BorderBrush="Transparent" Background="Transparent">
+                <Image Source="assets/icons/ic_menu.png" Width="35" Height="35"/>
+                <ToggleButton.Triggers>
+                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                        <BeginStoryboard>
+                            <Storyboard x:Name="HideStackPanel">
+                                <DoubleAnimation Storyboard.TargetName="gridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="200" To="93" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+                        <BeginStoryboard>
+                            <Storyboard x:Name="ShowStackPanel">
+                                <DoubleAnimation Storyboard.TargetName="gridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="93" To="200" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </ToggleButton.Triggers>
+            </ToggleButton>
+
+            <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="660"/>
-                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Height="75" Background="Blue" >
-                    <Button x:Name="btn_menu">
-                        
-                    </Button>
-                </StackPanel>
+                <Button x:Name="btnDashboard" Click="btnDashboard_Click" Grid.Row="0" Background="Transparent" BorderBrush="Transparent" />
+                <Button x:Name="btnCustomer" Click="btnCustomer_Click"  Grid.Row="1" Background="Transparent" BorderBrush="Transparent" />
+                <Button x:Name="btnOrder" Click="btnDashboard_Click"  Grid.Row="2" Background="Transparent" BorderBrush="Transparent" >
+                    <Image Source="assets/icons/ic_dashboard.png" Width="35" Height="35"/>
+                </Button>
+                <Button x:Name="btnSetting" Click="btnDashboard_Click"  Grid.Row="3" Background="Transparent" BorderBrush="Transparent" />
+                <Image Source="assets/icons/ic_setting.png" Margin="29,207,29,-208" Grid.Row="3"/>
+                <Image Source="assets/icons/ic_order.png" Margin="29,129,29,-129" Grid.Row="3"/>
+                <Image Source="assets/icons/ic_customer.png" Margin="29,42,29,-42" Grid.Row="3"/>
             </Grid>
-        </StackPanel>
-        
+
+            <Grid Grid.Row="2">
+                <Button x:Name="btnLogout" Click="btnLogout_Click" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="./Images/ic_logout.png" Width="35" Height="35"/>
+                </Button>
+            </Grid>
+
+        </Grid>
+        <!--End grid menu-->
+
+
+
+
+        <!--Content page-->
+        <Grid Grid.Column="1">
+            <Frame x:Name="frmContent" NavigationUIVisibility="Hidden" Margin="5">
+
+            </Frame>
+        </Grid>
     </Grid>
 </Window>

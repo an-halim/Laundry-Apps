@@ -20,6 +20,25 @@ namespace LaundryApps.View
         public Home()
         {
             InitializeComponent();
+            frmContent.Navigate(new View.DasboardPage());
         }
+
+        private void btnDashboard_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.DasboardPage());
+        }
+
+        private void btnCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.CustomerPage());
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            new View.Logout().Show();
+            this.Close();
+        }
+
+
     }
 }

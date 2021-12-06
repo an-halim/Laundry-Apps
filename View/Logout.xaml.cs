@@ -17,6 +17,7 @@ namespace LaundryApps.View
     /// </summary>
     public partial class Logout : Window
     {
+        public bool isLogin = false;
         public Logout()
         {
             InitializeComponent();
@@ -24,11 +25,13 @@ namespace LaundryApps.View
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+            new View.Login().Show();
             this.Close();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
+        { 
+            new View.Home().Show();
+            this.Close();
         }
     }
 }
