@@ -5,16 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaundryApps.View"
         mc:Ignorable="d"
-        Title="" Width="1324" Height="812" 
-        WindowStyle="None" WindowState="Normal" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
+        Title="Laundry Apps" Width="1324" Height="812" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" >
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity"  From="0" To="1" Duration="0:0:1" FillBehavior="HoldEnd" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="914"/>
             <ColumnDefinition Width="477"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Column="1" CornerRadius="79 0 0 79" Background="#1678F3">
-          
-        </Border>
+        <Border Grid.Column="1" CornerRadius="79 0 0 79" Background="#1678F3"/>
+
+
 
 
         <Grid Grid.Column="0">
@@ -22,14 +31,15 @@
             <Label Content="Get's Started" FontSize="40" HorizontalAlignment="Left"  Margin="161,193,0,562"/>
             <Label Content="Don't Have Account?"   Background="White"  FontSize="25" HorizontalAlignment="Left"  Margin="161,255,0,512"/>
             <Label Content="Username" FontSize="18" HorizontalAlignment="Left"  Margin="161,344,0,436"/>
-            <Border CornerRadius="13"  Background="#DDDD" BorderBrush="Black" Height="49" Width="592" Margin="161">
-                <TextBox x:Name="txtUsername" Text="Insert username" Height="47" Width="590" Margin="0" Foreground="DarkGray" Background="Transparent" BorderBrush="Transparent" VerticalContentAlignment="Center" Padding="15"/>
+            <Border CornerRadius="13" Background="#DDDD" BorderBrush="Black" Height="49" Width="592" Margin="161">
+                <TextBox x:Name="txtUsername" Text="Insert username" TextWrapping="Wrap" Height="47" Margin="30,1,30,1" Foreground="DarkGray" Background="Transparent" BorderBrush="Transparent" VerticalContentAlignment="Center" Padding="15" GotFocus="txtUsername_GotFocus"/>
             </Border>
             <Label Content="Password" FontSize="18" HorizontalAlignment="Left"  Margin="161,436,0,344"/>
             <Border CornerRadius="13"  Background="#DDDD" BorderBrush="Black" Height="49" Width="592" Margin="161,468,161,295">
-                <PasswordBox x:Name="txtPassword" Password="*****" Height="47" Width="590" Margin="0,0,2,2" Foreground="DarkGray" Background="Transparent" BorderBrush="Transparent" VerticalContentAlignment="Center" Padding="15"/>
+                <PasswordBox x:Name="txtPassword" Password="*****"  Height="47" Margin="30,0,30,2" Foreground="DarkGray" Background="Transparent" BorderBrush="Transparent" VerticalContentAlignment="Center" Padding="15" GotFocus="txtPassword_GotFocus"/>
             </Border>
             <Button Style="{DynamicResource PrimaryButton}" x:Name="btnLogin" Click="btnLogin_Click" Content="Login" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top" Height="51" Width="190" Margin="0,536,0,0" Background="#1678F3" Foreground="White"/>
+            <Button x:Name="btnSign" Content="Sign Up" HorizontalAlignment="Left" Margin="416,258,0,0" VerticalAlignment="Top" BorderBrush="Transparent" Background="#ffff" Foreground="#1678F3" FontSize="25" FontWeight="Medium" Click="btnSign_Click"/>
         </Grid>
 
     </Grid>

@@ -39,6 +39,9 @@ namespace LaundryApps.View
             this.Close();
         }
 
-
+        private void btnSetting_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.Admin.SettingPage());
+        }
     }
 }

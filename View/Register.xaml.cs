@@ -8,24 +8,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LaundryApps.View
 {
     /// <summary>
-    /// Interaction logic for DasboardPage.xaml
+    /// Interaction logic for Register.xaml
     /// </summary>
-    public partial class DasboardPage : Page
+    public partial class Register : Window
     {
-        public DasboardPage()
+        public Register()
         {
             InitializeComponent();
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            System.Environment.Exit(0);
         }
     }
 }

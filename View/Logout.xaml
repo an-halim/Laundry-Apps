@@ -19,7 +19,7 @@
                             <RowDefinition Height="100"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Column="0" Grid.Row="0">
+                        <StackPanel Grid.Row="0">
                             <Label HorizontalAlignment="Center" Content="Once you're logout" Foreground="#646464" FontWeight="Medium" FontSize="25"/>
                             <Label HorizontalAlignment="Center" Content="you can't go back" Foreground="#646464" FontWeight="Medium" FontSize="25"/>
                         </StackPanel>
@@ -30,11 +30,8 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Button x:Name="btnBack" Click="btnBack_Click"  BorderBrush="#0000ffff" Content="Back" FontWeight="Medium" Background="#0000ffff" Foreground="#000" Width="77" Height="34" />
-                                <StackPanel Grid.Column="1">
-                                    <Border CornerRadius="10" Background="#1678F3" Height="34" Width="77">
-                                        <Button x:Name="btnLogout" Click="btnLogout_Click"  BorderBrush="#0000ffff" Content="Logout" Width="77" Height="34" Foreground="#fff" Background="#0000ffff"/>
-                                    </Border>
-                                </StackPanel>
+                                <Button Grid.Column="1" Style="{DynamicResource PrimaryButton}" x:Name="btnLogout" Click="btnLogout_Click"  Content="Logout" Width="77" Height="34" Background="#1678F3" Foreground="#fff" />
+                                
                             </Grid>
                         </StackPanel>
                     </Grid>

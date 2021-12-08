@@ -17,19 +17,16 @@ namespace LaundryApps.View
     /// </summary>
     public partial class Login : Window
     {
+        Controller.LoginController login;
         public Login()
         {
             InitializeComponent();
-   
+            login = new Controller.LoginController(this);
         }
-
- 
-
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-           new Home().Show();
-          this.Close();
+            login.loginCheck();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -37,5 +34,20 @@ namespace LaundryApps.View
           System.Environment.Exit(0);
         }
 
+        private void txtUsername_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtUsername.Text = "";
+        }
+
+        private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtPassword.Clear();
+        }
+
+        private void btnSign_Click(object sender, RoutedEventArgs e)
+        {
+            new View.Register().Show();
+            this.Close();
+        }
     }
 }
