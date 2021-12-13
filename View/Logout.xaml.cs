@@ -30,7 +30,7 @@ namespace LaundryApps.View
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         { 
-            new View.Home().Show();
+            new View.Admin.Home().Show();
             this.Close();
         }
     }

@@ -1,11 +1,11 @@
-﻿<Window x:Class="LaundryApps.View.Home"
+﻿<Window x:Class="LaundryApps.View.Admin.Home"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaundryApps.View"
         mc:Ignorable="d"
-        Title="Home"  Width="1324" Height="812" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+        Title="Home"  Width="1324" Height="850" WindowStartupLocation="CenterScreen"  ResizeMode="CanMinimize">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -16,7 +16,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <ImageBrush x:Key="btnDashActive" ImageSource="Images/ic_dash_active.png"/>
+        <ImageBrush x:Key="btnDashActive" ImageSource="../Images/ic_dash_active.png"/>
         <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
@@ -82,7 +82,7 @@
             <Grid Grid.Row="0" Grid.Column="0">
                 <Button x:Name="btnHamburg"  BorderBrush="Transparent" Width="53" Height="53">
                     <Button.Background>
-                        <ImageBrush ImageSource="Images/ic_menu.png" />
+                        <ImageBrush ImageSource="../Images/ic_menu.png" />
                     </Button.Background>
                 </Button>
             </Grid>
@@ -103,22 +103,22 @@
 
                     <Button Style="{DynamicResource btnDashStyle}" Grid.Row="0" x:Name="btnDashboard" Click="btnDashboard_Click" BorderBrush="Transparent" Width="53" Height="53">
                         <Button.Background>
-                            <ImageBrush ImageSource="Images/ic_dashboard.png" />
+                            <ImageBrush ImageSource="../Images/ic_dashboard.png" />
                         </Button.Background>
                     </Button>
                     <Button Grid.Row="1" x:Name="btnUser"  BorderBrush="Transparent" Width="53" Height="53">
                         <Button.Background>
-                            <ImageBrush ImageSource="Images/ic_customer.png" />
+                            <ImageBrush ImageSource="../Images/ic_customer.png" />
                         </Button.Background>
                     </Button>
                     <Button Grid.Row="2" x:Name="btnOrder"  BorderBrush="Transparent" Width="53" Height="53">
                         <Button.Background>
-                            <ImageBrush ImageSource="Images/ic_order.png" />
+                            <ImageBrush ImageSource="../Images/ic_order.png" />
                         </Button.Background>
                     </Button>
                     <Button Grid.Row="3" x:Name="btnSetting" Click="btnSetting_Click" BorderBrush="Transparent" Width="53" Height="53">
                         <Button.Background>
-                            <ImageBrush ImageSource="Images/ic_setting.png" />
+                            <ImageBrush ImageSource="../Images/ic_setting.png" />
                         </Button.Background>
                     </Button>
                 </Grid>
@@ -127,7 +127,7 @@
 
             <Button Grid.Row="2" Grid.Column="0" x:Name="btnLogout" Click="btnLogout_Click"  BorderBrush="Transparent" Width="53" Height="53">
                 <Button.Background>
-                    <ImageBrush ImageSource="Images/ic_logout.png" />
+                    <ImageBrush ImageSource="../Images/ic_logout.png" />
                 </Button.Background>
             </Button>
 

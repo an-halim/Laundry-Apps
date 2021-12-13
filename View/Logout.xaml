@@ -13,7 +13,7 @@
         <StackPanel>
             <Border CornerRadius="10" BorderThickness="1" BorderBrush="Black" Height="276"  Width="389" Margin="10" Background="#fff">
 
-                <StackPanel Margin="70">
+                <StackPanel Margin="70,70,70,59">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="100"/>
@@ -30,7 +30,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Button x:Name="btnBack" Click="btnBack_Click"  BorderBrush="#0000ffff" Content="Back" FontWeight="Medium" Background="#0000ffff" Foreground="#000" Width="77" Height="34" />
-                                <Button Grid.Column="1" Style="{DynamicResource PrimaryButton}" x:Name="btnLogout" Click="btnLogout_Click"  Content="Logout" Width="77" Height="34" Background="#1678F3" Foreground="#fff" />
+                                <Button Grid.Column="1" Style="{DynamicResource PrimaryButton}" x:Name="btnLogout" Click="btnLogout_Click"  Content="Logout" Width="121" Height="45" />
                                 
                             </Grid>
                         </StackPanel>

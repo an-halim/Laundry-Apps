@@ -6,43 +6,43 @@ using System.Data.SqlClient;
 
 namespace LaundryApps.Model
 {
-    class Login
+    class Register
     {
         Model.DBconn db;
+
         public string username { get; set; }
+        public string name { get; set; }
+        public string address { get; set; }
+        public DateTime date { get; set; }
+        public string number { get; set; }
         public string password { get; set; }
 
-        public bool LoginCheck()
+        public bool Regist()
+        {
+            bool result;
+            db = new Model.DBconn();
+            
+
+            string data = "'" + username + "','" + name + "','" + address + "','" + date + "','" + number + "','" + password + "',' 0'";
+            result = db.Insert("pengguna", data);
+
+
+            return result;
+        }
+        public bool usernameCheck()
         {
             bool result;
             db = new Model.DBconn();
             DataSet ds = new DataSet();
 
-            string kondisi = "email = '" + username + "' AND pass = '" + password + "'";
+            string kondisi = "email = '" + username + "'";
             ds = db.Select("pengguna", kondisi);
 
             if (ds.Tables[0].Rows.Count > 0) result = true;
             else result = false;
 
             return result;
-        }
 
-        public bool isAdmin()
-        {
-            bool result;
-            int isAdmin;
-            db = new Model.DBconn();
-            DataSet ds = new DataSet();
-
-            string kondisi = "email = '" + username + "' AND pass = '" + password + "'";
-            ds = db.Select("pengguna", kondisi);
-            isAdmin = Convert.ToInt32(ds.Tables[0].Rows[0]["isadmin"]);
-
-            if (isAdmin == 1) result = true;
-            else result = false;
-
-            return result;
-            
         }
     }
 }

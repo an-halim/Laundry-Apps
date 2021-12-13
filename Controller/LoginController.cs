@@ -23,7 +23,7 @@ namespace LaundryApps.Controller
             bool result = model.LoginCheck();
             if (result)
             {
-                new View.Home().Show();
+                new View.Admin.Home().Show();
                 view.Close();
             }
             else

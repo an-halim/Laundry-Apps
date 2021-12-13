@@ -12,8 +12,10 @@
     <None Remove="View\Images\ic_dash_active.png" />
     <None Remove="View\Images\ic_lock.png" />
     <None Remove="View\Images\ic_menu.png" />
+    <None Remove="View\Images\ic_name.png" />
     <None Remove="View\Images\ic_order.png" />
     <None Remove="View\Images\ic_setting.png" />
+    <None Remove="View\Images\ic_visible.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,10 +41,16 @@
     <Resource Include="View\Images\ic_menu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="View\Images\ic_name.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="View\Images\ic_order.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\ic_setting.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_visible.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

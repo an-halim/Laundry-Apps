@@ -15,6 +15,5 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="DASHBOARD" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
         <Label Grid.Row="1" Content="THIS IS DASHBOARD PAGE" Foreground="Blue" Margin="250" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name="btnClose" Content="Button" HorizontalAlignment="Left" Margin="1041,18,0,0" VerticalAlignment="Top" Click="btnClose_Click"/>
     </Grid>
 </Page>
