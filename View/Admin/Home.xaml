@@ -79,13 +79,6 @@
                 <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Grid.Column="0">
-                <Button x:Name="btnHamburg"  BorderBrush="Transparent" Width="53" Height="53">
-                    <Button.Background>
-                        <ImageBrush ImageSource="../Images/ic_menu.png" />
-                    </Button.Background>
-                </Button>
-            </Grid>
 
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>

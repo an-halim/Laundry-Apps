@@ -21,10 +21,23 @@ namespace LaundryApps.Controller
             model.username = view.txtUsername.Text;
             model.password = view.txtPassword.Password;
             bool result = model.LoginCheck();
+            bool isAdmin = model.isAdmin();
             if (result)
             {
-                new View.Admin.Home().Show();
-                view.Close();
+
+
+                if (isAdmin)
+                {
+                    new View.Admin.Home().Show();
+                    view.Close();
+                }
+                else
+                {
+                    new View.User.Test().Show();
+                    view.Close();
+                }
+                
+                
             }
             else
             {

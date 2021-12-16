@@ -7,14 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\Images\bgHome.png" />
+    <None Remove="View\Images\ic_address.png" />
     <None Remove="View\Images\ic_customer.png" />
     <None Remove="View\Images\ic_dashboard.png" />
     <None Remove="View\Images\ic_dash_active.png" />
+    <None Remove="View\Images\ic_date.png" />
     <None Remove="View\Images\ic_lock.png" />
     <None Remove="View\Images\ic_menu.png" />
     <None Remove="View\Images\ic_name.png" />
     <None Remove="View\Images\ic_order.png" />
+    <None Remove="View\Images\ic_phone.png" />
     <None Remove="View\Images\ic_setting.png" />
+    <None Remove="View\Images\ic_user.png" />
     <None Remove="View\Images\ic_visible.png" />
   </ItemGroup>
 
@@ -23,6 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="View\Images\bgHome.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_address.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="View\Images\ic_customer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -30,6 +41,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\ic_dash_active.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_date.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\ic_lock.png">
@@ -47,7 +61,13 @@
     <Resource Include="View\Images\ic_order.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="View\Images\ic_phone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="View\Images\ic_setting.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_user.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\ic_visible.png">

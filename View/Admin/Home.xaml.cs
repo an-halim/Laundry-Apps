@@ -20,12 +20,12 @@ namespace LaundryApps.View.Admin
         public Home()
         {
             InitializeComponent();
-            frmContent.Navigate(new View.DasboardPage());
+            frmContent.Navigate(new View.Admin.HomePage());
         }
 
         private void btnDashboard_Click(object sender, RoutedEventArgs e)
         {
-            frmContent.Navigate(new View.DasboardPage());
+            frmContent.Navigate(new View.Admin.DasboardPage());
         }
 
         private void btnCustomer_Click(object sender, RoutedEventArgs e)
@@ -42,6 +42,12 @@ namespace LaundryApps.View.Admin
         private void btnSetting_Click(object sender, RoutedEventArgs e)
         {
             frmContent.Navigate(new View.Admin.SettingPage());
+        }
+
+
+        public void StartBtn()
+        {
+            frmContent.Navigate(new View.Admin.DasboardPage());
         }
     }
 }

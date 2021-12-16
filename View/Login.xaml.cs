@@ -29,14 +29,10 @@ namespace LaundryApps.View
             login.loginCheck();
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-          System.Environment.Exit(0);
-        }
-
         private void txtUsername_GotFocus(object sender, RoutedEventArgs e)
         {
-            txtUsername.Text = "";
+            txtUsername.SelectionStart = 0;
+            txtUsername.SelectionLength = txtUsername.Text.Length;
         }
 
         private void txtPassword_GotFocus(object sender, RoutedEventArgs e)

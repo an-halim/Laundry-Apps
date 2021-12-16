@@ -34,9 +34,16 @@
 
             <Label Content="Username" FontSize="18" HorizontalAlignment="Left"  Margin="161,325,0,436"/>
             <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Margin="0,356,0,0" Padding="57,10,0,10" FontSize="18" x:Name="txtUsername" Text="Insert username" Foreground="#7D7D7D" TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="48"/>
+            <Image HorizontalAlignment="Left" Height="25" Margin="173,364,664,422" VerticalAlignment="Top" Width="25" Source="/View/Images/ic_user.png"/>
             <Label Content="Password" FontSize="18" HorizontalAlignment="Left"  Margin="161,436,0,344"/>
-            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="txtPassword" Password="*****"  Height="48" Margin="161,468,161,295" Padding="57,10,0,10" Foreground="#7D7D7D"  VerticalContentAlignment="Center" GotFocus="txtPassword_GotFocus"/>
-          
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="txtPassword" Password="*****"  Height="48" Width="590" Margin="161,462,161,299" Padding="57,10,0,10" Foreground="#7D7D7D"  VerticalContentAlignment="Center" GotFocus="txtPassword_GotFocus"/>
+            <Image HorizontalAlignment="Left" Height="25" Margin="173,474,0,0" VerticalAlignment="Top" Width="25" Source="/View/Images/ic_lock.png"/>
+            <Button Style="{DynamicResource HideButton}" x:Name="btnShowPass" BorderBrush="Transparent" Width="20" Height="20" Margin="718,487,126,324">
+                <Button.Background>
+                    <ImageBrush ImageSource="/View/Images/ic_visible.png" />
+                </Button.Background>
+            </Button>
+            
             <Button Style="{DynamicResource PrimaryButton}" x:Name="btnLogin" Click="btnLogin_Click" Content="Login" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top" Height="51" Width="190" Margin="0,536,0,0" Background="#1678F3" Foreground="White"/>
             
         </Grid>

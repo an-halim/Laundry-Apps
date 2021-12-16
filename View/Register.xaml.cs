@@ -18,9 +18,11 @@ namespace LaundryApps.View
     public partial class Register : Window
     {
         bool hidePass = true;
+        Controller.RegistController regist;
         public Register()
         {
             InitializeComponent();
+            regist = new Controller.RegistController(this);
         }
 
         private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
@@ -80,6 +82,11 @@ namespace LaundryApps.View
         {
             txtPassword.Password = txtUnmaskPass.Text;
             
+        }
+
+        private void btnSign_Click(object sender, RoutedEventArgs e)
+        {
+            regist.regist();
         }
     }
 }

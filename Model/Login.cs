@@ -18,8 +18,8 @@ namespace LaundryApps.Model
             db = new Model.DBconn();
             DataSet ds = new DataSet();
 
-            string kondisi = "email = '" + username + "' AND pass = '" + password + "'";
-            ds = db.Select("pengguna", kondisi);
+            string kondisi = "Username = '" + username + "' AND User_password = '" + password + "'";
+            ds = db.Select("Tabel_user", kondisi);
 
             if (ds.Tables[0].Rows.Count > 0) result = true;
             else result = false;
@@ -34,9 +34,9 @@ namespace LaundryApps.Model
             db = new Model.DBconn();
             DataSet ds = new DataSet();
 
-            string kondisi = "email = '" + username + "' AND pass = '" + password + "'";
-            ds = db.Select("pengguna", kondisi);
-            isAdmin = Convert.ToInt32(ds.Tables[0].Rows[0]["isadmin"]);
+            string kondisi = "Username = '" + username + "' AND User_password = '" + password + "'";
+            ds = db.Select("Tabel_user", kondisi);
+            isAdmin = Convert.ToInt32(ds.Tables[0].Rows[0]["Is_admin"]);
 
             if (isAdmin == 1) result = true;
             else result = false;

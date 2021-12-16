@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaundryApps.View
+namespace LaundryApps.View.Admin
 {
     /// <summary>
     /// Interaction logic for DasboardPage.xaml

@@ -13,18 +13,17 @@ namespace LaundryApps.Model
         public string username { get; set; }
         public string name { get; set; }
         public string address { get; set; }
-        public DateTime date { get; set; }
         public string number { get; set; }
+        public DateTime date { get; set; }
         public string password { get; set; }
 
         public bool Regist()
         {
             bool result;
             db = new Model.DBconn();
-            
 
-            string data = "'" + username + "','" + name + "','" + address + "','" + date + "','" + number + "','" + password + "',' 0'";
-            result = db.Insert("pengguna", data);
+            string NewDate = date.ToString("yyyy/MM/dd");
+            result = db.Insert("Tabel_user", "'" + username + "','" + password + "','" + name + "','" + address + "','" + number + "','" + NewDate + "','0'");
 
 
             return result;
@@ -35,8 +34,8 @@ namespace LaundryApps.Model
             db = new Model.DBconn();
             DataSet ds = new DataSet();
 
-            string kondisi = "email = '" + username + "'";
-            ds = db.Select("pengguna", kondisi);
+            string kondisi = "Username = '" + username + "'";
+            ds = db.Select("Tabel_user", kondisi);
 
             if (ds.Tables[0].Rows.Count > 0) result = true;
             else result = false;
