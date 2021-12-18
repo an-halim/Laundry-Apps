@@ -25,7 +25,17 @@ create table Tabel_order(
 Id_layanan char(6) primary key not null,
 Id_user char(6) foreign key references Tabel_user(Id_user),
 Tanggal_transaksi datetime,
-Jumlah_produk varchar(),
+Jumlah_produk varchar(255),
+Total_harga numeric
+)
+go
+
+create table Order_detail(
+Id_order char char(6) primary key not null,
+Id_layanan char(6) foreign key references Tabel_order(Id_layanan),
+Id_user char(6) foreign key references Tabel_user(Id_user),
+Tanggal_transaksi datetime,
+Jumlah_produk varchar(255),
 Total_harga numeric
 )
 go
