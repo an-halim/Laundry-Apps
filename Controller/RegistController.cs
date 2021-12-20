@@ -21,28 +21,35 @@ namespace LaundryApps.Controller
             bool cek;
             bool regist;
 
-            model.username = view.txtUsername.Text;
-            model.name = view.txtName.Text;
-            model.address = view.txtAddress.Text;
-            model.date =  view.datePick.SelectedDate.Value.Date;
-            model.number = view.txtNumber.Text;
-            model.password = view.txtPassword.Password;
+            try
+            {
+                model.username = view.txtUsername.Text;
+                model.name = view.txtName.Text;
+                model.address = view.txtAddress.Text;
+                model.date = view.datePick.SelectedDate.Value.Date;
+                model.number = view.txtNumber.Text;
+                model.password = view.txtPassword.Password;
 
 
-            cek = model.usernameCheck();
-            if (cek)
-            {
-                MessageBox.Show("Username already used, please try use other!");
-            }
-            else
-            {
-                if (!CheckLength(model.username))
+                cek = model.usernameCheck();
+                if (cek)
                 {
-                    regist = model.Regist();
-                    if (regist) MessageBox.Show("Sign Up Successfully! you can login now");
-                    else MessageBox.Show("Sign Up failed!");
-                }else MessageBox.Show("Sign Up failed, Username use too many character!");
+                    MessageBox.Show("Username already used, please try use other!");
+                }
+                else
+                {
+                    if (!CheckLength(model.username))
+                    {
+                        regist = model.Regist();
+                        if (regist) MessageBox.Show("Sign Up Successfully! you can login now");
+                        else MessageBox.Show("Sign Up failed!");
+                    }
+                    else MessageBox.Show("Sign Up failed, Username use too many character!");
 
+                }
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
             }
 
         }

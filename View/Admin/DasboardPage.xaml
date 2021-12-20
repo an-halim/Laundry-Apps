@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LaundryApps.View"
       mc:Ignorable="d" 
-      d:DesignHeight="812" d:DesignWidth="1124" Background="#fff"
+      d:DesignHeight="812" d:DesignWidth="1243" Background="#fff"
       Title="DasboardPage">
 
     <Grid>
@@ -13,7 +13,34 @@
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="DASHBOARD" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
-        <Label Grid.Row="1" Content="THIS IS DASHBOARD PAGE" Foreground="Blue" Margin="250" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+        <Label Grid.Row="0" Content="Dashboard" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
+        <Border Grid.Row="1" Background="#E5E5E5" CornerRadius="32" Height="678" Width="787" Margin="27,37,429,21">
+            <Label Grid.Row="0" Content="Recent Order" HorizontalAlignment="Center" FontSize="35" Margin="31,29,537,600" FontWeight="SemiBold" Foreground="#1678F3"/>
+        </Border>
+        <Border Grid.Row="1" Background="#E5E5E5" CornerRadius="32" Height="379" Width="366" Margin="842,37,35,320">
+            <StackPanel>
+                <Image Source="/View/Images/avatar.png" Width="231" Height="231" Margin="0,22,0,0"/>
+                <Label x:Name="lblUsername" Content="username" HorizontalAlignment="Center" Margin="0,39,0,0" FontSize="35" FontWeight="SemiBold" Foreground="#1678F3"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Background="#E5E5E5" CornerRadius="32" Height="264" Width="366" Margin="842,442,35,30">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Balance" HorizontalAlignment="Center" FontSize="35" FontWeight="SemiBold" Foreground="#1678F3"/>
+                <Label Grid.Row="1" x:Name="lblBalance" Content="0" HorizontalAlignment="Center" FontSize="35" FontWeight="SemiBold" Foreground="#1678F3"/>
+                <Label Grid.Row="2" Content="Orders" HorizontalAlignment="Center" FontSize="35" FontWeight="SemiBold" Foreground="#1678F3"/>
+                <Label Grid.Row="3" x:Name="lblOrders" Content="0" HorizontalAlignment="Center" FontSize="35" FontWeight="SemiBold" Foreground="#1678F3"/>
+            </Grid>
+        </Border>
+
+
+
+
+
     </Grid>
 </Page>

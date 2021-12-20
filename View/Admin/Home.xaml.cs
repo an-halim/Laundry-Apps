@@ -17,6 +17,7 @@ namespace LaundryApps.View.Admin
     /// </summary>
     public partial class Home : Window
     {
+ 
         public Home()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace LaundryApps.View.Admin
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            new View.Logout().Show();
+            new View.Admin.Logout().Show();
             this.Close();
         }
 

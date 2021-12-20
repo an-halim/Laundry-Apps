@@ -23,6 +23,7 @@ namespace LaundryApps.View
         {
             InitializeComponent();
             regist = new Controller.RegistController(this);
+            txtUsername.Focus();
         }
 
         private void txtPassword_GotFocus(object sender, RoutedEventArgs e)

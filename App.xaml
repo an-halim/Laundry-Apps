@@ -166,9 +166,9 @@
         </Style>
         <SolidColorBrush x:Key="Button.Static.Background1" Color="Transparent"/>
         <SolidColorBrush x:Key="Button.Static.Border1" Color="Transparent"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="Transparent"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#7D7D7D"/>
         <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#7D7D7D"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="Transparent"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#F3f3f3"/>
         <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#7D7D7D"/>
         <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
@@ -178,7 +178,7 @@
             <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Padding" Value="1"/>

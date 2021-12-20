@@ -14,15 +14,14 @@ using System.Windows.Shapes;
 namespace LaundryApps.View.Admin
 {
     /// <summary>
-    /// Interaction logic for DasboardPage.xaml
+    /// Interaction logic for AccountSetingPage.xaml
     /// </summary>
-    public partial class DasboardPage : Page
+    public partial class AccountSetingPage : Page
     {
         Controller.AuthUserController auth;
         private string username;
         private string name;
-
-        public DasboardPage()
+        public AccountSetingPage()
         {
             InitializeComponent();
             auth = new Controller.AuthUserController();
@@ -30,9 +29,8 @@ namespace LaundryApps.View.Admin
             username = cache[0];
             name = cache[1];
 
-            lblUsername.Content = name;
-            
+            txtUsername.Text = username;
+            txtName.Focus();
         }
-
     }
 }

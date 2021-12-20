@@ -201,7 +201,7 @@
             <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNumber" GotFocus="txtNumber_GotFocus" Text="Phone Number"  HorizontalAlignment="Center" Margin="367,506,0,256" Padding="57,10,0,10" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" Height="48"/>
             <Image HorizontalAlignment="Left" Height="25" Margin="472,517,0,0" VerticalAlignment="Top" Width="25" Source="/View/Images/ic_phone.png"/>
             <Label Content="Password" FontSize="18" HorizontalAlignment="Left"  Margin="161,572,0,209"/>
-            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="txtPassword" GotFocus="txtPassword_GotFocus" PasswordChar="*" Password="Input password" Visibility="Visible" Width="590"  Height="48" Margin="66,605,0,158" Padding="57,10,407,10"  VerticalContentAlignment="Center"/>
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="txtPassword" GotFocus="txtPassword_GotFocus" PasswordChar="*" Password="Input" Visibility="Visible" Width="590"  Height="48" Margin="66,605,0,158" Padding="57,10,407,10"  VerticalContentAlignment="Center"/>
             <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtUnmaskPass" Text="****" GotFocus="txtUnmaskPass_GotFocus" HorizontalAlignment="Center" Margin="66,605,0,158" Visibility="Hidden" Padding="57,10,407,10" FontSize="18"  TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="48"/>
             <Image HorizontalAlignment="Left" Height="25" Margin="173,614,0,0" VerticalAlignment="Top" Width="25" Source="Images/ic_lock.png"/>
             <Button Style="{DynamicResource HideButton}" x:Name="btnShowPass" Click="btnShowPass_Click" BorderBrush="Transparent" Width="20" Height="20" Margin="618,616,10,172">

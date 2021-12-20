@@ -14,25 +14,23 @@ using System.Windows.Shapes;
 namespace LaundryApps.View.Admin
 {
     /// <summary>
-    /// Interaction logic for DasboardPage.xaml
+    /// Interaction logic for SettingPage.xaml
     /// </summary>
-    public partial class DasboardPage : Page
+    public partial class SettingPage : Page
     {
-        Controller.AuthUserController auth;
-        private string username;
-        private string name;
-
-        public DasboardPage()
+        public SettingPage()
         {
             InitializeComponent();
-            auth = new Controller.AuthUserController();
-            string[] cache = auth.getLoginUser().Split("|");
-            username = cache[0];
-            name = cache[1];
-
-            lblUsername.Content = name;
-            
         }
 
+        private void PanelAccountSet_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new View.Admin.AccountSetingPage());
+        }
+
+        private void PanelServiceSet_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("sercie");
+        }
     }
 }

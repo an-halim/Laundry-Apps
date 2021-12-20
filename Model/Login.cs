@@ -30,15 +30,13 @@ namespace LaundryApps.Model
         public bool isAdmin()
         {
             bool result;
-            int isAdmin;
             db = new Model.DBconn();
             DataSet ds = new DataSet();
 
-            string kondisi = "Username = '" + username + "' AND User_password = '" + password + "'";
+            string kondisi = "Username = '" + username + "' AND User_password = '" + password + "' AND Is_admin LIKE '1' ";
             ds = db.Select("Tabel_user", kondisi);
-            isAdmin = Convert.ToInt32(ds.Tables[0].Rows[0]["Is_admin"]);
 
-            if (isAdmin == 1) result = true;
+            if (ds.Tables[0].Rows.Count > 0) result = true;
             else result = false;
 
             return result;

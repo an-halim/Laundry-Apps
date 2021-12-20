@@ -18,17 +18,18 @@ namespace LaundryApps.View.Admin
     /// </summary>
     public partial class HomePage : Page
     {
-        View.Admin.Home hm;
+        
+        
         public HomePage()
         {
             InitializeComponent();
-            hm = new View.Admin.Home();
+            
+           
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            hm.StartBtn();
+            this.NavigationService.Navigate(new View.Admin.DasboardPage());
         }
-
     }
 }

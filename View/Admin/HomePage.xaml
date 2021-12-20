@@ -5,15 +5,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LaundryApps.View.Admin"
       mc:Ignorable="d" 
-      d:DesignHeight="812" d:DesignWidth="1124" Background="#fff"
+      d:DesignHeight="812" d:DesignWidth="1243" Background="#fff"
       Title="HomePage">
 
     <Grid>
         <Image Source="/View/Images/bgHome.png" Stretch="Fill"/>
-        <Label Content="Welcome To Our" HorizontalAlignment="Left" Margin="128,98,0,0" VerticalAlignment="Top" Foreground="#fff" FontSize="70" FontWeight="Bold"/>
-        <Label Content="Application" HorizontalAlignment="Left" Margin="128,185,0,0" VerticalAlignment="Top" Foreground="#fff" FontSize="70" FontWeight="Bold"/>
-        <Label Content="Click Button Below To Start the Program" HorizontalAlignment="Left" Margin="128,369,0,0" Foreground="#fff" FontSize="20" FontWeight="Bold" VerticalAlignment="Top"/>
-        <Button x:Name="btnStart"  Content="Get's Started" Style="{DynamicResource PrimaryButton}" HorizontalAlignment="Left" Margin="128,590,0,0" FontSize="18" VerticalAlignment="Top" Height="72" Width="268"/>
+        <Label Content="Welcome To Our" Foreground="#fff" FontSize="70" FontWeight="Bold" HorizontalAlignment="Left" Margin="123,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Application" Foreground="#fff" FontSize="70" FontWeight="Bold" HorizontalAlignment="Left" Margin="123,180,0,0" VerticalAlignment="Top"/>
+        <Label Content="Click Button Bellow to start the program" Foreground="#fff" FontSize="28" FontWeight="Regular" HorizontalAlignment="Left" Margin="132,428,0,0" VerticalAlignment="Top"/>
 
+        <Button x:Name="btnStart" Click="btnStart_Click" Style="{DynamicResource PrimaryButton}" FontSize="28" Content="Get's Started" Height="72" Width="268" Margin="132,501,843,239">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1678F3" Offset="0.1"/>
+                    <GradientStop Color="#F984F4" Offset="0.75"/>
+                    <GradientStop Color="#F984F4" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

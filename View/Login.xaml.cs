@@ -17,15 +17,18 @@ namespace LaundryApps.View
     /// </summary>
     public partial class Login : Window
     {
+        bool hidePass = true;
         Controller.LoginController login;
         public Login()
         {
             InitializeComponent();
             login = new Controller.LoginController(this);
+            txtUsername.Focus();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+
             login.loginCheck();
         }
 
@@ -44,6 +47,35 @@ namespace LaundryApps.View
         {
             new View.Register().Show();
             this.Close();
+        }
+
+        private void btnShowPass_Click(object sender, RoutedEventArgs e)
+        {
+            if (hidePass)
+            {
+                txtPassword.Visibility = Visibility.Hidden;
+                txtUnmaskPass.Text = txtPassword.Password;
+                txtUnmaskPass.Visibility = Visibility.Visible;
+                hidePass = false;
+            }
+            else
+            {
+                txtPassword.Visibility = Visibility.Visible;
+                txtPassword.Password = txtUnmaskPass.Text;
+                txtUnmaskPass.Visibility = Visibility.Hidden;
+                hidePass = true;
+            }
+        }
+
+        private void txtUnmaskPass_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtPassword.Password = txtUnmaskPass.Text;
+
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return) login.loginCheck();
         }
     }
 }

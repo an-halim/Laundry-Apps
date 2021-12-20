@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace LaundryApps.View
+namespace LaundryApps.View.Admin
 {
     /// <summary>
     /// Interaction logic for Logout.xaml
