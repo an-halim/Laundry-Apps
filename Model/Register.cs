@@ -23,7 +23,7 @@ namespace LaundryApps.Model
             db = new Model.DBconn();
 
             string NewDate = date.ToString("yyyy/MM/dd");
-            result = db.Insert("Tabel_user", "'" + username + "','" + password + "','" + name + "','" + address + "','" + number + "','" + NewDate + "','0'");
+            result = db.Insert("userdata", "'" + username + "','" + password + "','" + name + "','" + address + "','" + number + "','" + NewDate + "','0'");
 
 
             return result;
@@ -34,8 +34,8 @@ namespace LaundryApps.Model
             db = new Model.DBconn();
             DataSet ds = new DataSet();
 
-            string kondisi = "Username = '" + username + "'";
-            ds = db.Select("Tabel_user", kondisi);
+            string kondisi = "username = '" + username + "'";
+            ds = db.Select("userdata", kondisi);
 
             if (ds.Tables[0].Rows.Count > 0) result = true;
             else result = false;

@@ -26,10 +26,10 @@ namespace LaundryApps.Model
         {
             username = File.ReadAllText(path);
             DataSet ds = new DataSet();
-            string kondisi = "Username = '" + username + "'";
-            ds = db.Select("Tabel_user", kondisi);
-            username = ds.Tables[0].Rows[0]["Username"].ToString();
-            name = ds.Tables[0].Rows[0]["Nama"].ToString();
+            string kondisi = "username = '" + username + "'";
+            ds = db.Select("userdata", kondisi);
+            username = ds.Tables[0].Rows[0]["username"].ToString();
+            name = ds.Tables[0].Rows[0]["name"].ToString();
             return username + "|"+name;
         }
     }

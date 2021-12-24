@@ -19,12 +19,12 @@ namespace LaundryApps.Model
         public static SqlConnection GetConnection()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-KP5AV2H;Initial Catalog=LDB;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=DESKTOP-KP5AV2H;Initial Catalog=db_laundry;Integrated Security=True;Pooling=False";
 
             return conn;
         }
 
-        public DataSet Select(string tabel, string kondisi)
+        public DataSet Select(string tabel, string kondisi = null, string column = "*")
         {
             DataSet ds = new DataSet();
             try
@@ -33,8 +33,8 @@ namespace LaundryApps.Model
                 command = new SqlCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.Text;
-                if (kondisi == null) command.CommandText = "SELCT * FROM " + tabel;
-                else command.CommandText = "SELECT * FROM " + tabel + " WHERE " + kondisi;
+                if (kondisi == null) command.CommandText = "SELECT "+column+" FROM " + tabel;
+                else command.CommandText = "SELECT " + column + " FROM " + tabel + " WHERE " + kondisi;
 
                 SqlDataAdapter sda = new SqlDataAdapter(command);
                 sda.Fill(ds, tabel);
@@ -108,5 +108,32 @@ namespace LaundryApps.Model
 
             return result;
         }
+
+        public DataTable FillData(string table, string column, string kondisi = null)
+        {
+            DataTable dt;
+            try
+            {
+                conn.Open();
+                command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.Text;
+                if (kondisi == null) command.CommandText = "SELECT " + column + " FROM " + table;
+                else command.CommandText = "SELECT "+column+" FROM " + table + " WHERE " + kondisi;
+
+                SqlDataAdapter sda = new SqlDataAdapter(command);
+                dt = new DataTable(table);
+                sda.Fill(dt);
+            }
+            catch (SqlException)
+            {
+                dt = null;
+            }
+
+            conn.Close();
+            return dt;
+        }
+
+        
     }
 }

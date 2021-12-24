@@ -10,6 +10,8 @@
     <None Remove="View\Images\avatar.png" />
     <None Remove="View\Images\bgHome.png" />
     <None Remove="View\Images\bgSetting.png" />
+    <None Remove="View\Images\clothes.png" />
+    <None Remove="View\Images\hoodie.png" />
     <None Remove="View\Images\ic_address.png" />
     <None Remove="View\Images\ic_cart.png" />
     <None Remove="View\Images\ic_customer.png" />
@@ -28,6 +30,9 @@
     <None Remove="View\Images\ic_setting_active.png" />
     <None Remove="View\Images\ic_user.png" />
     <None Remove="View\Images\ic_visible.png" />
+    <None Remove="View\Images\more.png" />
+    <None Remove="View\Images\pants.png" />
+    <None Remove="View\Images\user.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +40,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="View\Images\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="View\Images\avatar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -42,6 +50,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\bgSetting.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\clothes.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\more.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\pants.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\ic_address.png">
@@ -99,6 +116,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\ic_visible.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\hoodie.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

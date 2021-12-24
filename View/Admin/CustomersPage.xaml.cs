@@ -11,16 +11,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaundryApps.View
+namespace LaundryApps.View.Admin
 {
     /// <summary>
-    /// Interaction logic for CustomerPage.xaml
+    /// Interaction logic for CustomersPage.xaml
     /// </summary>
-    public partial class CustomerPage : Page
+    public partial class CustomersPage : Page
     {
-        public CustomerPage()
+        public CustomersPage()
         {
             InitializeComponent();
+        }
+
+        private void btnListUser_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new View.Admin.UsersListPage());
         }
     }
 }

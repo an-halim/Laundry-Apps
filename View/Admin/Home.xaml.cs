@@ -31,7 +31,12 @@ namespace LaundryApps.View.Admin
 
         private void btnCustomer_Click(object sender, RoutedEventArgs e)
         {
-            frmContent.Navigate(new View.CustomerPage());
+            frmContent.Navigate(new View.Admin.CustomersPage());
+        }
+
+        private void btnSetting_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.Admin.SettingPage());
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -40,15 +45,9 @@ namespace LaundryApps.View.Admin
             this.Close();
         }
 
-        private void btnSetting_Click(object sender, RoutedEventArgs e)
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            frmContent.Navigate(new View.Admin.SettingPage());
-        }
-
-
-        public void StartBtn()
-        {
-            frmContent.Navigate(new View.Admin.DasboardPage());
+            frmContent.Navigate(new View.Admin.OrdersPage());
         }
     }
 }

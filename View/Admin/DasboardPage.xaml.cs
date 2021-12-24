@@ -21,6 +21,7 @@ namespace LaundryApps.View.Admin
         Controller.AuthUserController auth;
         private string username;
         private string name;
+        Controller.DashboardPageController dashboard;
 
         public DasboardPage()
         {
@@ -31,8 +32,24 @@ namespace LaundryApps.View.Admin
             name = cache[1];
 
             lblUsername.Content = name;
+            dashboard = new Controller.DashboardPageController(this);
+
+        }
+
+
+        private void lblSeeMore_MouseDown(object sender, MouseButtonEventArgs e)
+        {
             
         }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            dashboard.FillDatagrid();
+            dashboard.getBalance();
+            dashboard.getTotalOrder();
+            dashboard.getCompletOrder();
+            dashboard.getReceivedOrder();
+            dashboard.getProgresOrder();
+        }
     }
 }
