@@ -22,8 +22,7 @@ namespace LaundryApps.View.Admin
         
         public HomePage()
         {
-            InitializeComponent();
-            
+            InitializeComponent();          
            
         }
 

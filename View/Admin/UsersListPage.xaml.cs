@@ -19,12 +19,11 @@ namespace LaundryApps.View.Admin
     public partial class UsersListPage : Page
     {
         Controller.UserListController UserList;
-        View.Admin.EditUserWindow edit;
         public UsersListPage()
         {
             InitializeComponent();
             UserList = new Controller.UserListController(this);
-            edit = new View.Admin.EditUserWindow();
+
 
 
         }
@@ -36,11 +35,12 @@ namespace LaundryApps.View.Admin
 
         private void btnEditUser_Click(object sender, RoutedEventArgs e)
         {
-            if (edit.IsActive)
-            {
-                edit.Close();
-                edit.Show();
-            } else edit.Show();
+            new View.Admin.EditUserWindow().Show();
+        }
+
+        private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            new View.Admin.DeleteUserWindow().Show();
         }
     }
 }

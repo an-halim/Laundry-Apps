@@ -11,24 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaundryApps.View.Admin
+namespace LaundryApps.View.User
 {
     /// <summary>
-    /// Interaction logic for OrdersLogs.xaml
+    /// Interaction logic for DashboardPage.xaml
     /// </summary>
-    public partial class OrdersLogsPage : Page
+    public partial class DashboardPage : Page
     {
-
-        Controller.OrderLogsControler OD;
-        public OrdersLogsPage()
+        public DashboardPage()
         {
             InitializeComponent();
-            OD = new Controller.OrderLogsControler(this);
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            OD.FillDatagrid();
         }
     }
 }

@@ -8,18 +8,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LaundryApps.View.User
 {
     /// <summary>
-    /// Interaction logic for Test.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class Test : Window
+    public partial class HomePage : Page
     {
-        public Test()
+        public HomePage()
         {
             InitializeComponent();
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DashboardPage());
         }
     }
 }

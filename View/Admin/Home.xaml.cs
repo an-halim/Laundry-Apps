@@ -17,7 +17,7 @@ namespace LaundryApps.View.Admin
     /// </summary>
     public partial class Home : Window
     {
- 
+
         public Home()
         {
             InitializeComponent();
@@ -26,14 +26,19 @@ namespace LaundryApps.View.Admin
 
         private void btnDashboard_Click(object sender, RoutedEventArgs e)
         {
-            frmContent.Navigate(new View.Admin.DasboardPage());
+            View.Admin.DasboardPage dash = new View.Admin.DasboardPage();
+            dash.lblUsername.Content = lblLogedUser.Content;
+            frmContent.Navigate(dash);
         }
 
         private void btnCustomer_Click(object sender, RoutedEventArgs e)
         {
             frmContent.Navigate(new View.Admin.CustomersPage());
         }
-
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.Admin.OrdersPage());
+        }
         private void btnSetting_Click(object sender, RoutedEventArgs e)
         {
             frmContent.Navigate(new View.Admin.SettingPage());
@@ -42,12 +47,13 @@ namespace LaundryApps.View.Admin
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             new View.Admin.Logout().Show();
+        }
+
+        public void CloseWindow()
+        {
             this.Close();
         }
 
-        private void btnOrder_Click(object sender, RoutedEventArgs e)
-        {
-            frmContent.Navigate(new View.Admin.OrdersPage());
-        }
+
     }
 }

@@ -1,0 +1,17 @@
+﻿<Window x:Class="LaundryApps.View.Admin.DeleteUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaundryApps.View.Admin"
+        mc:Ignorable="d"
+        Title="Delete User" Height="380" Width="705" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="SingleBorderWindow">
+    <Grid>
+        <Label Content="Select Username" HorizontalAlignment="Center" Margin="0,54,0,239"/>
+        <ComboBox x:Name="cmbUsername" Height="45" Width="590" Margin="58,110,57,189"/>
+
+        <Button x:Name="btnBack"   BorderBrush="#0000ffff" Content="Back" FontWeight="Medium" Background="#0000ffff" Foreground="#000" Width="77" Height="34" Margin="265,210,363,100" />
+        <Button Style="{DynamicResource DangerButton}" x:Name="btnDelete"  BorderBrush="#0000ffff" Content="Delete" FontWeight="Medium"  Foreground="#000" Width="70" Height="32" Margin="375,210,260,100" />
+
+    </Grid>
+</Window>

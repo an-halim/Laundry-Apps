@@ -8,27 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaundryApps.View.Admin
+namespace LaundryApps.View.User
 {
     /// <summary>
-    /// Interaction logic for OrdersLogs.xaml
+    /// Interaction logic for Test.xaml
     /// </summary>
-    public partial class OrdersLogsPage : Page
+    public partial class Home : Window
     {
-
-        Controller.OrderLogsControler OD;
-        public OrdersLogsPage()
+        public Home()
         {
             InitializeComponent();
-            OD = new Controller.OrderLogsControler(this);
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            OD.FillDatagrid();
+            frmContent.Navigate(new HomePage());
         }
     }
 }

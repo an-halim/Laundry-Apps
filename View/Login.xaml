@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaundryApps.View"
         mc:Ignorable="d"
+        Icon="/View/Images/hoodie.png"
         Title="Laundry Apps" Width="1324" Height="850" ResizeMode="CanMinimize"  WindowStartupLocation="CenterScreen" >
 
     <Window.Triggers>
@@ -22,8 +23,6 @@
             <ColumnDefinition Width="477"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="1" CornerRadius="79 0 0 79" Background="#1678F3"/>
-
-
 
 
         <Grid Grid.Column="0">

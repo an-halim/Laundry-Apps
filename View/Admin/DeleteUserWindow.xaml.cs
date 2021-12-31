@@ -8,27 +8,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LaundryApps.View.Admin
 {
     /// <summary>
-    /// Interaction logic for OrdersLogs.xaml
+    /// Interaction logic for DeleteUserWindow.xaml
     /// </summary>
-    public partial class OrdersLogsPage : Page
+    public partial class DeleteUserWindow : Window
     {
-
-        Controller.OrderLogsControler OD;
-        public OrdersLogsPage()
+        public DeleteUserWindow()
         {
             InitializeComponent();
-            OD = new Controller.OrderLogsControler(this);
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            OD.FillDatagrid();
         }
     }
 }

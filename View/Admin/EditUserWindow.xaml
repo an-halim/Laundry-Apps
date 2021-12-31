@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaundryApps.View.Admin"
         mc:Ignorable="d"
-        Title="Edit User" Height="662" Width="606" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="SingleBorderWindow">
+        Title="Edit User" Height="690" Width="606" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="SingleBorderWindow">
     <Grid>
         <Border Height="662" Width="606" Background="#e4e4e4" CornerRadius="30">
             <Grid>

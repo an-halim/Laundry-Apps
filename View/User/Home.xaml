@@ -1,4 +1,4 @@
-﻿<Window x:Class="LaundryApps.View.Admin.Home"
+﻿<Window x:Class="LaundryApps.View.User.Home"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LaundryApps.View"
         Icon="/View/Images/hoodie.png"
         mc:Ignorable="d"
-        Title="Laundry Apps"  Width="1366" Height="850"   WindowStartupLocation="CenterScreen" >
+        Title="Laundry Apps"  Width="1366" Height="850" WindowStartupLocation="CenterScreen"  ResizeMode="CanMinimize">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -254,65 +254,55 @@
         <!--Start side menu-->
         <Grid Grid.Column="0" Width="93" Background="#F9F9F9">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="75"/>
                 <RowDefinition Height="660"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
 
 
             <Grid Grid.Row="1">
-                <Grid Margin="0,170">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="170"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button Style="{DynamicResource btnDashStyle}" Grid.Row="0" x:Name="btnDashboard" Click="btnDashboard_Click" BorderBrush="Transparent">
+
+                    <Button Style="{DynamicResource btnDashStyle}" Grid.Row="0"  BorderBrush="Transparent">
                         <Button.Background>
                             <ImageBrush ImageSource="../Images/ic_dashboard.png" />
                         </Button.Background>
                     </Button>
-                    <Button Style="{DynamicResource ButtonCust}" Grid.Row="1" x:Name="btnCustomer" Click="btnCustomer_Click" BorderBrush="Transparent">
-                        <Button.Background>
-                            <ImageBrush ImageSource="../Images/ic_customer.png" />
-                        </Button.Background>
-                    </Button>
-                    <Button Style="{DynamicResource ButtonOrder}" Grid.Row="2" x:Name="btnOrder" Click="btnOrder_Click"  BorderBrush="Transparent" >
+                    <Button Style="{DynamicResource ButtonCust}" Grid.Row="1"  BorderBrush="Transparent">
                         <Button.Background>
                             <ImageBrush ImageSource="../Images/ic_order.png" />
                         </Button.Background>
                     </Button>
-                    <Button Style="{DynamicResource ButtonSetting}" Grid.Row="3" x:Name="btnSetting" Click="btnSetting_Click" BorderBrush="Transparent" >
+                    <Button Style="{DynamicResource ButtonOrder}" Grid.Row="2"  BorderBrush="Transparent" >
                         <Button.Background>
-                            <ImageBrush ImageSource="../Images/ic_setting.png" />
+                            <ImageBrush ImageSource="../Images/ic_order.png" />
                         </Button.Background>
                     </Button>
                 </Grid>
             </Grid>
 
-            <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Button VerticalAlignment="Top" BorderBrush="Transparent" Width="35" Height="35">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/View/Images/is_logedUser.png" />
-                    </Button.Background>
-                </Button>
-                <Label x:Name="lblLogedUser" x:FieldModifier="public" Content="@admin" FontStyle="Italic" FontWeight="SemiBold" Opacity="0.7" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,22,0,0" Grid.RowSpan="2"/>
-                <Button Grid.Row="1" x:Name="btnLogout" Click="btnLogout_Click"  BorderBrush="Transparent" Width="35" Height="35">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/View/Images/ic_logout.png" />
-                    </Button.Background>
-                </Button>
-            </Grid>
 
-
+            <Button Grid.Row="2" Grid.Column="0"  BorderBrush="Transparent" Width="35" Height="35">
+                <Button.Background>
+                    <ImageBrush ImageSource="../Images/ic_logout.png" />
+                </Button.Background>
+            </Button>
 
         </Grid>
         <!--End side menu-->
+
+
+
 
         <!--Content page-->
         <Grid Grid.Column="1">

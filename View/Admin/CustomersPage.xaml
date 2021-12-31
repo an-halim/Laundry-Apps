@@ -17,7 +17,8 @@
         <!--Header-->
         <Label Grid.Row="0" Content="Customer" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
         <!--Header-->
-        <Grid Grid.Row="1">
+        
+        <Grid Grid.Row="1" Background="#f3f3f3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -25,26 +26,26 @@
 
 
 
-            <Border x:Name="btnListUser" MouseDown="btnListUser_MouseDown" CornerRadius="30" Height="500" Width="500" BorderBrush="Gray"  Background="#64A6F9">
+            <Border x:Name="btnListUser" MouseDown="btnListUser_MouseDown" CornerRadius="30" Height="500" Width="500" Background="#64A6F9">
                 <StackPanel >
                     <Image Source="/View/Images/ic_list.png" Height="250" Width="250" Margin="0,72,0,0"/>
                     <Label Content="List user" Foreground="White" FontSize="60" HorizontalAlignment="Center" Margin="-40"/>
                     
                 </StackPanel>
                 <Border.Effect>
-                    <DropShadowEffect BlurRadius="60" Color="#7d7d7d"/>
+                    <DropShadowEffect BlurRadius="60" Color="#e3e1e1"/>
                 </Border.Effect>
             </Border>
 
 
-            <Border Grid.Column="1" CornerRadius="30" Height="500" Width="500" Background="#837EF3">
+            <Border Grid.Column="1" x:Name="btnAddUser" MouseDown="btnAddUser_MouseDown" CornerRadius="30" Height="500" Width="500" Background="#837EF3">
                 <StackPanel >
                     <Image Source="/View/Images/user.png" Height="250" Width="250" Margin="0,72,0,0" />
                     <Label Content="New User" Foreground="White" FontSize="60" HorizontalAlignment="Center" Margin="-40"/>
                     
                 </StackPanel>
                 <Border.Effect>
-                    <DropShadowEffect BlurRadius="60" Color="#7d7d7d"/>
+                    <DropShadowEffect BlurRadius="60" Color="#e3e1e1"/>
                 </Border.Effect>
             </Border>
 

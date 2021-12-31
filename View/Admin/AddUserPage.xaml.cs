@@ -14,21 +14,13 @@ using System.Windows.Shapes;
 namespace LaundryApps.View.Admin
 {
     /// <summary>
-    /// Interaction logic for OrdersLogs.xaml
+    /// Interaction logic for AddUserPage.xaml
     /// </summary>
-    public partial class OrdersLogsPage : Page
+    public partial class AddUserPage : Page
     {
-
-        Controller.OrderLogsControler OD;
-        public OrdersLogsPage()
+        public AddUserPage()
         {
             InitializeComponent();
-            OD = new Controller.OrderLogsControler(this);
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            OD.FillDatagrid();
         }
     }
 }

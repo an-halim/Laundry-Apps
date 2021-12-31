@@ -17,20 +17,19 @@ namespace LaundryApps.View.Admin
     /// </summary>
     public partial class Logout : Window
     {
-        public bool isLogin = false;
-        public Logout()
+         public Logout()
         {
             InitializeComponent();
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+            App.Current.Windows[0].Close();
             new View.Login().Show();
             this.Close();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         { 
-            new View.Admin.Home().Show();
             this.Close();
         }
     }

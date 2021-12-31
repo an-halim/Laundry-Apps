@@ -30,8 +30,12 @@
     <None Remove="View\Images\ic_setting_active.png" />
     <None Remove="View\Images\ic_user.png" />
     <None Remove="View\Images\ic_visible.png" />
+    <None Remove="View\Images\img_adduser.png" />
+    <None Remove="View\Images\img_laundry.png" />
+    <None Remove="View\Images\is_logedUser.png" />
     <None Remove="View\Images\more.png" />
     <None Remove="View\Images\pants.png" />
+    <None Remove="View\Images\success.gif" />
     <None Remove="View\Images\user.png" />
   </ItemGroup>
 
@@ -40,6 +44,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="View\Images\img_adduser.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\img_laundry.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\is_logedUser.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\success.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="View\Images\user.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

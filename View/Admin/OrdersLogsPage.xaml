@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:LaundryApps.View.Admin"
       mc:Ignorable="d" 
       d:DesignHeight="812" d:DesignWidth="1243" Background="#fff"
-      Title="Orders Logs">
+      Title="Orders Logs" Loaded="Page_Loaded">
 
 
     <Grid>
@@ -19,62 +19,82 @@
         <Label Grid.Row="0" Content="Orders Logs" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
         <!--Header-->
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Background="#f3f3f3">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="600"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <DataGrid Grid.Row="1" x:Name="OrdersGrid" GridLinesVisibility="None" FontSize="15" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0" Background="Transparent" Margin="20,1,20,10" >
+            <DataGrid Name="OrdersGrid"  GridLinesVisibility="None" FontSize="15" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0" Background="Transparent" Margin="20,1,20,10" Grid.Row="1">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="#fff"/>
-                        <Setter Property="Padding" Value="5"/>
                         <Setter Property="FontWeight" Value="SemiBold"/>
-                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    </Style>
-                </DataGrid.Resources>
-                <DataGrid.RowStyle>
-                    <Style TargetType="DataGridRow">
                         <Setter Property="Height" Value="40"/>
-                        <Setter Property="Padding" Value="5"/>
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="FontWeight" Value="SemiBold"/>
-                        <Setter Property="HorizontalAlignment" Value="Center"/>
-                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding state}" Value="Received">
-                                <Setter Property="Background" Value="White"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding state}" Value="On Progres">
-                                <Setter Property="Background" Value="Orange"/>
-                                <Setter Property="Foreground" Value="White"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding state}" Value="Completed">
-                                <Setter Property="Background" Value="Green"/>
-                                <Setter Property="Foreground" Value="White"/>
-                            </DataTrigger>
-                        </Style.Triggers>
                     </Style>
-                </DataGrid.RowStyle>
-                <DataGrid.CellStyle>
-                    <Style TargetType="DataGridCell">
-                        <Setter Property="Height" Value="30"/>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        
+                        <Setter Property="Height" Value="60"/>
                         <Setter Property="Padding" Value="10"/>
                         <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="FontWeight" Value="SemiBold"/>
                         <Setter Property="BorderBrush" Value="Transparent"/>
-                        <Setter Property="Margin" Value="5,5"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                    <Grid>
+                                        <ContentPresenter VerticalAlignment="Center"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Foreground" Value="Blue"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="Blue"/>
+                            </Trigger>
+                        </Style.Triggers>
                     </Style>
-                </DataGrid.CellStyle>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Order ID" Width="80" Binding="{Binding order_id}"/>
-                    <DataGridTextColumn Header="Name" Width="*" Binding="{Binding name}"/>
-                    <DataGridTextColumn Header="Date" Width="*" Binding="{Binding date}"/>
-                    <DataGridTextColumn Header="Amount" Width="*" Binding="{Binding total}"/>
-                    <DataGridTextColumn Header="Status" Width="*" Binding="{Binding state}"/>
-                </DataGrid.Columns>
+                </DataGrid.Resources>
 
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="" Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Fill="#1678F3" Height="30" Width="30"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Status" Width="100" Binding="{Binding state}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="Completed">
+                                        <Setter Property="Background" Value="LightGreen"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="On Progres">
+                                        <Setter Property="Background" Value="Orange"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="Received">
+                                        <Setter Property="Background" Value="Aqua"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Order ID" Width="80" Binding="{Binding order_id}"/>
+                    <DataGridTextColumn Header="User Name" Width="*" Binding="{Binding user_id}"/>
+                    <DataGridTextColumn Header="Items" Width="70" Binding="{Binding product_total}"/>
+                    <DataGridTextColumn Header="Amount" Width="*" Binding="{Binding total_price}"/>
+                    <DataGridTextColumn Header="Date" Width="100" Binding="{Binding trx_date}"/>
+                </DataGrid.Columns>
             </DataGrid>
         </Grid>
 

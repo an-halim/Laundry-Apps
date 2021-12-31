@@ -25,16 +25,15 @@
                 <RowDefinition Height="616"/>
             </Grid.RowDefinitions>
 
-            <Button Style="{DynamicResource PrimaryButton}" Width="212" Height="61" FontSize="25" Content="Delete User" Background="#F31666" Margin="729,30,302,30"/>
-            <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEditUser" Click="btnEditUser_Click" Width="212" Height="61" FontSize="25" Content="Edit User" Margin="976,30,55,30"/>
-            <DataGrid Grid.Row="1" Name="UserListGrid"  GridLinesVisibility="None" FontSize="15" IsReadOnly="True"  AutoGenerateColumns="False" BorderThickness="0" Background="#7d7d7d" Margin="55,1,55,33" >
+            <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteUser" Click="btnDeleteUser_Click" Width="212" Height="61" FontSize="25" Content="Delete User" HorizontalAlignment="Right" Margin="0,30,302,0"/>
+            <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEditUser" Click="btnEditUser_Click" Width="212" Height="61" FontSize="25" Content="Edit User" HorizontalAlignment="Right" Margin="0,30,55,0"/>
+            <DataGrid Grid.Row="1" Name="UserListGrid" GridLinesVisibility="None" FontSize="15" IsReadOnly="True"  AutoGenerateColumns="False" BorderThickness="0" Background="White" Margin="55,0,55,33" >
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#f3f3f3"/>
                     <Setter Property="Padding" Value="5"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                </Style>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                    </Style>
             </DataGrid.Resources>
             
             <DataGrid.CellStyle>
@@ -42,17 +41,15 @@
                     <Setter Property="Height" Value="30"/>
                     <Setter Property="Padding" Value="10"/>
                     <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
                     <Setter Property="BorderBrush" Value="Transparent"/>
-                    <Setter Property="Margin" Value="5,5"/>
-                </Style>
+                    </Style>
             </DataGrid.CellStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="User Name" Width="120" Binding="{Binding username}"/>
-                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Address" Width="*" Binding="{Binding address}"/>
-                <DataGridTextColumn Header="Birth date" Width="*" Binding="{Binding birth_date}"/>
-                <DataGridTextColumn Header="Number" Width="*" Binding="{Binding number}"/>
+                <DataGridTextColumn Header="Name" Width="auto" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Number" Width="150" Binding="{Binding number}"/>
+                <DataGridTextColumn Header="Birth date" Width="100" Binding="{Binding birth_date}"/>               
+                <DataGridTextColumn Header="Address" Width="auto" Binding="{Binding address}"/>
             </DataGrid.Columns>
 
             </DataGrid>

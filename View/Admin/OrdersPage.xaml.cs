@@ -25,7 +25,12 @@ namespace LaundryApps.View.Admin
 
         private void btnOrdersLogs_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new View.Admin.OrdersLogsPage());
+            NavigationService.Navigate(new View.Admin.OrdersLogsPage());
+        }
+
+        private void btnCreateOrder_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new View.Admin.CreateOrderPage());
         }
     }
 }

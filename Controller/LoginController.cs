@@ -26,16 +26,16 @@ namespace LaundryApps.Controller
             bool isAdmin = model.isAdmin();
             if (result)
             {
-
-
                 if (isAdmin)
                 {
-                    new View.Admin.Home().Show();
+                    View.Admin.Home hm = new View.Admin.Home();
+                    hm.lblLogedUser.Content = model.username;
+                    hm.Show();
                     view.Close();
                 }
                 else
                 {
-                    new View.User.Test().Show();
+                    new View.User.Home().Show();
                     view.Close();
                 }
 

@@ -27,5 +27,10 @@ namespace LaundryApps.View.Admin
         {
             NavigationService.Navigate(new View.Admin.UsersListPage());
         }
+
+        private void btnAddUser_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new View.Admin.AddUserPage());
+        }
     }
 }
