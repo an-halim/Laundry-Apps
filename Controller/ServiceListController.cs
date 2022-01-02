@@ -20,6 +20,10 @@ namespace LaundryApps.Controller
         public void FillServices(string startFrom)
         {
             string[,] data = Service.FillServices(startFrom);
+            string total = model.Select("service", null, "count(*) as total").Tables[0].Rows[0]["total"].ToString();
+
+            view.lblTotalProducts.Content = "Showing " + (int.Parse(startFrom)+8).ToString() + " of " +total+ " Services"; 
+
             view.lblServiceID1.Content = data[0, 0];
             view.lblServiceName1.Content = data[0, 1];
             view.lblServiceDetail1.Text = data[0, 2];
@@ -104,8 +108,7 @@ namespace LaundryApps.Controller
             view.lblServiceName8.Content = data[7, 1];
             view.lblServiceDetail8.Text = data[7, 2];
             view.lblServicePrice8.Content = data[7, 3];
-
-
         }
+
     }
 }

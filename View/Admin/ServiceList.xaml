@@ -35,7 +35,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1" Margin="20,20,20,10">
-                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtSearch" Text="Search here" Width="500" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10" TextChanged="txtSearch_TextChanged" />
+                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtSearch" Text="" Width="500" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10" TextChanged="txtSearch_TextChanged" />
                     <Button Style="{DynamicResource PrimaryButton}" Content="+ Add new" Width="100" Height="40" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="10" Margin="0,0,10,0"/>
                 </Grid>
             </Grid>
@@ -48,7 +48,7 @@
                     <ColumnDefinition Width="250"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="1" CornerRadius="14" Background="#fff" Margin="10" Width="200">
+                <Border x:Name="card1" Grid.Column="1" CornerRadius="14" Background="#fff" Margin="10" Width="200">
                     <Border.Effect>
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
@@ -56,13 +56,14 @@
                         <Image x:Name="img1"  Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID1" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
-                        <Label x:Name="lblServiceName1" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,150,0,0"/>
-                        <TextBlock x:Name="lblServiceDetail1" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,20,0"/>
-                        <Label x:Name="lblServicePrice1" Content="Rp.10.000,00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="+" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,5"/>
+                        <Label x:Name="lblServiceName1" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
+                        <TextBlock x:Name="lblServiceDetail1" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
+                        <Label x:Name="lblServicePrice1" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🖍" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🗑" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,10"/>
                     </Grid>
                 </Border>
-                <Border Grid.Column="2" CornerRadius="14" Background="#fff" Margin="10" Width="200">
+                <Border x:Name="card2" Grid.Column="2" CornerRadius="14" Background="#fff" Margin="10" Width="200">
                     <Border.Effect>
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
@@ -70,12 +71,14 @@
                         <Image x:Name="img2" Source="/View/Images/img_laundry.png" Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID2" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
-                        <Label x:Name="lblServiceName2" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,150,0,0"/>
-                        <TextBlock x:Name="lblServiceDetail2" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,20,0"/>
-                        <Label x:Name="lblServicePrice2" Content="Rp.10.000,00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Label x:Name="lblServiceName2" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
+                        <TextBlock x:Name="lblServiceDetail2" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
+                        <Label x:Name="lblServicePrice2" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🖍" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🗑" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,10"/>
                     </Grid>
                 </Border>
-                <Border Grid.Column="3" CornerRadius="14" Background="#fff" Margin="10" Width="200">
+                <Border x:Name="card3" Grid.Column="3" CornerRadius="14" Background="#fff" Margin="10" Width="200">
                     <Border.Effect>
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
@@ -83,12 +86,14 @@
                         <Image x:Name="img3" Source="/View/Images/img_laundry.png" Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID3" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
-                        <Label x:Name="lblServiceName3" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,150,0,0"/>
-                        <TextBlock x:Name="lblServiceDetail3" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,20,0"/>
-                        <Label x:Name="lblServicePrice3" Content="Rp.10.000,00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Label x:Name="lblServiceName3" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
+                        <TextBlock x:Name="lblServiceDetail3" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
+                        <Label x:Name="lblServicePrice3" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🖍" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🗑" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,10"/>
                     </Grid>
                 </Border>
-                <Border Grid.Column="4" CornerRadius="14" Background="#fff" Margin="10" Width="200">
+                <Border x:Name="card4" Grid.Column="4" CornerRadius="14" Background="#fff" Margin="10" Width="200">
                     <Border.Effect>
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
@@ -96,9 +101,11 @@
                         <Image x:Name="img4" Source="/View/Images/img_laundry.png" Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID4" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
-                        <Label x:Name="lblServiceName4" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,150,0,0"/>
-                        <TextBlock x:Name="lblServiceDetail4" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,20,0"/>
-                        <Label x:Name="lblServicePrice4" Content="Rp.10.000,00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Label x:Name="lblServiceName4" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
+                        <TextBlock x:Name="lblServiceDetail4" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
+                        <Label x:Name="lblServicePrice4" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🖍" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🗑" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,10"/>
                     </Grid>
                 </Border>
             </Grid>
@@ -111,7 +118,7 @@
                     <ColumnDefinition Width="250"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="1" CornerRadius="14" Background="#fff" Margin="10" Width="200">
+                <Border x:Name="card5" Grid.Column="1" CornerRadius="14" Background="#fff" Margin="10" Width="200">
                     <Border.Effect>
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
@@ -119,13 +126,14 @@
                         <Image x:Name="img5"  Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID5" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
-                        <Label x:Name="lblServiceName5" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,150,0,0"/>
-                        <TextBlock x:Name="lblServiceDetail5" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,20,0"/>
-                        <Label x:Name="lblServicePrice5" Content="Rp.10.000,00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="+" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,5"/>
+                        <Label x:Name="lblServiceName5" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
+                        <TextBlock x:Name="lblServiceDetail5" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
+                        <Label x:Name="lblServicePrice5" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🖍" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🗑" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,10"/>
                     </Grid>
                 </Border>
-                <Border Grid.Column="2" CornerRadius="14" Background="#fff" Margin="10" Width="200">
+                <Border x:Name="card6" Grid.Column="2" CornerRadius="14" Background="#fff" Margin="10" Width="200">
                     <Border.Effect>
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
@@ -133,12 +141,14 @@
                         <Image x:Name="img6" Source="/View/Images/img_laundry.png" Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID6" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
-                        <Label x:Name="lblServiceName6" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,150,0,0"/>
-                        <TextBlock x:Name="lblServiceDetail6" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,20,0"/>
-                        <Label x:Name="lblServicePrice6" Content="Rp.10.000,00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Label x:Name="lblServiceName6" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
+                        <TextBlock x:Name="lblServiceDetail6" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
+                        <Label x:Name="lblServicePrice6" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🖍" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🗑" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,10"/>
                     </Grid>
                 </Border>
-                <Border Grid.Column="3" CornerRadius="14" Background="#fff" Margin="10" Width="200">
+                <Border x:Name="card7" Grid.Column="3" CornerRadius="14" Background="#fff" Margin="10" Width="200">
                     <Border.Effect>
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
@@ -146,12 +156,14 @@
                         <Image x:Name="img7" Source="/View/Images/img_laundry.png" Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID7" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
-                        <Label x:Name="lblServiceName7" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,150,0,0"/>
-                        <TextBlock x:Name="lblServiceDetail7" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,20,0"/>
-                        <Label x:Name="lblServicePrice7" Content="Rp.10.000,00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Label x:Name="lblServiceName7" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
+                        <TextBlock x:Name="lblServiceDetail7" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
+                        <Label x:Name="lblServicePrice7" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🖍" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🗑" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,10"/>
                     </Grid>
                 </Border>
-                <Border Grid.Column="4" CornerRadius="14" Background="#fff" Margin="10" Width="200">
+                <Border x:Name="card8" Grid.Column="4" CornerRadius="14" Background="#fff" Margin="10" Width="200">
                     <Border.Effect>
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
@@ -159,9 +171,11 @@
                         <Image x:Name="img8" Source="/View/Images/img_laundry.png" Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID8" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
-                        <Label x:Name="lblServiceName8" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,150,0,0"/>
-                        <TextBlock x:Name="lblServiceDetail8" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,170,20,0"/>
-                        <Label x:Name="lblServicePrice8" Content="Rp.10.000,00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Label x:Name="lblServiceName8" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
+                        <TextBlock x:Name="lblServiceDetail8" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
+                        <Label x:Name="lblServicePrice8" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🖍" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" Content="🗑" Height="20" Width="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,10"/>
                     </Grid>
                 </Border>
             </Grid>
@@ -176,9 +190,9 @@
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
                     <Grid>
-                        <Label Content="8 of 30 services" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="Previous" Height="35" Width="100"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,130,0"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="Next" Height="35" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                        <Label x:Name="lblTotalProducts" Content="8 of 30 services" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnPrev" Click="btnPrev_Click" Content="← Previous" Height="35" Width="100"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,130,0"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnNext" Click="btnNext_Click" Content="Next →" Height="35" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,10,0"/>
                     </Grid>                    
                 </Border>
             </Grid>

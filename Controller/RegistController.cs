@@ -34,22 +34,22 @@ namespace LaundryApps.Controller
                 cek = model.usernameCheck();
                 if (cek)
                 {
-                    MessageBox.Show("Username already used, please try use other!");
+                    MessageBox.Show("Username already used, please try use other!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
                     if (!CheckLength(model.username))
                     {
                         regist = model.Regist();
-                        if (regist) MessageBox.Show("Sign Up Successfully! you can login now");
-                        else MessageBox.Show("Sign Up failed!");
+                        if (regist) MessageBox.Show("Sign Up Successfully! you can login now", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
+                        else MessageBox.Show("Sign Up failed!", "Failed!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                    else MessageBox.Show("Sign Up failed, Username use too many character!");
+                    else MessageBox.Show("Sign Up failed, Username use too many character!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
-            }catch(Exception e)
+            }catch(Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("Field can't blank!", "Sign Up failed!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }

@@ -2,24 +2,29 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Data;
 
 namespace LaundryApps.Controller
 {
     class OrderLogsControler
     {
         View.Admin.OrdersLogsPage view;
-        Model.DBconn model;
+        Model.OrderLogs model;
 
         public OrderLogsControler(View.Admin.OrdersLogsPage view)
         {
-            model = new Model.DBconn();
+            model = new Model.OrderLogs();
             this.view = view;
         }
 
         public void FillDatagrid()
         {
-            try { view.OrdersGrid.ItemsSource = model.FillData("orders", "order_id, user_id, product_total, format(total_price, 'c', 'id-ID') as total_price, format(trx_date, 'dd/MM/yyyy' ) as trx_date, state").DefaultView; }
-            catch (Exception e) { MessageBox.Show(e.Message); }
+            string cari = view.txtSearch.Text;
+            DataTable data = model.loadData(cari);
+            if (data == null) MessageBox.Show("Error while load data", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+            else view.OrdersGrid.ItemsSource = data.DefaultView;
+            
         }
+
     }
 }

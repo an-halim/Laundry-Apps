@@ -42,5 +42,20 @@ namespace LaundryApps.View.Admin
         {
             new View.Admin.DeleteUserWindow().Show();
         }
+
+        private void btnNewUser_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new View.Admin.AddUserPage());
+        }
+
+        private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtSearch.Text = "";
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
     }
 }

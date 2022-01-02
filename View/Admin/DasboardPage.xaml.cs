@@ -34,13 +34,42 @@ namespace LaundryApps.View.Admin
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
+        {            
+            float BalancePercentage;
+            BalancePercentage = dashboard.GetBalancePrecentage();
+            if(BalancePercentage < 0)
+            {
+                lblBalancePrecentage.Foreground = Brushes.Red;
+                lblBalancePrecentage.Content = BalancePercentage + "% This week";
+            }
+            else
+            {                
+                lblBalancePrecentage.Foreground = Brushes.LightGreen;
+                lblBalancePrecentage.Content = "+" + BalancePercentage + "% This week";
+            }
+            float OrderPercentage;
+            OrderPercentage = dashboard.GetOrderPrecentage();
+            if(OrderPercentage < 0)
+            {
+                lblOrderPrecentage.Foreground = Brushes.Red;
+                lblOrderPrecentage.Content = OrderPercentage + "% This week";
+            }
+            else
+            {
+                lblOrderPrecentage.Foreground = Brushes.LightGreen;
+                lblOrderPrecentage.Content = "+" + int.Parse(OrderPercentage.ToString()) + "% This week";
+            }
             dashboard.FillDatagrid();
             dashboard.getBalance();
             dashboard.getTotalOrder();
             dashboard.getCompletOrder();
             dashboard.getReceivedOrder();
             dashboard.getProgresOrder();
+        }
+
+        private void btnSeeAll_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OrdersLogsPage());
         }
     }
 }

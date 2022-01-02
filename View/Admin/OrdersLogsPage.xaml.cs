@@ -30,5 +30,25 @@ namespace LaundryApps.View.Admin
         {
             OD.FillDatagrid();
         }
+
+        private void btnNewOrder_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new View.Admin.CreateOrderPage());
+        }
+
+        private void btnCancle_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Are you sure cancle this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
+        }
+
+        private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtSearch.Text = "";
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            OD.FillDatagrid();
+        }
     }
 }

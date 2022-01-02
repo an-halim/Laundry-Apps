@@ -18,179 +18,180 @@
         <!--Header-->
         <Label Grid.Row="0" Content="Dashboard" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
         <!--Header-->
+        
+        <!--Body-->
+        <Grid Grid.Row="1" Background="#f3f3f3">
+            <!--Service cards-->
+            <Border  Background="#fff" CornerRadius="14" Height="198" Width="787" Margin="27,35,429,500">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#e3e1e1"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="15" Color="#e3e1e1"/>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/View/Images/Clothes.png" Width="80" Height="80" Margin="35,30,35,77"/>
+                            <TextBlock Text="Clothes" Foreground="#fff" FontSize="21" HorizontalAlignment="Center" Margin="36,-80,36,549"/>
+                        </StackPanel>
+                    </Border>
 
-        <!--Service cards-->
-        <Border Grid.Row="1" Background="#E5E5E5" CornerRadius="32" Height="198" Width="787" Margin="27,35,429,500">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Border Grid.Column="0" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
-                    <Border.Effect>
-                        <DropShadowEffect Color="Gray" BlurRadius="25"/>
-                    </Border.Effect>
-                    <StackPanel>
-                        <Image Source="/View/Images/Clothes.png" Width="80" Height="80" Margin="35,30,35,77"/>
-                        <TextBlock Text="Clothes" Foreground="#fff" FontSize="21" HorizontalAlignment="Center" Margin="36,-80,36,549"/>
-                    </StackPanel>
-                </Border>
+                    <Border Grid.Column="1" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="15" Color="#e3e1e1"/>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/View/Images/pants.png" Width="80" Height="80" Margin="35,30,35,77"/>
+                            <TextBlock Text="Pants" Foreground="#fff" FontSize="21" HorizontalAlignment="Center" Margin="36,-80,36,549"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Grid.Column="1" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
-                    <Border.Effect>
-                        <DropShadowEffect Color="Gray" BlurRadius="25"/>
-                    </Border.Effect>
-                    <StackPanel>
-                        <Image Source="/View/Images/pants.png" Width="80" Height="80" Margin="35,30,35,77"/>
-                        <TextBlock Text="Pants" Foreground="#fff" FontSize="21" HorizontalAlignment="Center" Margin="36,-80,36,549"/>
-                    </StackPanel>
-                </Border>
+                    <Border Grid.Column="2" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="15" Color="#e3e1e1"/>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/View/Images/hoodie.png" Width="80" Height="80" Margin="35,30,35,77"/>
+                            <TextBlock Text="Jackets" Foreground="#fff" FontSize="21" HorizontalAlignment="Center" Margin="36,-80,36,549"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Grid.Column="2" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
-                    <Border.Effect>
-                        <DropShadowEffect Color="Gray" BlurRadius="25"/>
-                    </Border.Effect>
-                    <StackPanel>
-                        <Image Source="/View/Images/hoodie.png" Width="80" Height="80" Margin="35,30,35,77"/>
-                        <TextBlock Text="Jackets" Foreground="#fff" FontSize="21" HorizontalAlignment="Center" Margin="36,-80,36,549"/>
-                    </StackPanel>
-                </Border>
+                    <Border Grid.Column="3" x:Name="lblSeeMore" MouseDown="lblSeeMore_MouseDown" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="15" Color="#e3e1e1"/>
+                        </Border.Effect>
+                        <StackPanel>
+                            <Image Source="/View/Images/more.png" Width="80" Height="80" Margin="35,30,35,77"/>
+                            <TextBlock Text="See More" Foreground="#fff" FontSize="21" HorizontalAlignment="Center" Margin="36,-80,36,549"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Grid.Column="3" x:Name="lblSeeMore" MouseDown="lblSeeMore_MouseDown" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
-                    <Border.Effect>
-                        <DropShadowEffect Color="Gray" BlurRadius="25"/>
-                    </Border.Effect>
-                    <StackPanel>
-                        <Image Source="/View/Images/more.png" Width="80" Height="80" Margin="35,30,35,77"/>
-                        <TextBlock Text="See More" Foreground="#fff" FontSize="21" HorizontalAlignment="Center" Margin="36,-80,36,549"/>
-                    </StackPanel>
-                </Border>
-
-            </Grid>
-        </Border>
-        <!--end of service cards-->
-
-        <!--recent order-->
-        <Border Grid.Row="1" Background="#f3f3f3" CornerRadius="32" Height="455" Width="787" Margin="27,260,429,21">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="55"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Content="Recent Order"  FontSize="35" FontWeight="SemiBold" Margin="20,0,0,0" Foreground="Black"/>
-
-                <DataGrid Name="OrdersGrid"  GridLinesVisibility="None" FontSize="15" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0"  Margin="20,1,20,10" Grid.Row="1">
-                    <DataGrid.Resources>
-                        <Style TargetType="{x:Type DataGridColumnHeader}">
-                            <Setter Property="Background" Value="#fff"/>
-                            <Setter Property="FontWeight" Value="SemiBold"/>
-                            <Setter Property="Height" Value="40"/>
-                        </Style>
-                        <Style TargetType="{x:Type DataGridCell}">
-                            <Style.Triggers>
-                                <Trigger Property="IsSelected" Value="True">
-                                    <Setter Property="Foreground" Value="Blue" />
-                                </Trigger>
-                            </Style.Triggers>
-                            <Setter Property="Height" Value="60"/>
-                            <Setter Property="Padding" Value="10"/>
-                            <Setter Property="BorderThickness" Value="0"/>
-                            <Setter Property="BorderBrush" Value="Transparent"/>
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type DataGridCell}">
-                                        <Grid Background="#f3f3f3">
-                                            <ContentPresenter VerticalAlignment="Center"/>
-                                        </Grid>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </DataGrid.Resources>
-
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="" Width="50">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Ellipse Fill="#1678F3" Height="30" Width="30"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>                            
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Status" Width="100" Binding="{Binding state}">
-                                <DataGridTextColumn.ElementStyle>
-                                    
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="Text" Value="Completed">
-                                            <Setter Property="Foreground" Value="LightGreen"/>
-                                        </Trigger>
-                                        <Trigger Property="Text" Value="On Progres">
-                                            <Setter Property="Foreground" Value="Orange"/>
-                                        </Trigger>
-                                        <Trigger Property="Text" Value="Received">
-                                            <Setter Property="Foreground" Value="Aqua"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="Order ID" Width="80" Binding="{Binding order_id}"/>
-                        <DataGridTextColumn Header="User Name" Width="*" Binding="{Binding user_id}"/>
-                        <DataGridTextColumn Header="Items" Width="70" Binding="{Binding product_total}"/>
-                        <DataGridTextColumn Header="Amount" Width="*" Binding="{Binding total_price}"/>
-                        <DataGridTextColumn Header="Date" Width="100" Binding="{Binding trx_date}"/>                                                
-                    </DataGrid.Columns>
-
-                </DataGrid>
-            </Grid>
-        </Border>
-        <!--end of recent order-->
-
-        <Border Grid.Row="1" Background="#E5E5E5" CornerRadius="32" Height="297" Width="366" Margin="842,35,35,402">
-            <StackPanel>
-                <Image Source="/View/Images/avatar.png" Width="141" Height="141" Margin="0,22,0,0"/>
-                <Label x:Name="lblUsername" x:FieldModifier="public" Content="username" HorizontalAlignment="Center" Margin="0,39,0,0" FontSize="35" FontWeight="SemiBold" Foreground="#1678F3"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="1" Background="#E5E5E5" CornerRadius="32" Height="346" Width="366" Margin="842,360,35,30">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Label Content="Balance" HorizontalAlignment="Center" FontSize="35" FontWeight="SemiBold" Foreground="#1678F3"/>
-                <Label x:Name="lblBalance" Content="Rp.0" HorizontalAlignment="Center" FontSize="25" FontWeight="SemiBold" Foreground="#1678F3" Margin="0,44,0,0" />
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Label Content="Orders" HorizontalAlignment="Center" FontSize="18" FontWeight="SemiBold" Foreground="#1678F3"/>
-                        <Label x:Name="lblOrders" Content="0" HorizontalAlignment="Center" FontSize="25" FontWeight="SemiBold" Foreground="#1678F3" Margin="40"/>
-                        <Label Grid.Column="1" Content="Received" HorizontalAlignment="Center" FontSize="18" FontWeight="SemiBold" Foreground="#1678F3"/>
-                        <Label Grid.Column="1" x:Name="lblReceived" Content="0" HorizontalAlignment="Center" FontSize="25" FontWeight="SemiBold" Foreground="#1678F3" Margin="40"/>
-                    </Grid>
-                    <Grid Grid.Row="1">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Label Content="On Progres" HorizontalAlignment="Center" FontSize="18" FontWeight="SemiBold" Foreground="#1678F3"/>
-                        <Label x:Name="lblOnProgres" Content="0" HorizontalAlignment="Center" FontSize="25" FontWeight="SemiBold" Foreground="#1678F3" Margin="40"/>
-                        <Label Grid.Column="1" Content="Completed" HorizontalAlignment="Center" FontSize="18" FontWeight="SemiBold" Foreground="#1678F3"/>
-                        <Label Grid.Column="1" x:Name="lblCompleted" Content="0" HorizontalAlignment="Center" FontSize="25" FontWeight="SemiBold" Foreground="#1678F3" Margin="40"/>
-                    
-                    </Grid>
                 </Grid>
-            </Grid>
-        </Border>
+            </Border>
+            <!--end of service cards-->
+
+            <!--recent order-->
+            <Border Background="#fff" CornerRadius="14" Height="455" Width="787" Margin="27,260,429,21">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#e3e1e1"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Recent Order"  FontSize="35" FontWeight="SemiBold" Margin="20,0,0,0" Foreground="Black"/>
+
+                    <DataGrid Name="OrdersGrid"  GridLinesVisibility="None" FontSize="15" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0"  Margin="20,1,20,55" Grid.Row="1">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#f3f3f3"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                <Setter Property="Height" Value="40"/>
+                            </Style>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Foreground" Value="Blue" />
+                                    </Trigger>
+                                </Style.Triggers>
+                                <Setter Property="Height" Value="60"/>
+                                <Setter Property="Padding" Value="10"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                            <Grid Background="#fff">
+                                                <ContentPresenter VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGrid.Resources>
+                        
+
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="" Width="50">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Ellipse Fill="#1678F3" Height="30" Width="30"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Status" Width="100" Binding="{Binding state}">
+                                <DataGridTextColumn.ElementStyle>
+
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="Completed">
+                                                <Setter Property="Foreground" Value="LightGreen"/>
+                                            </Trigger>
+                                            <Trigger Property="Text" Value="On Progres">
+                                                <Setter Property="Foreground" Value="Orange"/>
+                                            </Trigger>
+                                            <Trigger Property="Text" Value="Received">
+                                                <Setter Property="Foreground" Value="#1678F3"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Order ID" Width="80" Binding="{Binding order_id}"/>
+                            <DataGridTextColumn Header="User Name" Width="*" Binding="{Binding user_id}"/>
+                            <DataGridTextColumn Header="Items" Width="70" Binding="{Binding product_total}"/>
+                            <DataGridTextColumn Header="Amount" Width="*" Binding="{Binding total_price}"/>
+                            <DataGridTextColumn Header="Date" Width="100" Binding="{Binding trx_date}"/>
+                            <DataGridTextColumn Header="Payment" Width="100" Binding="{Binding payment_method}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnSeeAll" Click="btnSeeAll_Click" Content="See All" VerticalAlignment="Bottom" Height="33" Width="80" Margin="687,0,20,10" Grid.Row="1"/>
+                </Grid>
+            </Border>
+            <!--end of recent order-->
+
+            <Border Background="#fff" CornerRadius="14" Height="276" Width="366" Margin="842,35,35,402">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#e3e1e1"/>
+                </Border.Effect>
+                <StackPanel>
+                    <Rectangle Fill="#4DBAE9" Width="366" Height="100" RadiusX="14" RadiusY="14"/>
+                    <Image Source="/View/Images/ic_wallet.png" Width="58" HorizontalAlignment="Right" Margin="0,-105,20,0"/>
+                    <Label Content="BALANCE" FontSize="30" FontWeight="SemiBold" Foreground="#fff" Margin="20,-75,0,0"/>
+                    <Label x:Name="lblBalance" Content="Rp.0" FontSize="25" FontWeight="SemiBold"  Margin="20,45,0,0"/>
+                    <Label x:Name="lblBalancePrecentage" Content="+40% This week" Foreground="LightGreen" FontSize="15" FontWeight="SemiBold"  Margin="20,10,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Background="#fff" CornerRadius="14" Height="346" Width="366" Margin="842,360,35,30">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#e3e1e1"/>
+                </Border.Effect>
+                <StackPanel>
+                    <Rectangle Fill="#4DBAE9" Width="366" Height="100" RadiusX="14" RadiusY="14"/>
+
+                    <Image Source="/View/Images/ic_report.png" Width="58" HorizontalAlignment="Right" Margin="0,-105,20,0"/>
+                    <Label Content="REPORT" FontSize="30" FontWeight="SemiBold" Foreground="#fff" Margin="20,-75,0,0"/>
+                    <Label Content="Total Order" FontSize="25" FontWeight="SemiBold"  Margin="20,15,0,0"/>
+                    <Label x:Name="lblOrders" Content="0" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,-40,20,0"/>
+                    <Label x:Name="lblOrderPrecentage" Content="+40% This week" Foreground="LightGreen" FontSize="15" FontWeight="SemiBold"  Margin="20,0,0,0"/>
+                    
+                    <Label Content="Received" FontSize="20" FontWeight="Regular"  Margin="20,5,0,0"/>
+                    <Label x:Name="lblReceived" Content="0" FontSize="20" FontWeight="Regular" HorizontalAlignment="Right" Margin="0,-35,20,0"/>
+                    <Label Content="On Progres" FontSize="20" FontWeight="Regular"  Margin="20,5,0,0"/>
+                    <Label x:Name="lblOnProgres" Content="0" FontSize="20" FontWeight="Regular" HorizontalAlignment="Right" Margin="0,-35,20,0"/>
+                    <Label Content="Completed" FontSize="20" FontWeight="Regular"  Margin="20,5,0,0"/>
+                    <Label x:Name="lblCompleted" Content="0" FontSize="20" FontWeight="Regular" HorizontalAlignment="Right" Margin="0,-35,20,0"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <!--Body-->
 
     </Grid>
 </Page>

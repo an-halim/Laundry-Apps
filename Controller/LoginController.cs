@@ -9,13 +9,11 @@ namespace LaundryApps.Controller
     {
         Model.Login model;
         View.Login view;
-        Controller.AuthUserController auth;
 
         public LoginController(View.Login view)
         {
             model = new Model.Login();
             this.view = view;
-            auth = new Controller.AuthUserController();
         }
 
         public void loginCheck()
@@ -35,16 +33,16 @@ namespace LaundryApps.Controller
                 }
                 else
                 {
-                    new View.User.Home().Show();
+                    View.User.Home hm = new View.User.Home();
+                    hm.lblLogedUser.Content = model.username;
+                    hm.Show();
                     view.Close();
                 }
-
-                auth.setLogedUser(model.username);
-                
+             
             }
             else
             {
-                MessageBox.Show("Invalid Username or Password , please try again.", "Warning!");
+                MessageBox.Show("Invalid Username or Password , please try again.", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
                 view.txtUsername.Focus();
             }
             

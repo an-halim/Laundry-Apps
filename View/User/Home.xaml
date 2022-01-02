@@ -254,9 +254,9 @@
         <!--Start side menu-->
         <Grid Grid.Column="0" Width="93" Background="#F9F9F9">
             <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="660"/>
-                <RowDefinition Height="75"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
 
@@ -273,7 +273,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Style="{DynamicResource btnDashStyle}" Grid.Row="0"  BorderBrush="Transparent">
+                    <Button Style="{DynamicResource btnDashStyle}" x:Name="btnDash" Click="btnDash_Click" Grid.Row="0"  BorderBrush="Transparent">
                         <Button.Background>
                             <ImageBrush ImageSource="../Images/ic_dashboard.png" />
                         </Button.Background>
@@ -292,11 +292,23 @@
             </Grid>
 
 
-            <Button Grid.Row="2" Grid.Column="0"  BorderBrush="Transparent" Width="35" Height="35">
-                <Button.Background>
-                    <ImageBrush ImageSource="../Images/ic_logout.png" />
-                </Button.Background>
-            </Button>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnUser" Click="btnUser_Click" VerticalAlignment="Top" BorderBrush="Transparent" Width="35" Height="35">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/Images/is_logedUser.png" />
+                    </Button.Background>
+                </Button>
+                <Label x:Name="lblLogedUser" MouseDown="lblLogedUser_MouseDown" x:FieldModifier="public" Content="@admin" FontStyle="Italic" FontWeight="SemiBold" Opacity="0.7" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,22,0,0" Grid.RowSpan="2"/>
+                <Button Grid.Row="1" x:Name="btnLogout" Click="btnLogout_Click"  BorderBrush="Transparent" Width="35" Height="35">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/Images/ic_logout.png" />
+                    </Button.Background>
+                </Button>
+            </Grid>
 
         </Grid>
         <!--End side menu-->

@@ -58,7 +58,7 @@ namespace LaundryApps.Controller
             }
             else
             {
-                MessageBox.Show("Unknown Error!", "ERROR");
+                MessageBox.Show("Unknown Error!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

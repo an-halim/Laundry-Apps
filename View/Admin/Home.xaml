@@ -296,12 +296,12 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button VerticalAlignment="Top" BorderBrush="Transparent" Width="35" Height="35">
+                <Button x:Name="btnUser" Click="btnUser_Click" VerticalAlignment="Top" BorderBrush="Transparent" Width="35" Height="35">
                     <Button.Background>
                         <ImageBrush ImageSource="/View/Images/is_logedUser.png" />
                     </Button.Background>
                 </Button>
-                <Label x:Name="lblLogedUser" x:FieldModifier="public" Content="@admin" FontStyle="Italic" FontWeight="SemiBold" Opacity="0.7" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,22,0,0" Grid.RowSpan="2"/>
+                <Label x:Name="lblLogedUser" MouseDown="lblLogedUser_MouseDown" x:FieldModifier="public" Content="@admin" FontStyle="Italic" FontWeight="SemiBold" Opacity="0.7" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,22,0,0" Grid.RowSpan="2"/>
                 <Button Grid.Row="1" x:Name="btnLogout" Click="btnLogout_Click"  BorderBrush="Transparent" Width="35" Height="35">
                     <Button.Background>
                         <ImageBrush ImageSource="/View/Images/ic_logout.png" />

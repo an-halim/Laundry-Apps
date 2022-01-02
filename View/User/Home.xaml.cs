@@ -22,5 +22,29 @@ namespace LaundryApps.View.User
             InitializeComponent();
             frmContent.Navigate(new HomePage());
         }
+
+        private void lblLogedUser_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            View.User.AccountSettingPage Setting = new View.User.AccountSettingPage();
+            Setting.txtUsername.Text = lblLogedUser.Content.ToString();
+            frmContent.Navigate(Setting);
+        }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            View.User.AccountSettingPage Setting = new View.User.AccountSettingPage();
+            Setting.txtUsername.Text = lblLogedUser.Content.ToString();
+            frmContent.Navigate(Setting);
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            new View.User.Logout().Show();
+        }
+
+        private void btnDash_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.User.DashboardPage());
+        }
     }
 }

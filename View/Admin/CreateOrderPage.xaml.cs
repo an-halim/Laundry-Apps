@@ -44,6 +44,7 @@ namespace LaundryApps.View.Admin
                 GridCart.IsEnabled = true;
                 GridSevice.IsEnabled = true;
                 createOrder.fillServices("0");
+                lblOrderID.Content = RandomNumber(1000, 9999).ToString();
                 if (CheckBoxDelivery.IsChecked.Value)
                 {
                     lblShipingFee.Content = "Shipping Fee: Rp.15.000";
@@ -65,6 +66,7 @@ namespace LaundryApps.View.Admin
             GridSevice.IsEnabled = false;
             DGServices.ItemsSource = "";
             DGCart.Items.Clear();
+            lblOrderID.Content = "";
         }
 
         private void btnCheckOut_Click(object sender, RoutedEventArgs e)
@@ -76,14 +78,18 @@ namespace LaundryApps.View.Admin
         {
             object item = DGServices.SelectedItem;
 
-
-
             data d = new data();
             d.service = (DGServices.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
             d.price = (DGServices.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
             d.qty = "1";
             d.total = "Rp.10.000";
             DGCart.Items.Add(d);
+            data da = new data();
+            da.service = (DGServices.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
+            da.price = (DGServices.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            da.qty = "1";
+            da.total = "Rp.10.000";
+            DGCart.Items.Add(da);
             
             MessageBox.Show("Successfully add to cart!", "Successfully", MessageBoxButton.OK,MessageBoxImage.Information);
         }
@@ -149,5 +155,13 @@ namespace LaundryApps.View.Admin
                 btnNext.IsEnabled = true;
             }
         }
+
+        private readonly Random _num = new Random();
+
+        private int RandomNumber(int min, int max)
+        {
+            return _num.Next(min, max);
+        }
+
     }
 }

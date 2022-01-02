@@ -18,42 +18,83 @@
         <!--Header-->
         <Label Grid.Row="0" Content="User List" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
         <!--Header-->
-
-        <Grid Grid.Row="1">
+                        
+        <Grid Grid.Row="1" Background="#f3f3f3">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="616"/>
+                <RowDefinition/>
+                <RowDefinition Height="600"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtSearch"  Text="" Height="40" Width="500" Margin="20,0,0,0" Padding="10" HorizontalAlignment="Left" GotFocus="txtSearch_GotFocus" TextChanged="txtSearch_TextChanged"/>
+            <Button Style="{DynamicResource PrimaryButton}" x:Name="btnNewUser" Click="btnNewUser_Click" Width="100" Height="40" Content="+ New User" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+            <Border Margin="20,1,20,10" Grid.Row="1" Background="#fff">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#e3e1e1"/>
+                </Border.Effect>
+                <DataGrid Name="UserListGrid" GridLinesVisibility="None" FontSize="15" IsReadOnly="True"  AutoGenerateColumns="False" BorderThickness="0" Background="White" Margin="0,0,0,5" >
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#1678F3"/>
+                            <Setter Property="Foreground" Value="#fff"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="Height" Value="40"/>
+                        </Style>
+                        <Style TargetType="{x:Type DataGridCell}">
 
-            <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteUser" Click="btnDeleteUser_Click" Width="212" Height="61" FontSize="25" Content="Delete User" HorizontalAlignment="Right" Margin="0,30,302,0"/>
-            <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEditUser" Click="btnEditUser_Click" Width="212" Height="61" FontSize="25" Content="Edit User" HorizontalAlignment="Right" Margin="0,30,55,0"/>
-            <DataGrid Grid.Row="1" Name="UserListGrid" GridLinesVisibility="None" FontSize="15" IsReadOnly="True"  AutoGenerateColumns="False" BorderThickness="0" Background="White" Margin="55,0,55,33" >
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="#f3f3f3"/>
-                    <Setter Property="Padding" Value="5"/>
-                        <Setter Property="FontWeight" Value="SemiBold"/>
-                    </Style>
-            </DataGrid.Resources>
-            
-            <DataGrid.CellStyle>
-                <Style TargetType="DataGridCell">
-                    <Setter Property="Height" Value="30"/>
-                    <Setter Property="Padding" Value="10"/>
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="BorderBrush" Value="Transparent"/>
-                    </Style>
-            </DataGrid.CellStyle>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="User Name" Width="120" Binding="{Binding username}"/>
-                <DataGridTextColumn Header="Name" Width="auto" Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Number" Width="150" Binding="{Binding number}"/>
-                <DataGridTextColumn Header="Birth date" Width="100" Binding="{Binding birth_date}"/>               
-                <DataGridTextColumn Header="Address" Width="auto" Binding="{Binding address}"/>
-            </DataGrid.Columns>
+                            <Setter Property="Height" Value="60"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                        <Grid>
+                                            <ContentPresenter VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Foreground" Value="Blue"/>
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Background" Value="Blue"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.Resources>
 
-            </DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="" Width="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Ellipse Height="30" Width="30" Fill="#1678F3" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="User Name" Width="120" Binding="{Binding username}"/>
+                        <DataGridTextColumn Header="Name" Width="auto" Binding="{Binding name}"/>
+                        <DataGridTextColumn Header="Number" Width="150" Binding="{Binding number}"/>
+                        <DataGridTextColumn Header="Birth date" Width="100" Binding="{Binding birth_date}"/>
+                        <DataGridTextColumn Header="Address" Width="auto" Binding="{Binding address}"/>
+                        <DataGridTemplateColumn Header="" Width="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteUser" Click="btnDeleteUser_Click" Height="30" Width="60" Foreground="#fff"  Content="✗" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="" Width="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEditUser" Click="btnEditUser_Click" Background="Orange" Height="30" Width="60" Foreground="#fff" Content="⟳" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>                    
+                </DataGrid>
+            </Border>
         </Grid>
-
     </Grid>
 </Page>

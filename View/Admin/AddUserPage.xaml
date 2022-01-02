@@ -15,24 +15,27 @@
         </Grid.RowDefinitions>
         <Label  Content="New User" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Background="#f3f3f3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border Height="700" Width="606" Background="#e4e4e4" CornerRadius="30">
+            <Border Height="700" Width="606" Background="#fff" CornerRadius="30">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#e3e1e1"/>
+                </Border.Effect>
                 <Grid>
                     <Label Content="Register New user" FontSize="28" Foreground="#1678F3" FontWeight="SemiBold" FontFamily="Rounded Mplus" Margin="48,25"/>
                     <Label Content="Username" FontSize="20" FontFamily="Rounded Mplus" Margin="48,80,0,0"/>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtUsername" Width="509" Height="45" Background="#f3f3f3"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"   Margin="48,85,49,518"/>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtUsername" Width="509" Height="45"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"   Margin="48,85,49,518"/>
                     <Label Content="Name" FontSize="20" FontFamily="Rounded Mplus" Margin="48,180,49,425"/>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtName" Width="509" Height="45" Background="#f3f3f3" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,185,49,424"/>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtName" Width="509" Height="45"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,185,49,424"/>
                     <Label Content="Address"  FontSize="20" FontFamily="Rounded Mplus" Margin="48,280,49,325"/>
-                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtAddress" Width="509" Height="45" Background="#f3f3f3"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,285,49,329"/>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtAddress" Width="509" Height="45"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,285,49,329"/>
                     <Label Content="Date of Birth" FontSize="20" FontFamily="Rounded Mplus" HorizontalAlignment="Left" Margin="48,380,49,225" />
-                    <DatePicker Style="{DynamicResource DatePickerStyle}" x:Name="datePick" Width="509" Height="45" Background="#f3f3f3"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,385,49,232"/>
+                    <DatePicker Style="{DynamicResource DatePickerStyle}" x:Name="datePick" Width="509" Height="45"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,385,49,232"/>
                     <Label Content="Phone Number"  FontSize="20" FontFamily="Rounded Mplus" Margin="48,480,49,125" />
-                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNumber" Width="509" Height="45" Background="#f3f3f3"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,495,49,140"/>
+                    <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNumber" Width="509" Height="45"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,495,49,140"/>
                     
                     <Button Style="{DynamicResource PrimaryButton}" Content="Accept" FontSize="25" Width="185" Height="47" Margin="374,600,47,10"/>
                 </Grid>

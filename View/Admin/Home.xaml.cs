@@ -26,34 +26,35 @@ namespace LaundryApps.View.Admin
 
         private void btnDashboard_Click(object sender, RoutedEventArgs e)
         {
-            View.Admin.DasboardPage dash = new View.Admin.DasboardPage();
-            dash.lblUsername.Content = lblLogedUser.Content;
-            frmContent.Navigate(dash);
+            frmContent.Navigate(new View.Admin.DasboardPage());
         }
 
         private void btnCustomer_Click(object sender, RoutedEventArgs e)
         {
-            frmContent.Navigate(new View.Admin.CustomersPage());
+            frmContent.Navigate(new View.Admin.UsersListPage());
         }
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            frmContent.Navigate(new View.Admin.OrdersPage());
+            frmContent.Navigate(new View.Admin.OrdersLogsPage());
         }
         private void btnSetting_Click(object sender, RoutedEventArgs e)
         {
-            frmContent.Navigate(new View.Admin.SettingPage());
+            frmContent.Navigate(new View.Admin.ServiceList());
+        }
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.Admin.AccountSetingPage());
+        }
+
+        private void lblLogedUser_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            frmContent.Navigate(new View.Admin.AccountSetingPage());
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             new View.Admin.Logout().Show();
         }
-
-        public void CloseWindow()
-        {
-            this.Close();
-        }
-
-
+        
     }
 }

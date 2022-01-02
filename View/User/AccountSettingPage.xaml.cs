@@ -11,22 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaundryApps.View.Admin
+namespace LaundryApps.View.User
 {
     /// <summary>
-    /// Interaction logic for AccountSetingPage.xaml
+    /// Interaction logic for AccountSettingPage.xaml
     /// </summary>
-    public partial class AccountSetingPage : Page
+    public partial class AccountSettingPage : Page
     {
-        private string username;
-        private string name;
-        public AccountSetingPage()
+        public AccountSettingPage()
         {
             InitializeComponent();
-
-
-            txtUsername.Text = username;
-            txtName.Focus();
         }
     }
 }

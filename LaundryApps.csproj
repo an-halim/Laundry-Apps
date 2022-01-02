@@ -26,10 +26,12 @@
     <None Remove="View\Images\ic_order.png" />
     <None Remove="View\Images\ic_order_active.png" />
     <None Remove="View\Images\ic_phone.png" />
+    <None Remove="View\Images\ic_report.png" />
     <None Remove="View\Images\ic_setting.png" />
     <None Remove="View\Images\ic_setting_active.png" />
     <None Remove="View\Images\ic_user.png" />
     <None Remove="View\Images\ic_visible.png" />
+    <None Remove="View\Images\ic_wallet.png" />
     <None Remove="View\Images\img_adduser.png" />
     <None Remove="View\Images\img_laundry.png" />
     <None Remove="View\Images\is_logedUser.png" />
@@ -44,6 +46,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="View\Images\ic_report.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_wallet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="View\Images\img_adduser.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
