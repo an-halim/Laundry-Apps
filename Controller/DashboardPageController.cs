@@ -57,12 +57,12 @@ namespace LaundryApps.Controller
             {
                 FirstValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-14 AND GETDATE()-7", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
                 SecondValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-7 AND GETDATE()", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
-                Percentage = (SecondValue - FirstValue) /FirstValue*100;
+                if (FirstValue == 0 && SecondValue == 0) Percentage = 0;
+                else Percentage = (SecondValue - FirstValue) / FirstValue * 100;
             }
-            catch(Exception e) 
+            catch(Exception) 
             {
                 Percentage = 0;
-                MessageBox.Show(e.Message); 
             }
 
             return Percentage;
@@ -74,12 +74,14 @@ namespace LaundryApps.Controller
             {
                 FirstValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-14 AND GETDATE()-7", "count(*) as total").Tables[0].Rows[0]["total"].ToString());
                 SecondValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-7 AND GETDATE()", "count(*) as total").Tables[0].Rows[0]["total"].ToString());
-                Percentage = (SecondValue- FirstValue) /FirstValue*100;
+                if (FirstValue == 0  && SecondValue == 0) Percentage = 0;
+                else Percentage = (SecondValue - FirstValue) / FirstValue*100;
+                
+                
             }
-            catch(Exception e) 
+            catch(Exception) 
             {
-                Percentage = 0;
-                MessageBox.Show(e.Message); 
+                Percentage = 0; 
             }
 
             return Percentage;

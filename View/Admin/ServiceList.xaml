@@ -53,7 +53,7 @@
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
                     <Grid>
-                        <Image x:Name="img1"  Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
+                        <Image x:Name="img1" Source="/View/Images/img_laundry.png" Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID1" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
                         <Label x:Name="lblServiceName1" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
@@ -123,7 +123,7 @@
                         <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
                     </Border.Effect>
                     <Grid>
-                        <Image x:Name="img5"  Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
+                        <Image x:Name="img5" Source="/View/Images/img_laundry.png" Width="200" Height="200" VerticalAlignment="top" Margin="0,10,0,0"/>
                         <Label Content="#" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,140,0,0"/>
                         <Label x:Name="lblServiceID5" Content="89745843" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,140,0,0"/>
                         <Label x:Name="lblServiceName5" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>

@@ -14,10 +14,6 @@ is_admin char(1) not null
 go
 
 
-insert into userdata values('anhalim','123', 'Halim', 'jl kh marwan ah jragung karangawen demak', '085647847468','12/12/2000', '1' )
-insert into userdata values('heker','123', 'Halim', 'jl kh marwan ah jragung karangawen demak', '085647847468','11/12/2000', '1' )
-insert into userdata values('jani','123', 'M jani', 'jl kuncup yogyakarta', '085647847468','2000/12/18', '1' )
-select * from userdata
 
 create table orders(
 order_id char(6) primary key not null,
@@ -26,11 +22,10 @@ trx_date datetime,
 product_total varchar(255),
 total_price numeric,
 state varchar(10) check(state in ('Received', 'On Progres', 'Completed')) not null
-payment_method varchar(15) check (state in ('cash' , 'bank transfer' , 'e wallet' , 'credit/debit card')) not null
+payment_method varchar(15) check (payment_method in ('Cash' , 'Bank Transfer' , 'E-Wallet' , 'Credit Card')) not null
 )
 go
 
-insert into orders values('OD0001', 'jani', '11/12/2021', '4', 25000)
 
 create table order_detail(
 order_id char(6) foreign key references orders(order_id) not null,
@@ -42,11 +37,6 @@ Total_harga numeric
 )
 go
 
-insert into order_detail values('OD0001', 'DK0001', 'jani', '11/12/2021', '1', 6000)
-insert into order_detail values('OD0001', 'DK0002', 'jani', '11/12/2021', '1', 6000)
-insert into order_detail values('OD0001', 'DK0002', 'jani', '11/12/2021', '1', 7000)
-
-
 create table service(
 service_id char(6) primary key not null,
 price numeric,
@@ -55,6 +45,10 @@ service_detail varchar(255)
 )
 go
 
+insert into userdata values('anhalim','123', 'Halim', 'jl kh marwan ah jragung karangawen demak', '085647847468','12/12/2000', '1' )
+insert into userdata values('heker','123', 'Halim', 'jl kh marwan ah jragung karangawen demak', '085647847468','11/12/2000', '1' )
+insert into userdata values('jani','123', 'M jani', 'jl kuncup yogyakarta', '085647847468','2000/12/18', '1' )
+insert into userdata values ('jambrud', 'jannisuani', 'jani sujono', 'jl kenari indah yogyakarta', '088215293123', '12/12/2001','0')
 
 
 insert into service values('DK0001', '7000', 'Kaos', 'cuci kering 48 jam selesai kiloan')
@@ -94,35 +88,20 @@ insert into service values('DK0030', '29000', 'karpet rumah premium', 'cuci keri
 insert into service values('DK0031', '25000', 'karpet masjid', 'cuci kering 48 jam selesai satuan')
 insert into service values('DK0032', '35000', 'karpet masjid premium', 'cuci kering 24 jam selesai satuan')
 
-insert into service values('DK0033', '30000', 'parfum premium', 'parfum premium beraroma sakura blossom')
+insert into service values('DK0033', '30000', 'parfum premium', 'Parfum premium beraroma sakura blossom')
 insert into service values('DK0033', '15000', 'jasa strika', 'jasa strika perkilo')
 
-
-select * from service
-
-select order_detail.order_id, order_detail.service_id, order_detail.trx_date, order_detail.Jumlah_produk, order_detail.Total_harga from orders inner join order_detail on orders.order_id = order_detail.order_id
-
-select count(*) as total from orders where orders.user_id='jani'
-
-select count(*) as total from orders
-
-//misc
-insert into userdata values ('jambrud', 'jannisuani', 'jani sujono', 'jl kenari indah yogyakarta', '088215293123', '12/12/2001','0')
-
+insert into orders values('OD0001', 'jani', '11/12/2021', '2', 19000, 'Received')
+insert into order_detail values('OD0001', 'DK0001', 'jani', '11/12/2021', '1', 6000)
+insert into order_detail values('OD0001', 'DK0002', 'jani', '11/12/2021', '1', 6000)
+insert into order_detail values('OD0001', 'DK0002', 'jani', '11/12/2021', '1', 7000)
 
 insert into orders values ('OD0004', 'anhalim', '2021/12/15', '2', '1200000', 'Completed')
 insert into order_detail values('OD0004', 'DK0001', 'anhalim', '2021/12/15', '100', '6000000')
 insert into order_detail values('OD0004', 'DK0002', 'anhalim', '2021/12/15', '100', '6000000')
 
-select * from order_detail
-select format(GETDATE(), 'dd-MM-yyyy')
-update orders set state='Completed' where order_id='OD0002'
-
-select order_id, user_id, format(trx_date, 'DD-MM-yyyy' ) as trx_date, format(total_price, 'c', 'id-ID') as total_price, state from orders 
-select format(sum(total_price), 'c', 'id-ID') as total from orders 
-select count(*) as total from orders
+select * from service
 
 
-select count(*) as total from orders where state='Completed'
 
 

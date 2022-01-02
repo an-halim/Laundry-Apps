@@ -19,7 +19,7 @@ namespace LaundryApps.Model
         public static SqlConnection GetConnection()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-KP5AV2H;Initial Catalog=db_laundry;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=LAPTOP-VTK6RRS0\\SQLEXPRESS;Initial Catalog=db_laundry;Integrated Security=True;Pooling=False";
 
             return conn;
         }

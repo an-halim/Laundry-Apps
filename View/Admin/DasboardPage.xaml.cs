@@ -37,27 +37,27 @@ namespace LaundryApps.View.Admin
         {            
             float BalancePercentage;
             BalancePercentage = dashboard.GetBalancePrecentage();
-            if(BalancePercentage < 0)
+            if(BalancePercentage <= 0)
             {
                 lblBalancePrecentage.Foreground = Brushes.Red;
-                lblBalancePrecentage.Content = BalancePercentage + "% This week";
+                lblBalancePrecentage.Content = BalancePercentage.ToString() + "% This week";
             }
             else
             {                
                 lblBalancePrecentage.Foreground = Brushes.LightGreen;
-                lblBalancePrecentage.Content = "+" + BalancePercentage + "% This week";
+                lblBalancePrecentage.Content = "+" + BalancePercentage.ToString() + "% This week";
             }
             float OrderPercentage;
             OrderPercentage = dashboard.GetOrderPrecentage();
-            if(OrderPercentage < 0)
+            if(OrderPercentage <= 0)
             {
                 lblOrderPrecentage.Foreground = Brushes.Red;
-                lblOrderPrecentage.Content = OrderPercentage + "% This week";
+                lblOrderPrecentage.Content = OrderPercentage.ToString() + "% This week";
             }
             else
             {
                 lblOrderPrecentage.Foreground = Brushes.LightGreen;
-                lblOrderPrecentage.Content = "+" + int.Parse(OrderPercentage.ToString()) + "% This week";
+                lblOrderPrecentage.Content = "+" + OrderPercentage.ToString() + "% This week";
             }
             dashboard.FillDatagrid();
             dashboard.getBalance();
