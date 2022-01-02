@@ -26,6 +26,7 @@ trx_date datetime,
 product_total varchar(255),
 total_price numeric,
 state varchar(10) check(state in ('Received', 'On Progres', 'Completed')) not null
+payment_method varchar(15) check (state in ('cash' , 'bank transfer' , 'e wallet' , 'credit/debit card')) not null
 )
 go
 
@@ -56,12 +57,46 @@ go
 
 
 
-insert into service values('DK0001', '6000', 'kaos', 'kaos pendek kiloan')
-insert into service values('DK0002', '6000', 'celana', 'celana pendek kiloan')
-insert into service values('DK0003', '7000', 'celana panjang', 'celana panjang kiloan')
-insert into service values('DK0004', '6000', 'kaos', 'kaos pendek kiloan')
-insert into service values('DK0005', '6000', 'kaos', 'kaos pendek kiloan')
-insert into service values('DK0006', '8000', 'kaos', 'kemeja pendek kiloan')
+insert into service values('DK0001', '7000', 'Kaos', 'cuci kering 48 jam selesai kiloan')
+insert into service values('DK0002', '12000', 'Kaos premium', 'cuci kering 24 jam selesai + strika kiloan')
+insert into service values('DK0003', '8000', 'Kemeja', 'cuci kering 48 jam selesai kiloan')
+insert into service values('DK0004', '13000', 'Kemeja premium', 'cuci kering 24 jam selesai kiloan')
+insert into service values('DK0005', '8000', 'Jaket', 'cuci kering 48 jam selesai sattuan')
+insert into service values('DK0006', '13000', 'Jaket premium', 'cuci kering 24 jam selesai satuan')
+insert into service values('DK0007', '30000', 'Jas', 'cuci kering 48 jam selesai satuan')
+insert into service values('DK0008', '40000', 'Jas premium', 'cuci kering 24 jam selesai satuan')
+insert into service values('DK0009', '9000', 'Blouse', 'cuci kering 48 jaln selesai satuan')
+insert into service values('DK0010', '14000', 'Blouse premium', 'cuci kering 24 jaln selesai satuan')
+
+insert into service values('DK0011', '6000', 'pakaian dalam', 'cuci kering 48 jam selesai kiloan')
+insert into service values('DK0012', '12000', 'pakaian dalam premium', 'cuci kering 24 jam selesai kiloan')
+insert into service values('DK0013', '7000', 'celana', 'cuci kering 48 jam selesai kiloan pendek/panjang')
+insert into service values('DK0014', '1400', 'celana premium', 'cuci kering 24 jam selesai kiloan pendek/panjang')
+insert into service values('DK0015', '8000', 'celana jeans', 'cuci kering 48 jam selesai kiloan')
+insert into service values('DK0016', '8000', 'celana jeans premium', 'cuci kering 24 jam selesai kiloan')
+
+insert into service values('DK0017', '25000', 'Bed Cover', 'cuci kering 48 jam selesai satuan')
+insert into service values('DK0018', '35000', 'bed cover premium', 'cuci kering 24 jam selesai satuan')
+insert into service values('DK0019', '12000', 'sprei', 'cuci kering 48 jam selesai satuan sprei single/double')
+insert into service values('DK0020', '24000', 'sprei premium', 'cuci kering 24 jam selesai satuan sprei single/double')
+insert into service values('DK0021', '20000', 'Selimut', 'cuci kering 48 jam selesai satuan')
+insert into service values('DK0022', '30000', 'Selimut premium', 'cuci kering 24 jam selesai satuan')
+
+insert into service values('DK0023', '12000', 'sepatu kain', 'cuci kering 48 jam selesai satuan')
+insert into service values('DK0024', '20000', 'sepatu kain premium', 'cuci kering 24 jam selesai satuan')
+insert into service values('DK0025', '15000', 'sepatu kulit', 'cuci kering 48 jam selesai satuan')
+insert into service values('DK0026', '25000', 'sepatu kulit premium', 'cuci kering 24 jam selesai satuan')
+
+insert into service values('DK0027', '20000', 'gorden', 'cuci kering 48 jam selesai permeter satuan')
+insert into service values('DK0028', '29000', 'gorden premium', 'cuci kering 24 jam selesai permetar satuan')
+insert into service values('DK0029', '20000', 'karpet rumah', 'cuci kering 48 jam selesai satuan')
+insert into service values('DK0030', '29000', 'karpet rumah premium', 'cuci kering 24 jam selesai satuan')
+insert into service values('DK0031', '25000', 'karpet masjid', 'cuci kering 48 jam selesai satuan')
+insert into service values('DK0032', '35000', 'karpet masjid premium', 'cuci kering 24 jam selesai satuan')
+
+insert into service values('DK0033', '30000', 'parfum premium', 'parfum premium beraroma sakura blossom')
+insert into service values('DK0033', '15000', 'jasa strika', 'jasa strika perkilo')
+
 
 select * from service
 
