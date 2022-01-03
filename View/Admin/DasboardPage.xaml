@@ -140,6 +140,9 @@
                                             <Trigger Property="Text" Value="Received">
                                                 <Setter Property="Foreground" Value="#1678F3"/>
                                             </Trigger>
+                                            <Trigger Property="Text" Value="Canceled">
+                                                <Setter Property="Foreground" Value="#F31666"/>
+                                            </Trigger>
                                         </Style.Triggers>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>

@@ -84,7 +84,10 @@
                                             <Setter Property="Foreground" Value="Orange"/>
                                         </Trigger>
                                         <Trigger Property="Text" Value="Received">
-                                            <Setter Property="Foreground" Value="Aqua"/>
+                                            <Setter Property="Foreground" Value="#1678F3"/>
+                                        </Trigger>
+                                        <Trigger Property="Text" Value="Canceled">
+                                            <Setter Property="Foreground" Value="#F31666"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -106,14 +109,14 @@
                         <DataGridTemplateColumn Header="" Width="80">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Style="{DynamicResource PrimaryButton}" Background="Orange" Height="30" Width="60" Foreground="#fff"  x:Name="SeeDetails" Content="⟳" />
+                                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnProses" Click="btnProses_Click" Background="Orange" Height="30" Width="60" Foreground="#fff"  Content="⟳" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="" Width="80">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Style="{DynamicResource PrimaryButton}" Background="LightGreen" Height="30" Width="60" Foreground="#fff"  x:Name="SeeDetails" Content="✓" />
+                                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnComplete" Click="btnComplete_Click" Background="LightGreen" Height="30" Width="60" Foreground="#fff"  Content="✓" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

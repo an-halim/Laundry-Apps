@@ -20,7 +20,7 @@ namespace LaundryApps.Model
             DataTable dt;
             try 
             {
-                if(cari == "")
+                if(cari == "" || cari.Length <=0 || cari == " ")
                 {
                     dt = db.FillData("orders", "order_id, user_id, product_total, format(total_price, 'c', 'id-ID') as total_price, format(trx_date, 'dd/MM/yyyy' ) as trx_date, state, payment_method");
                 }
@@ -38,6 +38,13 @@ namespace LaundryApps.Model
             }
 
             return dt;
+        }
+
+        public bool changeStatus(string orderid, string newStatus)
+        {
+            bool res = false;
+            res = db.Update("orders", "state='"+newStatus+"'", "order_id='"+ orderid +"'");
+            return res;
         }
     }
 }

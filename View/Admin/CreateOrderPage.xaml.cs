@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace LaundryApps.View.Admin
 {
     /// <summary>
@@ -20,13 +21,8 @@ namespace LaundryApps.View.Admin
     {
         Controller.CreateOrderController createOrder;
         int CurentPos;
-        class data
-        {
-            public string service { get; set; }
-            public string price { get; set; }
-            public string qty { get; set; }
-            public string total { get; set; }
-        }
+
+        int maksProduk = 0; //maksimal service id yg berbeda adalah 10 items
 
         public CreateOrderPage()
         {
@@ -43,11 +39,11 @@ namespace LaundryApps.View.Admin
                 gridCustomersDetail.IsEnabled = false;
                 GridCart.IsEnabled = true;
                 GridSevice.IsEnabled = true;
-                createOrder.fillServices("0");
-                lblOrderID.Content = RandomNumber(1000, 9999).ToString();
+                createOrder.fillServices(CurentPos.ToString());
+                createOrder.getOrderID();
                 if (CheckBoxDelivery.IsChecked.Value)
                 {
-                    lblShipingFee.Content = "Shipping Fee: Rp.15.000";
+                    lblShipingFee.Content = "Delivery Fee: Rp.15.000";
                 }
             }
 
@@ -65,33 +61,25 @@ namespace LaundryApps.View.Admin
             GridCart.IsEnabled = false;
             GridSevice.IsEnabled = false;
             DGServices.ItemsSource = "";
-            DGCart.Items.Clear();
             lblOrderID.Content = "";
+            createOrder.emptyCart();
+            maksProduk = 0;
         }
 
         private void btnCheckOut_Click(object sender, RoutedEventArgs e)
         {
-
-        }
+            createOrder.PlaceOrder();
+        }        
 
         private void addTOcart_Click(object sender, RoutedEventArgs e)
         {
-            object item = DGServices.SelectedItem;
-
-            data d = new data();
-            d.service = (DGServices.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
-            d.price = (DGServices.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            d.qty = "1";
-            d.total = "Rp.10.000";
-            DGCart.Items.Add(d);
-            data da = new data();
-            da.service = (DGServices.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
-            da.price = (DGServices.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            da.qty = "1";
-            da.total = "Rp.10.000";
-            DGCart.Items.Add(da);
             
-            MessageBox.Show("Successfully add to cart!", "Successfully", MessageBoxButton.OK,MessageBoxImage.Information);
+            object item = DGServices.SelectedItem;          
+            string id = (DGServices.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
+            string price = (DGServices.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            createOrder.UpdateCart(id, price);
+            maksProduk++;
+
         }
 
         private void DGCart_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -156,12 +144,10 @@ namespace LaundryApps.View.Admin
             }
         }
 
-        private readonly Random _num = new Random();
-
-        private int RandomNumber(int min, int max)
+        private void CBAddNote_Checked(object sender, RoutedEventArgs e)
         {
-            return _num.Next(min, max);
+            txtNote.IsEnabled = true;
+            txtNote.Focus();
         }
-
     }
 }

@@ -18,14 +18,10 @@ namespace LaundryApps.View.Admin
     /// </summary>
     public partial class AccountSetingPage : Page
     {
-        private string username;
-        private string name;
         public AccountSetingPage()
         {
             InitializeComponent();
 
-
-            txtUsername.Text = username;
             txtName.Focus();
         }
     }

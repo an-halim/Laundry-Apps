@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows;
 
 namespace LaundryApps.Model
 {
@@ -18,8 +19,15 @@ namespace LaundryApps.Model
         }
         public static SqlConnection GetConnection()
         {
-            conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=LAPTOP-VTK6RRS0\\SQLEXPRESS;Initial Catalog=db_laundry;Integrated Security=True;Pooling=False";
+            try
+            {
+                conn = new SqlConnection();
+                conn.ConnectionString = "Data Source=DESKTOP-KP5AV2H;Initial Catalog=db_laundry;Integrated Security=True;Pooling=False";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cant connect to database!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
             return conn;
         }
@@ -66,6 +74,7 @@ namespace LaundryApps.Model
                 result = false;
             }
 
+            conn.Close();
             return result;
         }
         public Boolean Update(string tabel, string data, string kondisi)
@@ -86,6 +95,7 @@ namespace LaundryApps.Model
                 result = false;
             }
 
+            conn.Close();
             return result;
         }
         public Boolean Update(string tabel, string kondisi)
@@ -106,6 +116,7 @@ namespace LaundryApps.Model
                 result = false;
             }
 
+            conn.Close();
             return result;
         }
 

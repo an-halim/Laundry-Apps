@@ -35,11 +35,7 @@ namespace LaundryApps.View.Admin
         {
             NavigationService.Navigate(new View.Admin.CreateOrderPage());
         }
-
-        private void btnCancle_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Are you sure cancle this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
-        }
+               
 
         private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -48,6 +44,32 @@ namespace LaundryApps.View.Admin
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
+            OD.FillDatagrid();
+        }
+
+        private void btnCancle_Click(object sender, RoutedEventArgs e)
+        {
+            object item = OrdersGrid.SelectedItem;
+            string id = (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            MessageBoxResult result = MessageBox.Show("Are you sure cancel this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "Canceled");
+            OD.FillDatagrid();
+        }
+        private void btnProses_Click(object sender, RoutedEventArgs e)
+        {
+            object item = OrdersGrid.SelectedItem;
+            string id = (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            MessageBoxResult result = MessageBox.Show("Are you sure proses this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "On Progres");
+            OD.FillDatagrid();
+        }
+
+        private void btnComplete_Click(object sender, RoutedEventArgs e)
+        {
+            object item = OrdersGrid.SelectedItem;
+            string id = (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            MessageBoxResult result = MessageBox.Show("Are you sure complete this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "Completed");
             OD.FillDatagrid();
         }
     }

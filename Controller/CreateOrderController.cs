@@ -11,11 +11,20 @@ namespace LaundryApps.Controller
         Model.CreateOrder CO;
         View.Admin.CreateOrderPage view;
 
+
         public CreateOrderController(View.Admin.CreateOrderPage view)
         {
             model = new Model.DBconn();
             CO = new Model.CreateOrder();
             this.view = view;
+        }
+
+        class data
+        {
+            public string service { get; set; }
+            public string price { get; set; }
+            public string qty { get; set; }
+            public string total { get; set; }
         }
 
         public void fillComboBox()
@@ -60,6 +69,60 @@ namespace LaundryApps.Controller
             {
                 MessageBox.Show("Unknown Error!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        public void UpdateCart(string id, string price)
+        {
+            
+            try
+            {
+                if(CO.CekMaks())
+                {
+                    MessageBox.Show("You have reach maksimum items on your shoping cart!", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    view.DGCart.Items.Clear();
+                    string[,] content = CO.UpdateCart(id, price);
+                    for (int i = 0; i < content.GetLength(0); i++)
+                    {
+                        if (content[i, 0] != "")
+                        {
+                            data d = new data();
+                            d.service = content[i, 0];
+                            d.price = content[i, 1];
+                            d.qty = content[i, 2];
+                            d.total = content[i, 3];
+                            view.DGCart.Items.Add(d);
+                        }
+                    }
+                    view.lblTotal.Content = "Total Payment: " + CO.getTotalPay(view.CheckBoxDelivery.IsChecked.Value);
+                    MessageBox.Show("Successfully add to cart!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+        }
+
+        public void emptyCart()
+        {
+            view.DGCart.Items.Clear();
+            CO.DeleteCart();
+        }
+
+        public void getOrderID()
+        {
+            view.lblOrderID.Content = CO.generateOderID();
+        }
+
+        public void PlaceOrder()
+        {
+            string data = CO.PutOder(view.lblOrderID.Content.ToString(), view.cmbUsername.SelectedValue.ToString(), view.CheckBoxDelivery.IsChecked.Value, view.txtNote.Text);
+            MessageBox.Show(data);
         }
     }
 }

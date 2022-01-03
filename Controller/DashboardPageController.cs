@@ -24,7 +24,7 @@ namespace LaundryApps.Controller
 
         public void getBalance()
         {
-            try { view.lblBalance.Content = model.Select("orders", null, "format(sum(total_price), 'c', 'id-ID') as total").Tables[0].Rows[0]["total"]; }
+            try { view.lblBalance.Content = model.Select("orders", "state!='Canceled'", "format(sum(total_price), 'c', 'id-ID') as total").Tables[0].Rows[0]["total"]; }
             catch (Exception e) { MessageBox.Show(e.Message); }
         }
 
@@ -55,8 +55,8 @@ namespace LaundryApps.Controller
             float FirstValue, SecondValue, Percentage;
             try
             {
-                FirstValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-14 AND GETDATE()-7", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
-                SecondValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-7 AND GETDATE()", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
+                FirstValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-14 AND GETDATE()-7 AND state!='Canceled'", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
+                SecondValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-7 AND GETDATE() AND state!='Canceled'", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
                 if (FirstValue == 0 && SecondValue == 0) Percentage = 0;
                 else Percentage = (SecondValue - FirstValue) / FirstValue * 100;
             }
