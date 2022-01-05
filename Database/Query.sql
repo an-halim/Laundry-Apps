@@ -49,6 +49,8 @@ insert into userdata values('jamal','123', 'jamalaudin', 'jl kh marwan ah jragun
 insert into userdata values('jani','123', 'M jani', 'jl kuncup yogyakarta', '085647847468','2000/12/18', '1' )
 insert into userdata values ('jambrud', 'jannisuani', 'jani sujono', 'jl kenari indah yogyakarta', '088215293123', '12/12/2001','0')
 
+insert into userdata values ('satrioz', 'wibiganteng', 'Satrio Wibisono', 'jl ir soetami lampung timur', '082222222222', '12/12/2001','1')
+
 
 insert into service values('DK0001', '7000', 'Kaos', 'cuci kering 48 jam selesai kiloan')
 insert into service values('DK0002', '12000', 'Kaos premium', 'cuci kering 24 jam selesai + strika kiloan')
