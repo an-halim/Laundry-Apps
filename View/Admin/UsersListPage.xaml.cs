@@ -23,9 +23,6 @@ namespace LaundryApps.View.Admin
         {
             InitializeComponent();
             UserList = new Controller.UserListController(this);
-
-
-
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -40,7 +37,11 @@ namespace LaundryApps.View.Admin
 
         private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            new View.Admin.DeleteUserWindow().Show();
+            object item = UserListGrid.SelectedItem;
+            string id = (UserListGrid.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
+            MessageBoxResult result = MessageBox.Show("Are you sure delete this user?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes) UserList.deleteUser(id);
+            UserList.FIllDataGrid();
         }
 
         private void btnNewUser_Click(object sender, RoutedEventArgs e)

@@ -72,5 +72,10 @@ namespace LaundryApps.Model
 
             return result;
         }
+
+        public bool delete(string serviceid)
+        {
+            return model.Delete("service", "service_id='" + serviceid + "'");
+        }
     }
 }

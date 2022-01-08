@@ -447,5 +447,20 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="BorderStyle" TargetType="{x:Type Border}">
+            <Setter Property="Background" Value="#3085F1"/>
+            <Setter Property="Height" Value="150"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="180"/>
+                    <Setter Property="Height" Value="180"/>
+                    <Setter Property="Background" Value="#005ACC"/>
+                    <Setter Property="BorderBrush" Value="Beige"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

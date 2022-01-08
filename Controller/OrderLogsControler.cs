@@ -17,12 +17,13 @@ namespace LaundryApps.Controller
             this.view = view;
         }
 
-        public void FillDatagrid()
+        public void FillDatagrid(string cari = "")
         {
-            string cari = view.txtSearch.Text;
             DataTable data = model.loadData(cari);
             if (data == null) MessageBox.Show("Error while load data", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
-            else view.OrdersGrid.ItemsSource = data.DefaultView;            
+            else view.OrdersGrid.ItemsSource = data.DefaultView;
+
+            view.lblOrderstotal.Content = "Showing " + view.OrdersGrid.Items.Count.ToString() + " orders";
         }
 
         public void ChangeStatus(string orderid, string status)

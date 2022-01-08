@@ -119,10 +119,11 @@ namespace LaundryApps.Controller
             view.lblOrderID.Content = CO.generateOderID();
         }
 
-        public void PlaceOrder()
+        public bool PlaceOrder()
         {
-            string data = CO.PutOder(view.lblOrderID.Content.ToString(), view.cmbUsername.SelectedValue.ToString(), view.CheckBoxDelivery.IsChecked.Value, view.txtNote.Text);
-            MessageBox.Show(data);
+            return CO.PutOder(view.lblOrderID.Content.ToString(), view.cmbUsername.SelectedValue.ToString(), view.CheckBoxDelivery.IsChecked.Value, view.txtNote.Text);
         }
+
+        
     }
 }

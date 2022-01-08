@@ -14,20 +14,13 @@ using System.Windows.Shapes;
 namespace LaundryApps.View.Admin
 {
     /// <summary>
-    /// Interaction logic for AddUserPage.xaml
+    /// Interaction logic for addNewServicePage.xaml
     /// </summary>
-    public partial class AddUserPage : Page
+    public partial class addNewServicePage : Page
     {
-        Controller.AddUserController add;
-        public AddUserPage()
+        public addNewServicePage()
         {
             InitializeComponent();
-            add = new Controller.AddUserController(this);
-        }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-            if (add.regist()) NavigationService.Navigate(new View.Admin.UsersListPage());
         }
     }
 }

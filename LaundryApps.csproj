@@ -13,12 +13,17 @@
     <None Remove="View\Images\clothes.png" />
     <None Remove="View\Images\hoodie.png" />
     <None Remove="View\Images\ic_address.png" />
+    <None Remove="View\Images\ic_back.png" />
+    <None Remove="View\Images\ic_bank.png" />
     <None Remove="View\Images\ic_cart.png" />
+    <None Remove="View\Images\ic_cash.png" />
+    <None Remove="View\Images\ic_credit.png" />
     <None Remove="View\Images\ic_customer.png" />
     <None Remove="View\Images\ic_cust_active.png" />
     <None Remove="View\Images\ic_dashboard.png" />
     <None Remove="View\Images\ic_dash_active.png" />
     <None Remove="View\Images\ic_date.png" />
+    <None Remove="View\Images\ic_ewallet.png" />
     <None Remove="View\Images\ic_list.png" />
     <None Remove="View\Images\ic_lock.png" />
     <None Remove="View\Images\ic_menu.png" />
@@ -27,6 +32,8 @@
     <None Remove="View\Images\ic_order_active.png" />
     <None Remove="View\Images\ic_phone.png" />
     <None Remove="View\Images\ic_report.png" />
+    <None Remove="View\Images\ic_service.png" />
+    <None Remove="View\Images\ic_service_active.png" />
     <None Remove="View\Images\ic_setting.png" />
     <None Remove="View\Images\ic_setting_active.png" />
     <None Remove="View\Images\ic_user.png" />
@@ -46,7 +53,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="View\Images\ic_back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_bank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_cash.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_ewallet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="View\Images\ic_report.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_service_active.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\ic_wallet.png">
@@ -58,7 +80,13 @@
     <Resource Include="View\Images\img_laundry.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="View\Images\ic_credit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="View\Images\is_logedUser.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\Images\ic_service.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\Images\success.gif">

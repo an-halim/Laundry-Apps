@@ -14,20 +14,22 @@ using System.Windows.Shapes;
 namespace LaundryApps.View.Admin
 {
     /// <summary>
-    /// Interaction logic for AddUserPage.xaml
+    /// Interaction logic for OrderDetail.xaml
     /// </summary>
-    public partial class AddUserPage : Page
+    public partial class OrderDetail : Page
     {
-        Controller.AddUserController add;
-        public AddUserPage()
+        Controller.OrderDetailController detail;
+        public OrderDetail(string orderid)
         {
             InitializeComponent();
-            add = new Controller.AddUserController(this);
+            lblOrderID.Content = orderid;
+            detail = new Controller.OrderDetailController(this);
+            detail.LoadOrder();
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            if (add.regist()) NavigationService.Navigate(new View.Admin.UsersListPage());
+            NavigationService.Navigate(new View.Admin.OrdersLogsPage());
         }
     }
 }

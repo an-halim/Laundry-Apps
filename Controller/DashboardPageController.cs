@@ -18,13 +18,18 @@ namespace LaundryApps.Controller
 
         public void FillDatagrid()
         {
-            try { view.OrdersGrid.ItemsSource = model.FillData("orders", "top 5 order_id, user_id, product_total, format(total_price, 'c', 'id-ID') as total_price, format(trx_date, 'dd/MM/yyyy' ) as trx_date, state, payment_method").DefaultView; }
+            try { view.OrdersGrid.ItemsSource = model.FillData("orders order by trx_date asc", "top 5 order_id, user_id, product_total, format(total_price, 'c', 'id-ID') as total_price, format(trx_date, 'dd/MM/yyyy' ) as trx_date, state, payment_method").DefaultView; }
             catch (Exception e) { MessageBox.Show(e.Message); }
         }
 
         public void getBalance()
         {
-            try { view.lblBalance.Content = model.Select("orders", "state!='Canceled'", "format(sum(total_price), 'c', 'id-ID') as total").Tables[0].Rows[0]["total"]; }
+            try 
+            { 
+                string duit = model.Select("orders", "state!='Canceled'", "format(sum(total_price), 'c', 'id-ID') as total").Tables[0].Rows[0]["total"].ToString();
+                if (duit == null || duit == "") view.lblBalance.Content = "Rp.0";
+                else view.lblBalance.Content = duit;
+            }
             catch (Exception e) { MessageBox.Show(e.Message); }
         }
 
@@ -54,9 +59,9 @@ namespace LaundryApps.Controller
         {
             float FirstValue, SecondValue, Percentage;
             try
-            {
-                FirstValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-14 AND GETDATE()-7 AND state!='Canceled'", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
-                SecondValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-7 AND GETDATE() AND state!='Canceled'", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
+            {                
+                FirstValue = float.Parse(model.Select("orders", "trx_date between (CONVERT(VARCHAR(10), GETDATE()-14, 111)) AND (CONVERT(VARCHAR(10), GETDATE()-7, 111)) AND state!='Canceled'", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
+                SecondValue = float.Parse(model.Select("orders", "trx_date between (CONVERT(VARCHAR(10), GETDATE()-7, 111)) AND (CONVERT(VARCHAR(10), GETDATE(), 111)) AND state!='Canceled'", "sum(total_price) as total").Tables[0].Rows[0]["total"].ToString());
                 if (FirstValue == 0 && SecondValue == 0) Percentage = 0;
                 else Percentage = (SecondValue - FirstValue) / FirstValue * 100;
             }
@@ -72,8 +77,8 @@ namespace LaundryApps.Controller
             float FirstValue, SecondValue, Percentage;
             try
             {
-                FirstValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-14 AND GETDATE()-7", "count(*) as total").Tables[0].Rows[0]["total"].ToString());
-                SecondValue = float.Parse(model.Select("orders", "trx_date between GETDATE()-7 AND GETDATE()", "count(*) as total").Tables[0].Rows[0]["total"].ToString());
+                FirstValue = float.Parse(model.Select("orders", "trx_date between (CONVERT(VARCHAR(10), GETDATE()-14, 111)) AND (CONVERT(VARCHAR(10), GETDATE()-7, 111))", "count(*) as total").Tables[0].Rows[0]["total"].ToString());
+                SecondValue = float.Parse(model.Select("orders", "trx_date between (CONVERT(VARCHAR(10), GETDATE()-7, 111)) AND (CONVERT(VARCHAR(10), GETDATE(), 111))", "count(*) as total").Tables[0].Rows[0]["total"].ToString());
                 if (FirstValue == 0  && SecondValue == 0) Percentage = 0;
                 else Percentage = (SecondValue - FirstValue) / FirstValue*100;
                 

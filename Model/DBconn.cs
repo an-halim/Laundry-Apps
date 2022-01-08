@@ -41,7 +41,7 @@ namespace LaundryApps.Model
                 command = new SqlCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.Text;
-                if (kondisi == null) command.CommandText = "SELECT "+column+" FROM " + tabel;
+                if (kondisi == null) command.CommandText = "SELECT "+ column +" FROM " + tabel;
                 else command.CommandText = "SELECT " + column + " FROM " + tabel + " WHERE " + kondisi;
 
                 SqlDataAdapter sda = new SqlDataAdapter(command);
@@ -98,7 +98,7 @@ namespace LaundryApps.Model
             conn.Close();
             return result;
         }
-        public Boolean Update(string tabel, string kondisi)
+        public Boolean Delete(string tabel, string kondisi)
         {
             result = false;
             try

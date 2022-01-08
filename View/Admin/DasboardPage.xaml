@@ -143,6 +143,9 @@
                                             <Trigger Property="Text" Value="Canceled">
                                                 <Setter Property="Foreground" Value="#F31666"/>
                                             </Trigger>
+                                            <Trigger Property="Text" Value="Waiting Payment">
+                                                <Setter Property="Foreground" Value="OrangeRed"/>
+                                            </Trigger>
                                         </Style.Triggers>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>

@@ -68,6 +68,7 @@ namespace LaundryApps.Controller
         }
         public void SearchService(string search)
         {
+            
             string[,] data = Service.SearchService(search);
             view.lblServiceID1.Content = data[0, 0];
             view.lblServiceName1.Content = data[0, 1];
@@ -110,5 +111,12 @@ namespace LaundryApps.Controller
             view.lblServicePrice8.Content = data[7, 3];
         }
 
+        public void deleteService(string serviceid)
+        {
+            MessageBoxResult result = MessageBox.Show("Delete " + serviceid, "Are you sure delete this?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+                if (Service.delete(serviceid)) MessageBox.Show("Delete successfully!",  "Success",  MessageBoxButton.OK, MessageBoxImage.Information);
+                else MessageBox.Show("Can't delete a service that's currently on order!", "Delete failed!", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }

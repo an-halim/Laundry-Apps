@@ -44,7 +44,11 @@ namespace LaundryApps.View.Admin
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            OD.FillDatagrid();
+            
+            if (txtSearch.Text.ToString() != "Search here...")
+            {
+                OD.FillDatagrid(txtSearch.Text.ToString());
+            }
         }
 
         private void btnCancle_Click(object sender, RoutedEventArgs e)
@@ -71,6 +75,18 @@ namespace LaundryApps.View.Admin
             MessageBoxResult result = MessageBox.Show("Are you sure complete this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "Completed");
             OD.FillDatagrid();
+        }
+
+        private void txtSearch_LostFocus(object sender, RoutedEventArgs e)
+        {
+            txtSearch.Text = "Search here...";
+        }
+
+        private void btnSeeDetails_Click(object sender, RoutedEventArgs e)
+        {
+            object item = OrdersGrid.SelectedItem;
+            string id = "Order #"+(OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            NavigationService.Navigate(new View.Admin.OrderDetail(id));
         }
     }
 }

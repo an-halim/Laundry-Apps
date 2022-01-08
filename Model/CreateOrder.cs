@@ -173,42 +173,51 @@ namespace LaundryApps.Model
             }
         }
 
-        public string PutOder(string orderid, string userid, bool isShiping, string note = "")
+        public bool PutOder(string orderid, string userid, bool isShiping, string note = "")
         {
-            string res = "";
+            bool res;
             string date = DateTime.Now.ToString("yyyy/MM/dd");
-            try
+            if (content[0,0] == "")
             {
-                if (note == "")
+                res = false;
+            }
+            else
+            {
+                try
                 {
-                    model.Insert("orders", "'" + orderid + "', '" + userid + "', '" + date + "', '" + int.Parse(getTotalItems()) + "', '" + ToInt(getTotalPay(false)) + "', 'Waiting Payment', 'Cash', ' '");
-                }
-                else
-                {
-                    model.Insert("orders", "'" + orderid + "', '" + userid + "', '" + date + "', '" + int.Parse(getTotalItems()) + "', '" + ToInt(getTotalPay(false)) + "', 'Waiting Payment', 'Cash', '" + note + "'");
-                }
-
-                for (int i = 0; i < content.GetLength(0); i++)
-                {
-                    if (content[i, 0] != "")
+                    if (note == "")
                     {
-                        string serviceId = content[i, 0];
-                        string qty = content[i, 2];
-                        int total = ToInt(content[i, 3]);
-                        model.Insert("order_detail", "'" + orderid + "', '" + serviceId + "', '" + userid + "', '" + date + "', '" + qty + "', '" + total + "'");
+                        model.Insert("orders", "'" + orderid + "', '" + userid + "', '" + date + "', '" + int.Parse(getTotalItems()) + "', '" + ToInt(getTotalPay(false)) + "', 'Waiting Payment', 'Cash', ' '");
+                    }
+                    else
+                    {
+                        model.Insert("orders", "'" + orderid + "', '" + userid + "', '" + date + "', '" + int.Parse(getTotalItems()) + "', '" + ToInt(getTotalPay(false)) + "', 'Waiting Payment', 'Cash', '" + note + "'");
                     }
 
+                    for (int i = 0; i < content.GetLength(0); i++)
+                    {
+                        if (content[i, 0] != "")
+                        {
+                            string serviceId = content[i, 0];
+                            string qty = content[i, 2];
+                            int total = ToInt(content[i, 3]);
+                            model.Insert("order_detail", "'" + orderid + "', '" + serviceId + "', '" + userid + "', '" + date + "', '" + qty + "', '" + total + "'");
+                        }
+
+                    }
+                    res = true;
                 }
-                res = "OK";
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.Message);
-                res = e.Message;
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    res = false;
+                }
             }
 
             return res;
         }
+
+        
         
     }
 }

@@ -22,12 +22,12 @@ namespace LaundryApps.Model
             {
                 if(cari == "" || cari.Length <=0 || cari == " ")
                 {
-                    dt = db.FillData("orders", "order_id, user_id, product_total, format(total_price, 'c', 'id-ID') as total_price, format(trx_date, 'dd/MM/yyyy' ) as trx_date, state, payment_method");
+                    dt = db.FillData("orders", "order_id, user_id, product_total, format(total_price, 'c', 'id-ID') as total_price, format(trx_date, 'dd/MM/yyyy' ) as trx_date, state, payment_method, note");
                 }
                 else
                 {
-                    string kondisi = "order_id LIKE '%" + cari + "%' OR user_id LIKE '%" + cari + "%' OR product_total LIKE '%" + cari + "%' OR total_price LIKE '%" + cari + "%' OR trx_date LIKE '%" + cari + "%' OR state LIKE '%" + cari + "%' OR payment_method LIKE '%" + cari + "%'";
-                    dt = db.FillData("orders", "order_id, user_id, product_total, format(total_price, 'c', 'id-ID') as total_price, format(trx_date, 'dd/MM/yyyy' ) as trx_date, state, payment_method", kondisi);
+                    string kondisi = "order_id LIKE '%" + cari + "%' OR user_id LIKE '%" + cari + "%' OR product_total LIKE '%" + cari + "%' OR total_price LIKE '%" + cari + "%' OR trx_date LIKE '%" + cari + "%' OR state LIKE '%" + cari + "%' OR payment_method LIKE '%" + cari + "%' OR note LIKE '%" + cari + "%'";
+                    dt = db.FillData("orders", "order_id, user_id, product_total, format(total_price, 'c', 'id-ID') as total_price, format(trx_date, 'dd/MM/yyyy' ) as trx_date, state, payment_method, note", kondisi);
                 }
 
                 

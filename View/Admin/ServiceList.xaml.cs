@@ -37,8 +37,13 @@ namespace LaundryApps.View.Admin
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            service.SearchService(txtSearch.Text.ToString());
-            chekCardContent();
+            if (txtSearch.Text.ToString() != "Search here...")
+            {
+                service.SearchService(txtSearch.Text.ToString());
+                chekCardContent();
+            }
+            
+            
         }
 
         private void btnPrev_Click(object sender, RoutedEventArgs e)
@@ -119,6 +124,62 @@ namespace LaundryApps.View.Admin
                 card8.Visibility = Visibility.Hidden;
             else
                 card8.Visibility = Visibility.Visible;
+        }
+
+        private void btnDeleteCard1_Click(object sender, RoutedEventArgs e)
+        {
+            service.deleteService(lblServiceID1.Content.ToString());
+            service.FillServices(curentPos.ToString());
+        }
+        private void btnDeleteCard2_Click(object sender, RoutedEventArgs e)
+        {
+            service.deleteService(lblServiceID2.Content.ToString());
+            service.FillServices(curentPos.ToString());
+        }
+        private void btnDeleteCard3_Click(object sender, RoutedEventArgs e)
+        {
+            service.deleteService(lblServiceID3.Content.ToString());
+            service.FillServices(curentPos.ToString());
+        }
+        private void btnDeleteCard4_Click(object sender, RoutedEventArgs e)
+        {
+            service.deleteService(lblServiceID4.Content.ToString());
+            service.FillServices(curentPos.ToString());
+        }
+        private void btnDeleteCard5_Click(object sender, RoutedEventArgs e)
+        {
+            service.deleteService(lblServiceID5.Content.ToString());
+            service.FillServices(curentPos.ToString());
+        }
+        private void btnDeleteCard6_Click(object sender, RoutedEventArgs e)
+        {
+            service.deleteService(lblServiceID6.Content.ToString());
+            service.FillServices(curentPos.ToString());
+        }
+        private void btnDeleteCard7_Click(object sender, RoutedEventArgs e)
+        {
+            service.deleteService(lblServiceID7.Content.ToString());
+            service.FillServices(curentPos.ToString());
+        }
+        private void btnDeleteCard8_Click(object sender, RoutedEventArgs e)
+        {
+            service.deleteService(lblServiceID8.Content.ToString());
+            service.FillServices(curentPos.ToString());
+        }
+
+        private void btnAddservice_Click(object sender, RoutedEventArgs e)
+        {
+            new View.Admin.AddServiceWindow().Show();
+        }
+
+        private void txtSearch_LostFocus(object sender, RoutedEventArgs e)
+        {
+            txtSearch.Text = "Search here...";
+        }
+
+        private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtSearch.Text = "";
         }
     }
 }

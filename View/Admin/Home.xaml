@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LaundryApps.View"
         Icon="/View/Images/hoodie.png"
         mc:Ignorable="d"
-        Title="Laundry Apps"  Width="1366" Height="850"   WindowStartupLocation="CenterScreen" >
+        Title="Laundry Apps"  Width="1366" Height="850" ResizeMode="CanMinimize"  WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -45,7 +45,6 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource btnDashActive}"/>
@@ -194,7 +193,7 @@
             </Setter>
         </Style>
 
-        <ImageBrush x:Key="btnSettingActive" ImageSource="../Images/ic_setting_active.png"/>
+        <ImageBrush x:Key="btnSettingActive" ImageSource="../Images/ic_service_active.png"/>
         <SolidColorBrush x:Key="Button.Static.Background3" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border3" Color="#FF707070"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background3" Color="#FFBEE6FD"/>
@@ -285,7 +284,7 @@
                     </Button>
                     <Button Style="{DynamicResource ButtonSetting}" Grid.Row="3" x:Name="btnSetting" Click="btnSetting_Click" BorderBrush="Transparent" >
                         <Button.Background>
-                            <ImageBrush ImageSource="../Images/ic_setting.png" />
+                            <ImageBrush ImageSource="../Images/ic_service.png" />
                         </Button.Background>
                     </Button>
                 </Grid>

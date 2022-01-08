@@ -37,7 +37,7 @@
                     <Label Content="Phone Number"  FontSize="20" FontFamily="Rounded Mplus" Margin="48,480,49,125" />
                     <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNumber" Width="509" Height="45"  FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center"  Margin="48,495,49,140"/>
                     
-                    <Button Style="{DynamicResource PrimaryButton}" Content="Accept" FontSize="25" Width="185" Height="47" Margin="374,600,47,10"/>
+                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnSave" Click="btnSave_Click" Content="Accept" FontSize="25" Width="185" Height="47" Margin="374,600,47,10"/>
                 </Grid>
             </Border>
             <Image Grid.Column="1" Source="/View/Images/img_AddUser.png" Opacity="0.9" />
