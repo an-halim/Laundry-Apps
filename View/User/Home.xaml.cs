@@ -46,5 +46,15 @@ namespace LaundryApps.View.User
         {
             frmContent.Navigate(new View.User.DashboardPage());
         }
+
+        private void btnService_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.User.ServiceList());
+        }
+
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            frmContent.Navigate(new View.User.OrdersLogPage(lblLogedUser.Content.ToString()));
+        }
     }
 }

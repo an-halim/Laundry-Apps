@@ -4,24 +4,17 @@ using System.Text;
 using System.Windows;
 namespace LaundryApps.Controller
 {
-    class ServiceListController
+    class ServiceListUserController
     {
         Model.DBconn model;
         Model.ServiceList Service;
-        View.Admin.ServiceList view;
-        View.User.ServiceList viewuser;
+        View.User.ServiceList view;
 
-        public ServiceListController(View.Admin.ServiceList view)
+        public ServiceListUserController(View.User.ServiceList view)
         {
             model = new Model.DBconn();
             Service = new Model.ServiceList();
             this.view = view;
-        }
-        public ServiceListController(View.User.ServiceList view)
-        {
-            model = new Model.DBconn();
-            Service = new Model.ServiceList();
-            this.viewuser = view;
         }
 
         public void FillServices(string startFrom)
@@ -29,7 +22,7 @@ namespace LaundryApps.Controller
             string[,] data = Service.FillServices(startFrom);
             string total = model.Select("service", null, "count(*) as total").Tables[0].Rows[0]["total"].ToString();
 
-            view.lblTotalProducts.Content = "Showing " + (int.Parse(startFrom)+8).ToString() + " of " +total+ " Services"; 
+            view.lblTotalProducts.Content = "Showing " + (int.Parse(startFrom) + 8).ToString() + " of " + total + " Services";
 
             view.lblServiceID1.Content = data[0, 0];
             view.lblServiceName1.Content = data[0, 1];
@@ -75,7 +68,7 @@ namespace LaundryApps.Controller
         }
         public void SearchService(string search)
         {
-            
+
             string[,] data = Service.SearchService(search);
             view.lblServiceID1.Content = data[0, 0];
             view.lblServiceName1.Content = data[0, 1];
@@ -122,7 +115,7 @@ namespace LaundryApps.Controller
         {
             MessageBoxResult result = MessageBox.Show("Delete " + serviceid, "Are you sure delete this?", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
-                if (Service.delete(serviceid)) MessageBox.Show("Delete successfully!",  "Success",  MessageBoxButton.OK, MessageBoxImage.Information);
+                if (Service.delete(serviceid)) MessageBox.Show("Delete successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 else MessageBox.Show("Can't delete a service that's currently on order!", "Delete failed!", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }

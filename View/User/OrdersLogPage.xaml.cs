@@ -11,31 +11,32 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaundryApps.View.Admin
+namespace LaundryApps.View.User
 {
     /// <summary>
-    /// Interaction logic for OrdersLogs.xaml
+    /// Interaction logic for OrdersLog.xaml
     /// </summary>
-    public partial class OrdersLogsPage : Page
+    public partial class OrdersLogPage : Page
     {
-
-        Controller.OrderLogsControler OD;
-        public OrdersLogsPage()
+        Controller.OrdersLogUserController OD;
+        string LogedUser;
+        public OrdersLogPage(string username)
         {
             InitializeComponent();
-            OD = new Controller.OrderLogsControler(this);
+            OD = new Controller.OrdersLogUserController(this);
+            LogedUser = username;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            OD.FillDatagrid();
+            OD.FillDatagrid(LogedUser);
         }
 
         private void btnNewOrder_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new View.Admin.CreateOrderPage());
         }
-               
+
 
         private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -44,10 +45,10 @@ namespace LaundryApps.View.Admin
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+
             if (txtSearch.Text.ToString() != "Search here...")
             {
-                OD.FillDatagrid(txtSearch.Text.ToString());
+                OD.FillDatagrid(LogedUser, txtSearch.Text.ToString());
             }
         }
 
@@ -57,25 +58,9 @@ namespace LaundryApps.View.Admin
             string id = (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
             MessageBoxResult result = MessageBox.Show("Are you sure cancel this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "Canceled");
-            OD.FillDatagrid();
-        }
-        private void btnProses_Click(object sender, RoutedEventArgs e)
-        {
-            object item = OrdersGrid.SelectedItem;
-            string id = (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            MessageBoxResult result = MessageBox.Show("Are you sure proses this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "On Progres");
-            OD.FillDatagrid();
+            OD.FillDatagrid(LogedUser);
         }
 
-        private void btnComplete_Click(object sender, RoutedEventArgs e)
-        {
-            object item = OrdersGrid.SelectedItem;
-            string id = (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            MessageBoxResult result = MessageBox.Show("Are you sure complete this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "Completed");
-            OD.FillDatagrid();
-        }
 
         private void txtSearch_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -85,13 +70,8 @@ namespace LaundryApps.View.Admin
         private void btnSeeDetails_Click(object sender, RoutedEventArgs e)
         {
             object item = OrdersGrid.SelectedItem;
-            string id = "Order #"+(OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
+            string id = "Order #" + (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
             NavigationService.Navigate(new View.Admin.OrderDetail(id));
-        }
-
-        private void btnExport_Click(object sender, RoutedEventArgs e)
-        {
-            OD.exportFile();
         }
     }
 }

@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <!--Header-->
-        <Label Grid.Row="0" Content="User List" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
+        <Label Grid.Row="0" Content="User List" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" LostFocus="Label_LostFocus"/>
         <!--Header-->
                         
         <Grid Grid.Row="1" Background="#f3f3f3">
@@ -25,9 +25,9 @@
                 <RowDefinition Height="600"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtSearch"  Text="" Height="40" Width="500" Margin="20,0,0,0" Padding="10" HorizontalAlignment="Left" GotFocus="txtSearch_GotFocus" TextChanged="txtSearch_TextChanged"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtSearch"  Text="Search here..." Height="40" Width="500" Margin="20,0,0,0" Padding="10" HorizontalAlignment="Left" GotFocus="txtSearch_GotFocus" TextChanged="txtSearch_TextChanged"/>
             <Button Style="{DynamicResource PrimaryButton}" x:Name="btnNewUser" Click="btnNewUser_Click" Width="100" Height="40" Content="+ New User" HorizontalAlignment="Right" Margin="0,0,20,0"/>
-            <Border Margin="20,1,20,10" Grid.Row="1" Background="#fff">
+            <Border Margin="20,1,20,0" Grid.Row="1" Background="#fff">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="20" Color="#e3e1e1"/>
                 </Border.Effect>
@@ -100,7 +100,16 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                     </DataGrid.Columns>                    
-                </DataGrid>
+                </DataGrid>                
+            </Border>
+            <Border Grid.Row="2" Margin="20,10,20,10" Background="#fff" CornerRadius="10">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#e3e1e1"/>
+                </Border.Effect>
+                <Grid>
+                    <Label x:Name="lblOrderstotal" Content="Showing 0 users" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnExport" Click="btnExport_Click" Height="35" Width="120" Content="📁 Export to csv" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                </Grid>
             </Border>
         </Grid>
     </Grid>

@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using CSVLibraryAK;
+using System.Data;
 
 namespace LaundryApps.View.Admin
 {
@@ -27,7 +30,7 @@ namespace LaundryApps.View.Admin
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            UserList.FIllDataGrid();
+            UserList.FillDataGrid();
         }
 
         private void btnEditUser_Click(object sender, RoutedEventArgs e)
@@ -41,7 +44,7 @@ namespace LaundryApps.View.Admin
             string id = (UserListGrid.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
             MessageBoxResult result = MessageBox.Show("Are you sure delete this user?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes) UserList.deleteUser(id);
-            UserList.FIllDataGrid();
+            UserList.FillDataGrid();
         }
 
         private void btnNewUser_Click(object sender, RoutedEventArgs e)
@@ -56,7 +59,20 @@ namespace LaundryApps.View.Admin
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+            if (txtSearch.Text.ToString() != "Search here...")
+            {
+                UserList.FillDataGrid(txtSearch.Text.ToString());
+            }
+        }
+
+        private void Label_LostFocus(object sender, RoutedEventArgs e)
+        {
+            txtSearch.Text = "Search here...";
+        }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            UserList.exportFile();
         }
     }
 }

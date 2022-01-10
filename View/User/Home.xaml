@@ -278,12 +278,12 @@
                             <ImageBrush ImageSource="../Images/ic_dashboard.png" />
                         </Button.Background>
                     </Button>
-                    <Button Style="{DynamicResource ButtonCust}" Grid.Row="1"  BorderBrush="Transparent">
+                    <Button Style="{DynamicResource ButtonCust}" x:Name="btnOrder" Click="btnOrder_Click"  Grid.Row="1"  BorderBrush="Transparent">
                         <Button.Background>
                             <ImageBrush ImageSource="../Images/ic_order.png" />
                         </Button.Background>
                     </Button>
-                    <Button Style="{DynamicResource ButtonOrder}" Grid.Row="2"  BorderBrush="Transparent" >
+                    <Button Style="{DynamicResource ButtonOrder}" x:Name="btnService" Click="btnService_Click" Grid.Row="2"  BorderBrush="Transparent" >
                         <Button.Background>
                             <ImageBrush ImageSource="../Images/ic_order.png" />
                         </Button.Background>

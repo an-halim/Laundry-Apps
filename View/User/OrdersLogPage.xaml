@@ -1,12 +1,12 @@
-﻿<Page x:Class="LaundryApps.View.Admin.OrdersLogsPage"
+﻿<Page x:Class="LaundryApps.View.User.OrdersLogPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:LaundryApps.View.Admin"
+      xmlns:local="clr-namespace:LaundryApps.View.User"
       mc:Ignorable="d" 
-      d:DesignHeight="812" d:DesignWidth="1243" Background="#fff"
-      Title="Orders Logs" Loaded="Page_Loaded">
+       d:DesignHeight="850" d:DesignWidth="1243" Background="#fff"
+      Title="OrderLogs" Loaded="Page_Loaded">
 
 
     <Grid>
@@ -70,7 +70,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Ellipse Fill="#1678F3" Height="30" Width="30"/>
-                                </DataTemplate>                                
+                                </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Header="Status" Width="125" Binding="{Binding state}">
@@ -102,7 +102,7 @@
                         <DataGridTextColumn Header="Amount" Width="auto" Binding="{Binding total_price}"/>
                         <DataGridTextColumn Header="Date" Width="100" Binding="{Binding trx_date}"/>
                         <DataGridTextColumn Header="Payment" Width="100" Binding="{Binding payment_method}"/>
-                        <DataGridTextColumn Header="Note" Width="100" Binding="{Binding note}">
+                        <DataGridTextColumn Header="Note" Width="*" Binding="{Binding note}">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
@@ -110,27 +110,13 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTemplateColumn Header="" Width="80">
+                        <DataGridTemplateColumn Header="" Width="100">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Style="{DynamicResource DangerButton}" x:Name="btnCancle" Click="btnCancle_Click" Height="30" Width="60" Foreground="#fff"  Content="✗" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="" Width="80">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnProses" Click="btnProses_Click" Background="Orange" Height="30" Width="60" Foreground="#fff"  Content="⟳" />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="" Width="80">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnComplete" Click="btnComplete_Click" Background="LightGreen" Height="30" Width="60" Foreground="#fff"  Content="✓" />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                        </DataGridTemplateColumn>                        
                         <DataGridTemplateColumn Header="" Width="120">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -147,7 +133,7 @@
                 </Border.Effect>
                 <Grid>
                     <Label x:Name="lblOrderstotal" Content="Showing 80 orders" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnExport" Click="btnExport_Click" Height="35" Width="120" Content="📁 Export to csv" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Button Style="{DynamicResource PrimaryButton}" Height="35" Width="120" Content="📁 Export to csv" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
                 </Grid>
             </Border>
         </Grid>

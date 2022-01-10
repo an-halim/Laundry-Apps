@@ -15,8 +15,12 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="Account Settings" Foreground="Black" Padding="25 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" FontWeight="Bold"/>
 
-        <Border Grid.Row="1" Height="662" Width="606" Background="#e4e4e4" CornerRadius="30">
-            <Grid>
+        <Grid Grid.Row="1" Background="#f3f3f3">
+        <Border Grid.Row="1" Height="662" Width="606" Background="#fff" CornerRadius="30">
+                <Border.Effect>
+                    <DropShadowEffect Color="#7d7d7d" Opacity="0.1"/>
+                </Border.Effect>
+                <Grid>
                 <Image Grid.Row="1" Source="/View/Images/bgSetting.png" Opacity="0.5" />
                 <Label Content="Edit Account" FontSize="28" Foreground="#1678F3" FontWeight="SemiBold" FontFamily="Rounded Mplus" Margin="48,25"/>
                 <Label Content="Username" FontSize="20" FontFamily="Rounded Mplus" Margin="48,105,49,525"/>
@@ -32,5 +36,6 @@
                 <Button Style="{DynamicResource PrimaryButton}" Content="Accept" FontSize="25" Width="185" Height="47" Margin="372,550,49,0"/>
             </Grid>
         </Border>
+        </Grid>
     </Grid>
 </Page>

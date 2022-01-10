@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Data;
+using Microsoft.Win32;
+using CSVLibraryAK;
 
 namespace LaundryApps.Controller
 {
@@ -34,5 +36,34 @@ namespace LaundryApps.Controller
             else MessageBox.Show("Update failed!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        public void exportFile()
+        {
+            try
+            {
+                if (view.OrdersGrid.Items.Count <= 0)
+                {
+                    MessageBox.Show("Data not available", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                DataTable data = new DataTable();
+                data = ((DataView)view.OrdersGrid.ItemsSource).ToTable();
+
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "CSV Files (*.csv)|*.csv";
+
+
+                if (save.ShowDialog() == true)
+                {
+                    CSVLibraryAK.Core.CSVLibraryAK.Export(save.FileName, data);
+                    MessageBox.Show("OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.Write(ex);
+            }
+        }
     }
 }
