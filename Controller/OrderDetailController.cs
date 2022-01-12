@@ -38,6 +38,9 @@ namespace LaundryApps.Controller
             view.txtStatus.Text = data.Rows[0]["state"].ToString();
             view.txtPayment.Text = data.Rows[0]["payment_method"].ToString();
             view.txtNote.Text = data.Rows[0]["note"].ToString();
+            view.lblTotal.Content = "Final Price: " + data.Rows[0]["total_price"].ToString();
+            view.lblQty.Content = "Total Quantity: " + data.Rows[0]["product_total"].ToString();
+            view.lblDelivery.Content = "Delivery Fee: " + model.CekDelivery(orderid);
         }
 
 
@@ -55,6 +58,9 @@ namespace LaundryApps.Controller
             viewUser.txtStatus.Text = data.Rows[0]["state"].ToString();
             viewUser.txtPayment.Text = data.Rows[0]["payment_method"].ToString();
             viewUser.txtNote.Text = data.Rows[0]["note"].ToString();
+            viewUser.lblTotal.Content = "Final Price: " + data.Rows[0]["total_price"].ToString();
+            viewUser.lblQty.Content = "Total Quantity: " + data.Rows[0]["product_total"].ToString();
+            viewUser.lblDelivery.Content = "Delivery Fee: " + model.CekDelivery(orderid);
         }
     }
 }

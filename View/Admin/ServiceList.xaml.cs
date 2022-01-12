@@ -23,8 +23,6 @@ namespace LaundryApps.View.Admin
         public ServiceList()
         {
             InitializeComponent();
-            Uri resoureUri = new Uri("/View/Images/img_laundry.png", UriKind.Relative);
-            img1.Source = new BitmapImage(resoureUri);
             service = new Controller.ServiceListController(this);
             service.FillServices(curentPos.ToString());
             
@@ -187,6 +185,7 @@ namespace LaundryApps.View.Admin
         private void btnEdit1_Click(object sender, RoutedEventArgs e)
         {
             View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID1.Content.ToString());
+            w.Title = "Edit service";
             w.action = "update";
             w.Show();
         }
@@ -194,6 +193,7 @@ namespace LaundryApps.View.Admin
         private void btnEdit2_Click(object sender, RoutedEventArgs e)
         {
             View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID2.Content.ToString());
+            w.Title = "Edit service";
             w.action = "update";
             w.Show();
         }
@@ -201,6 +201,7 @@ namespace LaundryApps.View.Admin
         private void btnEdit3_Click(object sender, RoutedEventArgs e)
         {
             View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID3.Content.ToString());
+            w.Title = "Edit service";
             w.action = "update";
             w.Show();
         }
@@ -208,6 +209,7 @@ namespace LaundryApps.View.Admin
         private void btnEdit4_Click(object sender, RoutedEventArgs e)
         {
             View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID4.Content.ToString());
+            w.Title = "Edit service";
             w.action = "update";
             w.Show();
         }
@@ -215,6 +217,8 @@ namespace LaundryApps.View.Admin
         private void btnEdit5_Click(object sender, RoutedEventArgs e)
         {
             View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID5.Content.ToString());
+            w.Title = "Edit service";
+            w.Title = "Edit service";
             w.action = "update";
             w.Show();
         }
@@ -222,6 +226,7 @@ namespace LaundryApps.View.Admin
         private void btnEdit6_Click(object sender, RoutedEventArgs e)
         {
             View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID6.Content.ToString());
+            w.Title = "Edit service";
             w.action = "update";
             w.Show();
         }
@@ -229,6 +234,7 @@ namespace LaundryApps.View.Admin
         private void btnEdit7_Click(object sender, RoutedEventArgs e)
         {
             View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID7.Content.ToString());
+            w.Title = "Edit service";
             w.action = "update";
             w.Show();
         }
@@ -236,6 +242,7 @@ namespace LaundryApps.View.Admin
         private void btnEdit8_Click(object sender, RoutedEventArgs e)
         {
             View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID8.Content.ToString());
+            w.Title = "Edit service";
             w.action = "update";
             w.Show();
         }

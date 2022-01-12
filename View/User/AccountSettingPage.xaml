@@ -29,7 +29,7 @@
                 <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNumber" Width="509" Height="45" Background="#7d7d7d" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="#fff"  Margin="48,416,49,201"/>
                 <Label Content="Password" FontSize="20" FontFamily="Rounded Mplus" Margin="48,485,49,125"/>
                 <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtPass" Width="509" Height="45" Background="#7d7d7d" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="#fff"   Margin="48,510,49,107"/>
-                <Button Style="{DynamicResource PrimaryButton}" Content="Accept" FontSize="25" Width="185" Height="47" Margin="372,550,49,0"/>
+                <Button Style="{DynamicResource PrimaryButton}" x:Name="btnAccept" Content="Accept" Click="btnAccept_Click" FontSize="25" Width="185" Height="47" Margin="372,550,49,0"/>
             </Grid>
         </Border>
     </Grid>

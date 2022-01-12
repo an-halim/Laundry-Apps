@@ -38,7 +38,7 @@ namespace LaundryApps.View.User
 
         private void btnNewOrder_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new View.Admin.CreateOrderPage());
+            NavigationService.Navigate(new View.User.CreateOrderPage());
         }
 
 

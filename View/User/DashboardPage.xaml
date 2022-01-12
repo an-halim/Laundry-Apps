@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:LaundryApps.View.User"
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1243"
-      Title="DashboardPage">
+      Title="DashboardPage" Loaded="Page_Loaded">
 
 
     <Grid>
@@ -139,6 +139,12 @@
                                             </Trigger>
                                             <Trigger Property="Text" Value="Received">
                                                 <Setter Property="Foreground" Value="#1678F3"/>
+                                            </Trigger>
+                                            <Trigger Property="Text" Value="Canceled">
+                                                <Setter Property="Foreground" Value="#F31666"/>
+                                            </Trigger>
+                                            <Trigger Property="Text" Value="Waiting Payment">
+                                                <Setter Property="Foreground" Value="OrangeRed"/>
                                             </Trigger>
                                         </Style.Triggers>
                                     </Style>

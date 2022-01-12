@@ -75,11 +75,11 @@ namespace LaundryApps.View.User
         {
             DGServices.ItemsSource = "";
             CurentPos += 3;
-            createOrder.fillServices(CurentPos.ToString());
+            createOrder.fillServicesUser(CurentPos.ToString());
             if (DGServices.Items.Count == 0)// avoid empty database, it will return to the previous data and disable next button
             {
                 CurentPos -= 3;
-                createOrder.fillServices(CurentPos.ToString());
+                createOrder.fillServicesUser(CurentPos.ToString());
                 btnNext.IsEnabled = false;
                 MessageBox.Show("You have reach end of service list", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
@@ -100,7 +100,7 @@ namespace LaundryApps.View.User
             {
                 DGServices.ItemsSource = "";
                 CurentPos -= 3;
-                createOrder.fillServices(CurentPos.ToString());
+                createOrder.fillServicesUser(CurentPos.ToString());
                 btnNext.IsEnabled = true;
             }
         }

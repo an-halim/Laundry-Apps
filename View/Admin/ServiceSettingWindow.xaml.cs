@@ -33,21 +33,6 @@ namespace LaundryApps.View.Admin
             this.Close();
         }
 
-        private void btnBrowse_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
-            if (file.ShowDialog() == true)
-            {
-                string filename = file.FileName;
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(filename);
-                bitmap.EndInit();
-                imgFoto.Source = bitmap;
-            }
-        }
-
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             if(action == "update")

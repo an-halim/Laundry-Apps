@@ -187,8 +187,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNote" x:FieldModifier="public" IsEnabled="False" Width="200" Height="80" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,110" Padding="10" TextWrapping="Wrap"/>
-                    <CheckBox x:Name="CBAddNote" Content="Add Note" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 90" Checked="CBAddNote_Checked"/>
-                    <Label Content="Sub Total: Rp0" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" Margin="10,170"/>
+                    <CheckBox x:Name="CBAddNote" Content="Add Note" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 90" Checked="CBAddNote_Checked"/>                    
                     <Label x:Name="lblShipingFee" Content="Shiping Fee: Rp0" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" Margin="10,145"/>
                     <Label x:Name="lblTotal" Content="Total Payment: Rp0" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" Margin="10,120"/>
                     <Button Style="{DynamicResource PrimaryButton}" x:Name="btnCheckOut" Click="btnCheckOut_Click" Content="Checkout Order" Width="200" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10"/>

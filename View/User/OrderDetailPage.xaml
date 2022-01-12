@@ -23,20 +23,20 @@
         </Border>
         <Grid Grid.Column="1" Background="#f3f3f3">
             <Label Content="Nama" FontSize="20" FontWeight="SemiBold" Margin="20,40"/>
-            <TextBox  x:Name="txtName" IsReadOnly="True" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="20,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10,5,10,0"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtName" IsReadOnly="True" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="20,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10,5,10,0"/>
             <Label Content="Phone Number" FontSize="20" FontWeight="SemiBold" Margin="20,120"/>
-            <TextBox  x:Name="txtPhone" IsReadOnly="true" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="20,150" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10,5,10,0"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtPhone" IsReadOnly="true" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="20,150" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10,5,10,0"/>
             <Label Content="Address" FontSize="20" FontWeight="SemiBold"  Margin="20,190"/>
-            <TextBox  x:Name="txtAddress" IsReadOnly="True" Width="351" Height="80" FontSize="18" FontWeight="SemiBold" Margin="20,220" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10,5,10,0"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtAddress" IsReadOnly="True" Width="351" Height="80" FontSize="18" FontWeight="SemiBold" Margin="20,220" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10,5,10,0"/>
 
             <Label Content="Date" FontSize="20" FontWeight="SemiBold" Margin="0,40,320,0" HorizontalAlignment="Right"/>
-            <TextBox  x:Name="txtDate" IsReadOnly="true" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="0,70,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10,5,10,0"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtDate" IsReadOnly="true" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="0,70,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10,5,10,0"/>
             <Label Content="Status" FontSize="20" FontWeight="SemiBold" Margin="0,120,310,0" HorizontalAlignment="Right"/>
-            <TextBox  x:Name="txtStatus" IsReadOnly="true" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="0,149,21,0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10,5,10,0"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtStatus" IsReadOnly="true" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="0,149,21,0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10,5,10,0"/>
             <Label Content="Payment Method" FontSize="20" FontWeight="SemiBold" Margin="0,190,209,330" HorizontalAlignment="Right"/>
-            <TextBox  x:Name="txtPayment" IsReadOnly="true" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="0,223,21,0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10,5,10,0"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtPayment" IsReadOnly="true" Width="351" Height="37" FontSize="18" FontWeight="SemiBold" Margin="0,223,21,0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10,5,10,0"/>
             <Label Content="Note" FontSize="20" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,260,322,-90"/>
-            <TextBox x:Name="txtNote" IsReadOnly="true" Height="80" Width="350" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,290,22,0" Padding="10,5,10,0"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNote" IsReadOnly="true" Height="80" Width="350" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,290,22,0" Padding="10,5,10,0"/>
 
             <Border Margin="20,400,20,20" Background="#fff">
                 <Border.Effect>
@@ -45,9 +45,9 @@
                 <Grid>
                     <Label x:Name="lblOrderID" Content="Order #88880" FontSize="20" Foreground="Black" FontWeight="SemiBold" Margin="20,0"/>
                     <Label Content="Summary" FontSize="20" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,40,20,0"/>
-                    <Label Content="Total Quantity: 80" FontSize="17" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,70,20,0"/>
-                    <Label Content="Devivery fee: RP15000" FontSize="17" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,100,20,0"/>
-                    <Label Content="Final price: RP15000" FontSize="17" Foreground="Black" FontWeight="SemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,100,20,20"/>
+                    <Label x:Name="lblQty" Content="Total Quantity: 80" FontSize="17" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,70,20,0"/>
+                    <Label x:Name="lblDelivery" Content="Devivery fee: RP15000" FontSize="17" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,100,20,0"/>
+                    <Label x:Name="lblTotal" Content="Final price: RP15000" FontSize="17" Foreground="Black" FontWeight="SemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,100,20,20"/>
                     <DataGrid Name="OrderDetailGrid"  GridLinesVisibility="None" FontSize="15" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0" Background="Transparent" Margin="20,40,350,0">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">

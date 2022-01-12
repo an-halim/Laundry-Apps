@@ -14,13 +14,28 @@ using System.Windows.Shapes;
 namespace LaundryApps.View.User
 {
     /// <summary>
-    /// Interaction logic for AccountSettingPage.xaml
+    /// Interaction logic for AccountSetingPage.xaml
     /// </summary>
     public partial class AccountSettingPage : Page
     {
+        Controller.AccountSettingController setting;
         public AccountSettingPage()
         {
             InitializeComponent();
+            setting = new Controller.AccountSettingController(this);
+            txtName.Focus();
+            txtUsername.Text = getLoged();
+            setting.LoadDataUser();
+        }
+
+        private string getLoged()
+        {
+            return ((Home)Application.Current.Windows[0]).lblLogedUser.Content.ToString();
+        }
+        
+        private void btnAccept_Click(object sender, RoutedEventArgs e)
+        {
+            setting.UpdateUser();
         }
     }
 }

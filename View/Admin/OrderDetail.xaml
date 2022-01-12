@@ -45,9 +45,9 @@
                 <Grid>
                     <Label x:Name="lblOrderID" Content="Order #88880" FontSize="20" Foreground="Black" FontWeight="SemiBold" Margin="20,0"/>
                     <Label Content="Summary" FontSize="20" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,40,20,0"/>
-                    <Label Content="Total Quantity: 80" FontSize="17" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,70,20,0"/>
-                    <Label Content="Devivery fee: RP15000" FontSize="17" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,100,20,0"/>
-                    <Label Content="Final price: RP15000" FontSize="17" Foreground="Black" FontWeight="SemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,100,20,20"/>
+                    <Label x:Name="lblQty" Content="Total Quantity: 80" FontSize="17" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,70,20,0"/>
+                    <Label x:Name="lblDelivery" Content="Delivery fee: RP15000" FontSize="17" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,100,20,0"/>
+                    <Label x:Name="lblTotal" Content="Final price: RP15000" FontSize="17" Foreground="Black" FontWeight="SemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,100,20,20"/>
                     <DataGrid Name="OrderDetailGrid"  GridLinesVisibility="None" FontSize="15" IsReadOnly="True" AutoGenerateColumns="False" BorderThickness="0" Background="Transparent" Margin="20,40,350,0">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">

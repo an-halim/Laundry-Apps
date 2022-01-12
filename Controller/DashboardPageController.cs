@@ -36,7 +36,7 @@ namespace LaundryApps.Controller
 
         public void getTotalOrder()
         {
-            try { view.lblOrders.Content = db.Select("orders", null, "count(*) as total").Tables[0].Rows[0]["total"]; }
+            try { view.lblOrders.Content = db.Select("orders", "state!='Canceled'", "count(*) as total").Tables[0].Rows[0]["total"]; }
             catch (Exception e) { MessageBox.Show(e.Message); }
         }
 
@@ -89,8 +89,8 @@ namespace LaundryApps.Controller
             float FirstValue, SecondValue, Percentage = 0;
             try
             {
-                FirstValue = ObjectToFloat(db.Select("orders", "trx_date between (CONVERT(VARCHAR(10), GETDATE()-14, 111)) AND (CONVERT(VARCHAR(10), GETDATE()-7, 111))", "count(*) as total").Tables[0].Rows[0]["total"]);
-                SecondValue = ObjectToFloat(db.Select("orders", "trx_date between (CONVERT(VARCHAR(10), GETDATE()-7, 111)) AND (CONVERT(VARCHAR(10), GETDATE(), 111))", "count(*) as total").Tables[0].Rows[0]["total"]);
+                FirstValue = ObjectToFloat(db.Select("orders", "trx_date between (CONVERT(VARCHAR(10), GETDATE()-14, 111)) AND (CONVERT(VARCHAR(10), GETDATE()-7, 111)) AND state <> 'Canceled'", "count(*) as total").Tables[0].Rows[0]["total"]);
+                SecondValue = ObjectToFloat(db.Select("orders", "trx_date between (CONVERT(VARCHAR(10), GETDATE()-7, 111)) AND (CONVERT(VARCHAR(10), GETDATE(), 111)) AND state <> 'Canceled'", "count(*) as total").Tables[0].Rows[0]["total"]);
                 if (FirstValue == 0 && SecondValue == 0) Percentage = 0;
                 else if (FirstValue == 0) Percentage = 100;
                 else if (FirstValue < SecondValue) Percentage = (SecondValue - FirstValue) / FirstValue * 100;

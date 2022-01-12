@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaundryApps.View.Admin"
+        Icon="/View/Images/hoodie.png"
         mc:Ignorable="d"
         Title="Add New Service" Height="750" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid Background="#f3f3f3">
@@ -15,9 +16,7 @@
         <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtprice" Width="400" Height="40" VerticalAlignment="Top" Margin="0,210,0,0" Padding="10"/>
         <Label Content="Service Detail" Margin="15,260,0,0" FontSize="20" FontWeight="SemiBold"/>
         <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtDetail" Width="400" Height="80" VerticalAlignment="Top" Margin="0,290,0,0" Padding="10" TextWrapping="Wrap"/>
-        <Label Content="Foto" Margin="15,380,0,0" FontSize="20" FontWeight="SemiBold"/>
         <Image x:Name="imgFoto" Width="200" Height="200" Source="/View/Images/img_laundry.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,130"/>
-        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnBrowse" Click="btnBrowse_Click" Width="70" Height="30" Content="Browse" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,85"/>
         <Button Style="{DynamicResource DangerButton}" x:Name="btnCancel" Click="btnCancel_Click" Width="80" Height="35" Content="Cancel" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="100,10"/>
         <Button Style="{DynamicResource PrimaryButton}" x:Name="btnSave"  Width="80" Height="35" Content="Save" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10,10" Click="btnSave_Click"/>
 

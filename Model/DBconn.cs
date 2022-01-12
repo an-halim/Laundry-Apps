@@ -47,8 +47,9 @@ namespace LaundryApps.Model
                 SqlDataAdapter sda = new SqlDataAdapter(command);
                 sda.Fill(ds, tabel);
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                MessageBox.Show(e.Message);
                 ds = null;
             }
 
@@ -90,8 +91,9 @@ namespace LaundryApps.Model
                 command.ExecuteNonQuery();
                 result = true;
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                MessageBox.Show(e.Message);
                 result = false;
             }
 
@@ -136,8 +138,9 @@ namespace LaundryApps.Model
                 dt = new DataTable(table);
                 sda.Fill(dt);
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                MessageBox.Show(e.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 dt = null;
             }
 

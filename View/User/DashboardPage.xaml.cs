@@ -18,11 +18,13 @@ namespace LaundryApps.View.User
     /// </summary>
     public partial class DashboardPage : Page
     {
+        Controller.UserDashboardController dash;
         public string username { get; set; }
         public DashboardPage()
         {
             InitializeComponent();
             username = getLoged();
+            dash = new Controller.UserDashboardController(this);
         }
 
         private string getLoged()
@@ -38,6 +40,18 @@ namespace LaundryApps.View.User
         private void btnSeeAll_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new View.User.OrdersLogPage());
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            dash.GetBalancePrecentage(username);
+            dash.GetOrderPrecentage(username);
+            dash.FillDatagrid(username);
+            dash.getBalance(username);
+            dash.getTotalOrder(username);
+            dash.getCompletOrder(username);
+            dash.getReceivedOrder(username);
+            dash.getProgresOrder(username);
         }
     }
 }

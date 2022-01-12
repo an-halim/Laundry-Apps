@@ -187,11 +187,11 @@ namespace LaundryApps.Model
                 {
                     if (note == "")
                     {
-                        model.Insert("orders", "'" + orderid + "', '" + userid + "', '" + date + "', '" + int.Parse(getTotalItems()) + "', '" + ToInt(getTotalPay(false)) + "', 'Waiting Payment', 'Cash', ' '");
+                        model.Insert("orders", "'" + orderid + "', '" + userid + "', '" + date + "', '" + int.Parse(getTotalItems()) + "', '" + ToInt(getTotalPay(isShiping)) + "', 'Waiting Payment', 'Cash', ' '");
                     }
                     else
                     {
-                        model.Insert("orders", "'" + orderid + "', '" + userid + "', '" + date + "', '" + int.Parse(getTotalItems()) + "', '" + ToInt(getTotalPay(false)) + "', 'Waiting Payment', 'Cash', '" + note + "'");
+                        model.Insert("orders", "'" + orderid + "', '" + userid + "', '" + date + "', '" + int.Parse(getTotalItems()) + "', '" + ToInt(getTotalPay(isShiping)) + "', 'Waiting Payment', 'Cash', '" + note + "'");
                     }
 
                     for (int i = 0; i < content.GetLength(0); i++)
