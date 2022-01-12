@@ -1,4 +1,4 @@
-﻿<Page x:Class="LaundryApps.View.Admin.CreateOrderPage"
+﻿<Page x:Class="LaundryApps.View.User.CreateOrderPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -28,27 +28,27 @@
                 <Border.Effect>
                     <DropShadowEffect Opacity="100" BlurRadius="30" Color="#f3f3f3"/>
                 </Border.Effect>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid x:Name="gridCustomersDetail" IsEnabled="True">
-                    <Label Content="Customers Detail" FontSize="20" FontWeight="SemiBold" Margin="10, 0" VerticalContentAlignment="Top"/>
-                    <Label Content="Username" Margin="10,30,10,0"/>
-                    <ComboBox x:Name="cmbUsername" SelectionChanged="cmbUsername_SelectionChanged" DisplayMemberPath = "username" SelectedValuePath = "username" Width="150" Height="25" HorizontalAlignment="Left" Margin="15,55,0,125"/>
-                    <Label Content="Name" Margin="10,80,10,0"/>
-                    <TextBox x:Name="txtName" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" Width="150" Height="20" HorizontalAlignment="Left" Padding="10,0,0,0" Margin="15,105,0,75" />
-                    <Label Content="Phone Number" Margin="10,130,10,0"/>
-                    <TextBox x:Name="txtPhone" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" Width="150" Height="20" HorizontalAlignment="Left" Padding="10,0,0,0" Margin="15,155,0,25" />
-                    <Label Content="Address" Margin="0,30,200,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtAddress" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" Padding="10" TextWrapping="Wrap" Width="250" Height="75" HorizontalAlignment="Right" Margin="10,55,10,70"/>
-                    <CheckBox x:Name="CheckBoxDelivery" Content="Pickup And delivery" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,128,49"/>
-                    <Button x:Name="btnSave" Click="btnSave_Click" Style="{DynamicResource PrimaryButton}" Height="42" Width="100" Content="Save" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,0"/>
-                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="gridCustomersDetail" IsEnabled="True">
+                        <Label Content="Customers Detail" FontSize="20" FontWeight="SemiBold" Margin="10, 0" VerticalContentAlignment="Top"/>
+                        <Label Content="Username" Margin="10,30,10,0"/>
+                        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtUsername" IsEnabled="False" Width="150" Height="20" HorizontalAlignment="Left" Margin="15,55,0,125" Padding="10,0,0,0"/>
+                        <Label Content="Name" Margin="10,80,10,0"/>
+                        <TextBox x:Name="txtName" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" Width="150" Height="20" HorizontalAlignment="Left" Padding="10,0,0,0" Margin="15,105,0,75" />
+                        <Label Content="Phone Number" Margin="10,130,10,0"/>
+                        <TextBox x:Name="txtPhone" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" Width="150" Height="20" HorizontalAlignment="Left" Padding="10,0,0,0" Margin="15,155,0,25" />
+                        <Label Content="Address" Margin="0,30,200,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtAddress" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" Padding="10" TextWrapping="Wrap" Width="250" Height="75" HorizontalAlignment="Right" Margin="10,55,10,70"/>
+                        <CheckBox x:Name="CheckBoxDelivery" Content="Pickup And delivery" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,128,49"/>
+                        <Button x:Name="btnSave" Click="btnSave_Click" Style="{DynamicResource PrimaryButton}" Height="42" Width="100" Content="Save" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,0"/>
+                    </Grid>
 
-                <Grid Grid.Row="1" x:Name="GridSevice" IsEnabled="False">
-                    <Label Content="Services" FontSize="20" FontWeight="SemiBold" Margin="10,0,10,0" VerticalContentAlignment="Top"/>
+                    <Grid Grid.Row="1" x:Name="GridSevice" IsEnabled="False">
+                        <Label Content="Services" FontSize="20" FontWeight="SemiBold" Margin="10,0,10,0" VerticalContentAlignment="Top"/>
                         <DataGrid Height="400" Name="DGServices" HorizontalScrollBarVisibility="Disabled" GridLinesVisibility="None" FontSize="15" IsReadOnly="True" Background="White" AutoGenerateColumns="False" Margin="10,0,10,30">
                             <!--Dara grid style-->
                             <DataGrid.Resources>
@@ -127,11 +127,11 @@
                                 </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                    <Button Style="{DynamicResource DangerButton}" x:Name="btnCancel" Click="btnCancel_Click" Content="Cancel Order" Foreground="#fff" Height="50" Width="90" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10"/>
-                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnPrev" Click="btnPrev_Click" Content="← Previous" Foreground="#fff" Height="50" Width="90" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="110,10"/>
-                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnNext" Click="btnNext_Click" Content="Next →" Foreground="#fff" Height="50" Width="90" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10"/>
+                        <Button Style="{DynamicResource DangerButton}" x:Name="btnCancel" Click="btnCancel_Click" Content="Cancel Order" Foreground="#fff" Height="50" Width="90" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnPrev" Click="btnPrev_Click" Content="← Previous" Foreground="#fff" Height="50" Width="90" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="110,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnNext" Click="btnNext_Click" Content="Next →" Foreground="#fff" Height="50" Width="90" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10"/>
+                    </Grid>
                 </Grid>
-            </Grid>
             </Border>
 
             <!--Cart-->
@@ -139,19 +139,19 @@
                 <Border.Effect>
                     <DropShadowEffect Opacity="100" BlurRadius="30" Color="#f3f3f3"/>
                 </Border.Effect>
-            <Grid>
-                <Label Content="ORDER #" FontSize="20" FontWeight="SemiBold" Margin="10, 0" VerticalContentAlignment="Top"/>
-                <Label x:Name="lblOrderID" x:FieldModifier="public" Content="0" FontSize="20" FontWeight="SemiBold" Margin="92, 0" VerticalContentAlignment="Top"/>
+                <Grid>
+                    <Label Content="ORDER #" FontSize="20" FontWeight="SemiBold" Margin="10, 0" VerticalContentAlignment="Top"/>
+                    <Label x:Name="lblOrderID" x:FieldModifier="public" Content="0" FontSize="20" FontWeight="SemiBold" Margin="92, 0" VerticalContentAlignment="Top"/>
                     <DataGrid Name="DGCart" HorizontalScrollBarVisibility="Disabled" GridLinesVisibility="None" FontSize="15" IsReadOnly="True" AutoGenerateColumns="False" Background="White" BorderThickness="1" Margin="10,40,10,200" Grid.Row="1">
-                    <!--Data grid style-->
-                    <DataGrid.Resources>
-                        <Style TargetType="{x:Type DataGridColumnHeader}">
-                            <Setter Property="Background" Value="#1678F3"/>
-                            <Setter Property="Padding" Value="5"/>
-                            <Setter Property="FontWeight" Value="SemiBold"/>
-                            <Setter Property="Foreground" Value="#fff"/>
-                        </Style>
-                        <Style TargetType="DataGridCell">
+                        <!--Data grid style-->
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#1678F3"/>
+                                <Setter Property="Padding" Value="5"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                <Setter Property="Foreground" Value="#fff"/>
+                            </Style>
+                            <Style TargetType="DataGridCell">
                                 <Setter Property="Height" Value="40"/>
                                 <Setter Property="Padding" Value="0"/>
                                 <Setter Property="BorderThickness" Value="0"/>
@@ -168,24 +168,24 @@
                                         </ControlTemplate>
                                     </Setter.Value>
                                 </Setter>
-                         </Style>
-                        <Style TargetType="DataGridRow">
-                            <Setter Property="Height" Value="40"/>
-                            <Setter Property="Padding" Value="0"/>
-                            <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="FontWeight" Value="SemiBold"/>
-                            <Setter Property="Foreground" Value="Black"/>
-                        </Style>
+                            </Style>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Height" Value="40"/>
+                                <Setter Property="Padding" Value="0"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Style>
                         </DataGrid.Resources>
 
-                    <!--End data grid style-->
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Service ID" Width="*" Binding="{Binding service}"/>
-                        <DataGridTextColumn Header="Price" Width="*" Binding="{Binding price}"/>
-                        <DataGridTextColumn Header="Qty" Width="*" Binding="{Binding qty}"/>
-                        <DataGridTextColumn Header="Total" Width="*" Binding="{Binding total}"/>
-                    </DataGrid.Columns>
-                </DataGrid>                    
+                        <!--End data grid style-->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Service ID" Width="*" Binding="{Binding service}"/>
+                            <DataGridTextColumn Header="Price" Width="*" Binding="{Binding price}"/>
+                            <DataGridTextColumn Header="Qty" Width="*" Binding="{Binding qty}"/>
+                            <DataGridTextColumn Header="Total" Width="*" Binding="{Binding total}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                     <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNote" x:FieldModifier="public" IsEnabled="False" Width="200" Height="80" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,110" Padding="10" TextWrapping="Wrap"/>
                     <CheckBox x:Name="CBAddNote" Content="Add Note" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 90" Checked="CBAddNote_Checked"/>
                     <Label Content="Sub Total: Rp0" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" Margin="10,170"/>
@@ -199,3 +199,4 @@
 
     </Grid>
 </Page>
+

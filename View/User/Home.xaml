@@ -76,64 +76,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <ImageBrush x:Key="btnCustActive" ImageSource="../Images/ic_cust_active.png"/>
-        <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border1" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
-        <Style x:Key="ButtonCust" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" Background="{TemplateBinding Background}" Width="35" Height="35" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource btnCustActive}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border1}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource btnCustActive}"/>
-                                <Setter Property="Height" TargetName="border" Value="53"/>
-                                <Setter Property="Width" TargetName="border" Value="53"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border1}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="FocusVisual2">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+
 
         <ImageBrush x:Key="btnOrderActive" ImageSource="../Images/ic_order_active.png"/>
         <SolidColorBrush x:Key="Button.Static.Background2" Color="#FFDDDDDD"/>
@@ -194,7 +137,7 @@
             </Setter>
         </Style>
 
-        <ImageBrush x:Key="btnSettingActive" ImageSource="../Images/ic_setting_active.png"/>
+        <ImageBrush x:Key="btnServiceActive" ImageSource="../Images/ic_service_active.png"/>
         <SolidColorBrush x:Key="Button.Static.Background3" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border3" Color="#FF707070"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background3" Color="#FFBEE6FD"/>
@@ -204,7 +147,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background3" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border3" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground3" Color="#FF838383"/>
-        <Style x:Key="ButtonSetting" TargetType="{x:Type Button}">
+        <Style x:Key="btnService" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual3}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background3}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border3}"/>
@@ -224,11 +167,11 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource btnSettingActive}"/>
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource btnServiceActive}"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border3}"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource btnSettingActive}"/>
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource btnServiceActive}"/>
                                 <Setter Property="Height" TargetName="border" Value="53"/>
                                 <Setter Property="Width" TargetName="border" Value="53"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border3}"/>
@@ -278,14 +221,14 @@
                             <ImageBrush ImageSource="../Images/ic_dashboard.png" />
                         </Button.Background>
                     </Button>
-                    <Button Style="{DynamicResource ButtonCust}" x:Name="btnOrder" Click="btnOrder_Click"  Grid.Row="1"  BorderBrush="Transparent">
+                    <Button Style="{DynamicResource ButtonOrder}" x:Name="btnOrder" Click="btnOrder_Click"  Grid.Row="1"  BorderBrush="Transparent">
                         <Button.Background>
                             <ImageBrush ImageSource="../Images/ic_order.png" />
                         </Button.Background>
                     </Button>
-                    <Button Style="{DynamicResource ButtonOrder}" x:Name="btnService" Click="btnService_Click" Grid.Row="2"  BorderBrush="Transparent" >
+                    <Button Style="{DynamicResource btnService}" x:Name="btnService" Click="btnService_Click" Grid.Row="2"  BorderBrush="Transparent" >
                         <Button.Background>
-                            <ImageBrush ImageSource="../Images/ic_order.png" />
+                            <ImageBrush ImageSource="../Images/ic_service.png"/>
                         </Button.Background>
                     </Button>
                 </Grid>

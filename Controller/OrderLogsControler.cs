@@ -56,7 +56,7 @@ namespace LaundryApps.Controller
                 if (save.ShowDialog() == true)
                 {
                     CSVLibraryAK.Core.CSVLibraryAK.Export(save.FileName, data);
-                    MessageBox.Show("OK");
+                    MessageBox.Show("Data successfully export!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)

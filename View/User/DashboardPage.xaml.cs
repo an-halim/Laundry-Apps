@@ -18,9 +18,26 @@ namespace LaundryApps.View.User
     /// </summary>
     public partial class DashboardPage : Page
     {
+        public string username { get; set; }
         public DashboardPage()
         {
             InitializeComponent();
+            username = getLoged();
+        }
+
+        private string getLoged()
+        {
+            return ((Home)Application.Current.Windows[0]).lblLogedUser.Content.ToString();
+        }
+
+        private void lblSeeMore_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new View.User.ServiceList());
+        }
+
+        private void btnSeeAll_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new View.User.OrdersLogPage());
         }
     }
 }

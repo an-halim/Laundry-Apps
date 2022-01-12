@@ -63,7 +63,7 @@
                         </StackPanel>
                     </Border>
 
-                    <Border Grid.Column="3" x:Name="lblSeeMore" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
+                    <Border Grid.Column="3" x:Name="lblSeeMore" MouseDown="lblSeeMore_MouseDown" Background="#64A6F9" Width="164" Height="164" CornerRadius="32">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="15" Color="#e3e1e1"/>
                         </Border.Effect>
@@ -151,7 +151,7 @@
                             <DataGridTextColumn Header="Payment" Width="100" Binding="{Binding payment_method}"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnSeeAll" Content="See All" VerticalAlignment="Bottom" Height="33" Width="80" Margin="687,0,20,10" Grid.Row="1"/>
+                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnSeeAll" Click="btnSeeAll_Click" Content="See All" VerticalAlignment="Bottom" Height="33" Width="80" Margin="687,0,20,10" Grid.Row="1"/>
                 </Grid>
             </Border>
             <!--end of recent order-->

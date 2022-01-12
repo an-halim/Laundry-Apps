@@ -21,7 +21,9 @@ namespace LaundryApps.Model
             DataTable dt = new DataTable();
             try
             {
-                dt = db.FillData("orders join order_detail on orders.order_id=order_detail.order_id", "order_detail.service_id, order_detail.Jumlah_produk, order_detail.Total_harga", "orders.order_id='" + orderid + "'");
+                string join = "orders join userdata on orders.user_id = userdata.username join order_detail on orders.order_id=order_detail.order_id join service on order_detail.service_id = service.service_id";
+                string column = "order_detail.service_id, order_detail.Jumlah_produk, format(order_detail.Total_harga, 'c', 'id-ID') as Total_harga, CONCAT(service.service_name, ' ', service.service_detail) as service_name, userdata.name, userdata.number, userdata.address, format(orders.trx_date, 'dd/MM/yyyy' ) as trx_date, orders.state, orders.payment_method, orders.note";
+                dt = db.FillData(join, column, "orders.order_id='" + orderid + "'");
             }catch(Exception e)
             {
                 MessageBox.Show("Error : "+ e.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -29,22 +31,6 @@ namespace LaundryApps.Model
             }
 
             return dt;
-        }
-
-        public DataSet loadCustomer(string orderid)
-        {
-            DataSet ds = new DataSet();
-            try
-            {
-                ds = db.Select("userdata join orders on userdata.username=orders.user_id", "orders.order_id='" + orderid + "'", "userdata.name, userdata.number, userdata.address, CONVERT(VARCHAR(10), orders.trx_date, 111) as trx_date, orders.state, orders.payment_method, orders.note, orders.total_price");
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error : " + e.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
-                ds = null;
-            }
-
-            return ds;
         }
     }
 }

@@ -59,7 +59,7 @@
                         <Label x:Name="lblServiceName1" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
                         <TextBlock x:Name="lblServiceDetail1" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
                         <Label x:Name="lblServicePrice1" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEdit1" Click="btnEdit1_Click" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
                         <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteCard1" Click="btnDeleteCard1_Click" Content="🗑" Foreground="#fff" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10"/>
                     </Grid>
                 </Border>
@@ -74,7 +74,7 @@
                         <Label x:Name="lblServiceName2" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
                         <TextBlock x:Name="lblServiceDetail2" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
                         <Label x:Name="lblServicePrice2" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEdit2" Click="btnEdit2_Click" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
                         <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteCard2" Click="btnDeleteCard2_Click" Content="🗑" Foreground="#fff" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10"/>
                     </Grid>
                 </Border>
@@ -89,7 +89,7 @@
                         <Label x:Name="lblServiceName3" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
                         <TextBlock x:Name="lblServiceDetail3" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
                         <Label x:Name="lblServicePrice3" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEdit3" Click="btnEdit3_Click" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
                         <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteCard3" Click="btnDeleteCard3_Click" Content="🗑" Foreground="#fff" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10"/>
                     </Grid>
                 </Border>
@@ -104,7 +104,7 @@
                         <Label x:Name="lblServiceName4" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
                         <TextBlock x:Name="lblServiceDetail4" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
                         <Label x:Name="lblServicePrice4" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEdit4" Click="btnEdit4_Click" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
                         <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteCard4" Click="btnDeleteCard4_Click" Content="🗑" Foreground="#fff" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10"/>
                     </Grid>
                 </Border>
@@ -129,7 +129,7 @@
                         <Label x:Name="lblServiceName5" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
                         <TextBlock x:Name="lblServiceDetail5" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
                         <Label x:Name="lblServicePrice5" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEdit5" Click="btnEdit5_Click" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
                         <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteCard5" Click="btnDeleteCard5_Click" Content="🗑" Foreground="#fff" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10"/>
                     </Grid>
                 </Border>
@@ -144,7 +144,7 @@
                         <Label x:Name="lblServiceName6" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
                         <TextBlock x:Name="lblServiceDetail6" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
                         <Label x:Name="lblServicePrice6" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEdit6" Click="btnEdit6_Click" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
                         <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteCard6" Click="btnDeleteCard6_Click" Content="🗑" Foreground="#fff" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10"/>
                     </Grid>
                 </Border>
@@ -159,7 +159,7 @@
                         <Label x:Name="lblServiceName7" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
                         <TextBlock x:Name="lblServiceDetail7" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
                         <Label x:Name="lblServicePrice7" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEdit7" Click="btnEdit7_Click" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
                         <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteCard7" Click="btnDeleteCard7_Click" Content="🗑" Foreground="#fff" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10"/>
                     </Grid>
                 </Border>
@@ -174,7 +174,7 @@
                         <Label x:Name="lblServiceName8" Content="Cuci kilat" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,155,0,0"/>
                         <TextBlock x:Name="lblServiceDetail8" Text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." Foreground="#7d7d7d" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,20,0"/>
                         <Label x:Name="lblServicePrice8" Content="Rp.10.000,00" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,5"/>
-                        <Button Style="{DynamicResource PrimaryButton}" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
+                        <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEdit8" Click="btnEdit8_Click" Content="✏️" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10"/>
                         <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteCard8" Click="btnDeleteCard8_Click" Content="🗑" Foreground="#fff" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10"/>
                     </Grid>
                 </Border>

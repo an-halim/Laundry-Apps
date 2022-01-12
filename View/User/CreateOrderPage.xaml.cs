@@ -11,8 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace LaundryApps.View.Admin
+namespace LaundryApps.View.User
 {
     /// <summary>
     /// Interaction logic for CreateOrderPage.xaml
@@ -21,37 +20,28 @@ namespace LaundryApps.View.Admin
     {
         Controller.CreateOrderController createOrder;
         int CurentPos;
-
-
         public CreateOrderPage()
         {
             InitializeComponent();
             createOrder = new Controller.CreateOrderController(this);
-            createOrder.fillComboBox();
+            txtUsername.Text = getLoged();
+            createOrder.LoadCustomer();
         }
-
+        private string getLoged()
+        {
+            return ((Home)Application.Current.Windows[0]).lblLogedUser.Content.ToString();
+        }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (txtName.Text == null || txtName.Text == "") MessageBox.Show("Please choose customer!", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
-            else
+            gridCustomersDetail.IsEnabled = false;
+            GridCart.IsEnabled = true;
+            GridSevice.IsEnabled = true;
+            createOrder.fillServicesUser(CurentPos.ToString());
+            createOrder.getOrderIDUser();
+            if (CheckBoxDelivery.IsChecked.Value)
             {
-                gridCustomersDetail.IsEnabled = false;
-                GridCart.IsEnabled = true;
-                GridSevice.IsEnabled = true;
-                createOrder.fillServices(CurentPos.ToString());
-                createOrder.getOrderID();
-                if (CheckBoxDelivery.IsChecked.Value)
-                {
-                    lblShipingFee.Content = "Delivery Fee: Rp.15.000";
-                }
+                lblShipingFee.Content = "Delivery Fee: Rp.15.000";
             }
-
-            
-        }
-
-        private void cmbUsername_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            createOrder.CmbSelected();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -61,26 +51,25 @@ namespace LaundryApps.View.Admin
             GridSevice.IsEnabled = false;
             DGServices.ItemsSource = "";
             lblOrderID.Content = "";
-            createOrder.emptyCart();
+            createOrder.emptyCartUser();
         }
 
         private void btnCheckOut_Click(object sender, RoutedEventArgs e)
         {
-            if (createOrder.PlaceOrder())
+            if (createOrder.PlaceOrderUser())
             {
-                NavigationService.Navigate(new View.Admin.PaymentPage("Order #"+ lblOrderID.Content.ToString(), lblTotal.Content.ToString()));
+                NavigationService.Navigate(new View.User.PaymentPage("Order #" + lblOrderID.Content.ToString(), lblTotal.Content.ToString()));
             }
-        }  
+        }
 
         private void addTOcart_Click(object sender, RoutedEventArgs e)
         {
-            
-            object item = DGServices.SelectedItem;          
+            object item = DGServices.SelectedItem;
             string id = (DGServices.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
             string price = (DGServices.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            createOrder.UpdateCart(id, price);
-
+            createOrder.UpdateCartUser(id, price);
         }
+
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
@@ -98,13 +87,11 @@ namespace LaundryApps.View.Admin
             {
                 btnPrev.IsEnabled = true;
             }
-
         }
 
         private void btnPrev_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(CurentPos == 0)// avoid user if has reach start data, it will disable prev button
+            if (CurentPos == 0)// avoid user if has reach start data, it will disable prev button
             {
                 MessageBox.Show("You have reach start of service list", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
                 btnPrev.IsEnabled = false;
@@ -123,6 +110,5 @@ namespace LaundryApps.View.Admin
             txtNote.IsEnabled = true;
             txtNote.Focus();
         }
-
     }
 }

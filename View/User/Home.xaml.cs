@@ -54,7 +54,7 @@ namespace LaundryApps.View.User
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            frmContent.Navigate(new View.User.OrdersLogPage(lblLogedUser.Content.ToString()));
+            frmContent.Navigate(new View.User.OrdersLogPage());
         }
     }
 }

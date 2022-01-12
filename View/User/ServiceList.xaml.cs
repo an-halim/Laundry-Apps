@@ -132,7 +132,7 @@ namespace LaundryApps.View.User
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new View.User.CreateOrderPage());
         }
     }
 }

@@ -17,7 +17,10 @@ namespace LaundryApps.View.Admin
     /// </summary>
     public partial class Home : Window
     {
-
+        public string username()
+        {
+            return lblLogedUser.Content.ToString();
+        }
         public Home()
         {
             InitializeComponent();

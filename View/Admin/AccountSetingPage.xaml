@@ -24,16 +24,16 @@
                 <Image Grid.Row="1" Source="/View/Images/bgSetting.png" Opacity="0.5" />
                 <Label Content="Edit Account" FontSize="28" Foreground="#1678F3" FontWeight="SemiBold" FontFamily="Rounded Mplus" Margin="48,25"/>
                 <Label Content="Username" FontSize="20" FontFamily="Rounded Mplus" Margin="48,105,49,525"/>
-                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtUsername" Width="509" Height="45" Background="#7d7d7d" Opacity="0.5" IsReadOnly="True" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="#fff"  Margin="48,132,49,485"/>
+                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtUsername" Width="509" Height="45" Opacity="0.5" IsReadOnly="True" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="Black"  Margin="48,132,49,485"/>
                 <Label Content="Name" FontSize="20" FontFamily="Rounded Mplus" Margin="48,200,49,425"/>
-                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtName" Width="509" Height="45" Background="#7d7d7d" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="#fff"  Margin="48,226,49,391"/>
+                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtName" Width="509" Height="45"  Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="Black"  Margin="48,226,49,391"/>
                 <Label Content="Address"  FontSize="20" FontFamily="Rounded Mplus" Margin="48,295,49,325"/>
-                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtAddress" Width="509" Height="45" Background="#7d7d7d" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="#fff"   Margin="48,321,49,296"/>
+                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtAddress" Width="509" Height="45" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="Black"  Margin="48,321,49,296"/>
                 <Label Content="Phone Number"  FontSize="20" FontFamily="Rounded Mplus" Margin="48,390,49,225"/>
-                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNumber" Width="509" Height="45" Background="#7d7d7d" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="#fff"  Margin="48,416,49,201"/>
+                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNumber" Width="509" Height="45" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="Black"  Margin="48,416,49,201"/>
                 <Label Content="Password" FontSize="20" FontFamily="Rounded Mplus" Margin="48,485,49,125"/>
-                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtPass" Width="509" Height="45" Background="#7d7d7d" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="#fff"   Margin="48,510,49,107"/>
-                <Button Style="{DynamicResource PrimaryButton}" Content="Accept" FontSize="25" Width="185" Height="47" Margin="372,550,49,0"/>
+                <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtPass" Width="509" Height="45" Opacity="0.5" FontSize="20" FontWeight="SemiBold" FontFamily="Rounded Mplus" Padding="20,0,20,0" VerticalContentAlignment="Center" Foreground="Black"   Margin="48,510,49,107"/>
+                <Button Style="{DynamicResource PrimaryButton}" x:Name="btnAccept" Click="btnAccept_Click" Content="Accept" FontSize="25" Width="185" Height="47" Margin="372,550,49,0"/>
             </Grid>
         </Border>
         </Grid>

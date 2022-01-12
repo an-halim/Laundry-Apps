@@ -78,24 +78,17 @@
                         <DataGridTextColumn Header="Number" Width="150" Binding="{Binding number}"/>
                         <DataGridTextColumn Header="Birth date" Width="100" Binding="{Binding birth_date}"/>
                         <DataGridTextColumn Header="Address" Width="*" Binding="{Binding address}"/>
-                        <DataGridTemplateColumn Header="" Width="80">
+                        <DataGridTemplateColumn Header="Action" Width="80">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteUser" Click="btnDeleteUser_Click" Height="30" Width="60" Foreground="#fff"  Content="✗" />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="" Width="80">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnEditUser" Click="btnEditUser_Click" Background="Orange" Height="30" Width="60" Foreground="#fff" Content="⟳" />
+                                    <Button Style="{DynamicResource DangerButton}" x:Name="btnDeleteUser" Click="btnDeleteUser_Click" Height="30" Width="60" Foreground="#fff"  Content="🗑" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="" Width="100">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnSeeDetails" Height="30" Width="80" Foreground="#fff" Content="See Detail" />
+                                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnSeeDetails" Click="btnSeeDetails_Click" Height="30" Width="80" Foreground="#fff" Content="See Detail" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

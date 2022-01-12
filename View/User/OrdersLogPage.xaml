@@ -110,7 +110,7 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTemplateColumn Header="" Width="100">
+                        <DataGridTemplateColumn Header="Action" Width="100">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Style="{DynamicResource DangerButton}" x:Name="btnCancle" Click="btnCancle_Click" Height="30" Width="60" Foreground="#fff"  Content="✗" />
@@ -133,7 +133,7 @@
                 </Border.Effect>
                 <Grid>
                     <Label x:Name="lblOrderstotal" Content="Showing 80 orders" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                    <Button Style="{DynamicResource PrimaryButton}" Height="35" Width="120" Content="📁 Export to csv" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Button Style="{DynamicResource PrimaryButton}" x:Name="btnExport" Click="btnExport_Click" Height="35" Width="120" Content="📁 Export to csv" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
                 </Grid>
             </Border>
         </Grid>

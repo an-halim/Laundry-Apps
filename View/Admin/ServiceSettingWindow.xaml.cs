@@ -17,11 +17,15 @@ namespace LaundryApps.View.Admin
     /// <summary>
     /// Interaction logic for AddServiceWindow.xaml
     /// </summary>
-    public partial class AddServiceWindow : Window
+    public partial class ServiceSettingWindow : Window
     {
-        public AddServiceWindow()
+        Controller.ServiceSettingController serviceSetting;
+        public string action { get; set; }
+        public ServiceSettingWindow(string serviceID = "") // default value parameter "" for add new service its mean dont load from exiting data
         {
             InitializeComponent();
+            serviceSetting = new Controller.ServiceSettingController(this);
+            serviceSetting.LoadData(serviceID);
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -46,7 +50,14 @@ namespace LaundryApps.View.Admin
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-
+            if(action == "update")
+            {
+                if(serviceSetting.Update()) this.Close();
+            }
+            else if(action == "insert")
+            {
+                if (serviceSetting.Insert()) this.Close();
+            }
         }
     }
 }

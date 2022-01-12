@@ -19,17 +19,21 @@ namespace LaundryApps.View.User
     public partial class OrdersLogPage : Page
     {
         Controller.OrdersLogUserController OD;
-        string LogedUser;
-        public OrdersLogPage(string username)
+        public string LogedUser { get; set; }
+        public OrdersLogPage()
         {
             InitializeComponent();
             OD = new Controller.OrdersLogUserController(this);
-            LogedUser = username;
+            LogedUser = getLoged();
         }
 
+        private string getLoged()
+        {
+            return ((Home)Application.Current.Windows[0]).lblLogedUser.Content.ToString();
+        }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            OD.FillDatagrid(LogedUser);
+            OD.FillDatagrid();
         }
 
         private void btnNewOrder_Click(object sender, RoutedEventArgs e)
@@ -48,7 +52,7 @@ namespace LaundryApps.View.User
 
             if (txtSearch.Text.ToString() != "Search here...")
             {
-                OD.FillDatagrid(LogedUser, txtSearch.Text.ToString());
+                OD.FillDatagrid(txtSearch.Text.ToString());
             }
         }
 
@@ -56,9 +60,18 @@ namespace LaundryApps.View.User
         {
             object item = OrdersGrid.SelectedItem;
             string id = (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            MessageBoxResult result = MessageBox.Show("Are you sure cancel this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "Canceled");
-            OD.FillDatagrid(LogedUser);
+            string status = (OrdersGrid.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
+            if(status == "On Progres" || status == "Completed")
+            {
+                MessageBox.Show("This order is "+ status +", you can't cancel!", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure cancel this order?", "Confirmation!", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes) OD.ChangeStatus(id, "Canceled");
+                OD.FillDatagrid();
+            }
+            
         }
 
 
@@ -71,7 +84,12 @@ namespace LaundryApps.View.User
         {
             object item = OrdersGrid.SelectedItem;
             string id = "Order #" + (OrdersGrid.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            NavigationService.Navigate(new View.Admin.OrderDetail(id));
+            NavigationService.Navigate(new View.User.OrderDetailPage(id));
+        }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            OD.exportFile();
         }
     }
 }

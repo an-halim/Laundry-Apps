@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaundryApps.View.Admin
+namespace LaundryApps.View.User
 {
     /// <summary>
     /// Interaction logic for PaymentPage.xaml
@@ -32,7 +32,7 @@ namespace LaundryApps.View.Admin
             lblTotal.Content = total;
             payment = new Controller.PaymentController(this);
         }
-        
+
 
         private void BDCash_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -103,16 +103,16 @@ namespace LaundryApps.View.Admin
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
-            if (payment.confirmPayment())
+            if (payment.confirmPaymentUser())
             {
                 MessageBox.Show("Order successfully confirmed!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
-                NavigationService.Navigate(new View.Admin.OrderDetail(lblOrderID.Content.ToString()));
+                NavigationService.Navigate(new View.User.OrderDetailPage(lblOrderID.Content.ToString()));
             }
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            if (payment.cancelOrder()) NavigationService.Navigate(new View.Admin.CreateOrderPage());
+            if (payment.cancelOrderUser()) NavigationService.Navigate(new View.User.CreateOrderPage());
         }
     }
 }

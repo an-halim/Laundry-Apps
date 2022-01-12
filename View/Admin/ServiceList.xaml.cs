@@ -169,7 +169,9 @@ namespace LaundryApps.View.Admin
 
         private void btnAddservice_Click(object sender, RoutedEventArgs e)
         {
-            new View.Admin.AddServiceWindow().Show();
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow();
+            w.action = "insert";
+            w.Show();
         }
 
         private void txtSearch_LostFocus(object sender, RoutedEventArgs e)
@@ -180,6 +182,62 @@ namespace LaundryApps.View.Admin
         private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
         {
             txtSearch.Text = "";
+        }
+
+        private void btnEdit1_Click(object sender, RoutedEventArgs e)
+        {
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID1.Content.ToString());
+            w.action = "update";
+            w.Show();
+        }
+
+        private void btnEdit2_Click(object sender, RoutedEventArgs e)
+        {
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID2.Content.ToString());
+            w.action = "update";
+            w.Show();
+        }
+
+        private void btnEdit3_Click(object sender, RoutedEventArgs e)
+        {
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID3.Content.ToString());
+            w.action = "update";
+            w.Show();
+        }
+
+        private void btnEdit4_Click(object sender, RoutedEventArgs e)
+        {
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID4.Content.ToString());
+            w.action = "update";
+            w.Show();
+        }
+
+        private void btnEdit5_Click(object sender, RoutedEventArgs e)
+        {
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID5.Content.ToString());
+            w.action = "update";
+            w.Show();
+        }
+
+        private void btnEdit6_Click(object sender, RoutedEventArgs e)
+        {
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID6.Content.ToString());
+            w.action = "update";
+            w.Show();
+        }
+
+        private void btnEdit7_Click(object sender, RoutedEventArgs e)
+        {
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID7.Content.ToString());
+            w.action = "update";
+            w.Show();
+        }
+
+        private void btnEdit8_Click(object sender, RoutedEventArgs e)
+        {
+            View.Admin.ServiceSettingWindow w = new View.Admin.ServiceSettingWindow(lblServiceID8.Content.ToString());
+            w.action = "update";
+            w.Show();
         }
     }
 }
